@@ -1,7 +1,9 @@
 **Description:** 
+
 Key Ideas: socket programming, multithreading, and routing, system programming
 Language: C/C++
 Tools: Linux/Unix, Ubuntu (via AWS)
+
 Successfully implemented:
 - Through programming exercises (written in C++), a simple web service and a simple web client
 - Through multithreaded programming exercises (written in C++), how to throttle and control data rates when transferring data across the Internet
