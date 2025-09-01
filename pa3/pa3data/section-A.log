@@ -1,0 +1,36 @@
+[Mon Jan 18 2021 14:15:49.552224] START: port=12345, rootdir='pa2data'
+[Mon Jan 18 2021 14:15:56.150962] CONNECT[1]: 127.0.0.1:39758
+[Mon Jan 18 2021 14:15:56.151600] REQUEST[1]: 127.0.0.1:39758, uri=/extra/usctommy-photo.jpg
+	[1]	GET /extra/usctommy-photo.jpg HTTP/1.1
+	[1]	User-Agent: Wget/1.17.1 (linux-gnu)
+	[1]	Accept: */*
+	[1]	Accept-Encoding: identity
+	[1]	Host: 127.0.0.1:12345
+	[1]	Connection: Keep-Alive
+	[1]	
+[Mon Jan 18 2021 14:15:56.154981] RESPONSE[1]: 127.0.0.1:39758, status=200, P=2, MAXR=10 tokens/s, DIAL=30%, rate=1.5 KB/s
+	[1]	HTTP/1.1 200 OK
+	[1]	Server: pa3
+	[1]	Content-Type: application/octet-stream
+	[1]	Content-Length: 104441
+	[1]	Content-MD5: cb54f9c4499291c6620cc96a4e4c8f8e
+	[1]	
+[Mon Jan 18 2021 14:15:59.527075] CONNECT[2]: 127.0.0.1:39760
+[Mon Jan 18 2021 14:15:59.527366] REQUEST[2]: 127.0.0.1:39760, uri=/viterbi-seal-rev-770x360.png
+	[2]	GET /viterbi-seal-rev-770x360.png HTTP/1.1
+	[2]	User-Agent: Wget/1.17.1 (linux-gnu)
+	[2]	Accept: */*
+	[2]	Accept-Encoding: identity
+	[2]	Host: 127.0.0.1:12345
+	[2]	Connection: Keep-Alive
+	[2]	
+[Mon Jan 18 2021 14:15:59.532469] RESPONSE[2]: 127.0.0.1:39760, status=200, P=3, MAXR=21 tokens/s, DIAL=15%, rate=1.05 KB/s
+	[2]	HTTP/1.1 200 OK
+	[2]	Server: pa3
+	[2]	Content-Type: application/octet-stream
+	[2]	Content-Length: 95957
+	[2]	Content-MD5: 8498b061caed25fc623b9ac23fd0bcc5
+	[2]	
+[Mon Jan 18 2021 14:17:04.156498] CLOSE[1]: (done) 127.0.0.1:39758
+[Mon Jan 18 2021 14:17:29.058347] CLOSE[2]: (done) 127.0.0.1:39760
+[Mon Jan 18 2021 14:17:37.820474] STOP: port=12345

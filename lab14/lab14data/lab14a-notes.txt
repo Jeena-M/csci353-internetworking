@@ -1,0 +1,42 @@
+Topology for lab14a:
+    +-------+   +-------+     +-------+ 
+    | 12000 +---+ 12002 +-----+ 12004 | 
+    +-------+   +---+---+     +---+---+ 
+in all windows, type "netgraph" and verify
+in all windows, type "forwarding" and verify
+in 1st window, type "rdtsend :12000 hello", should see:
+        Cannot use rdtsend command to send message to yourself
+in 1st window, type "rdtsend :12012 hello", should see:
+        :12012 target is not reachable
+TC#1: in 1st window, type "rdtsend :12002 hello"
+      in 2nd window, should receive "hello" when finished
+TC#2: in 1st window, type "rdtsend :12004 howdy"
+      in 3rd window, should receive "howdy" when finished
+TC#3: type the following 2 commands quickly:
+          in 1st window, type "rdtsend :12004 good-day"
+          in 3rd window, type "rdtsend :12000 bye-bye"
+      wait for sender and receive to finish
+      in 1st window, should receive "bye-bye" when finished
+      in 3rd window, should receive "good-day" when finished
+TC#4: in 1st window, type "rdtsend :12004 hold-on"
+      after 1 second, in 2nd window, type "quit"
+          should start seeing timeout in 1st window
+          wait to see at least 3 timeouts
+      in 2nd window, type <Ctrl+d> to restart :12002
+      in 3rd window, should receive "hold-on" when finished
+TC#5: type the following 2 commands quickly:
+          in 1st window, type "rdtsend :12004 left-right"
+          in 3rd window, type "rdtsend :12000 high-low"
+      after 1 second, in 2nd window, type "quit"
+          should start seeing timeout in 1st and 3rd windows
+          wait to see at least 3 timeouts in 1st and 3rd windows
+      in 2nd window, type <Ctrl+d> to restart :12002
+      in 1st window, should receive "high-low" when finished
+      in 3rd window, should receive "left-right" when finished
+TC#6: type the following 2 commands quickly:
+          in 1st window, type "rdtsend :12002 left"
+          in 3rd window, type "rdtsend :12002 right"
+      in 2nd window, should receive both "left" and "right"
+type "quit" in all windows
+in 3rd window, type "more lab14data/*.log"
+type <Ctrl+d> after server has quit to close this pane

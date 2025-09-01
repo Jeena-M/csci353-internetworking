@@ -1,0 +1,21 @@
+Script started on Sun 27 Apr 2025 02:16:23 AM PDT
+]0;student@student-VirtualBox: ~/lab13[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab13[00m$ exit./lab13a lab13data/lab13-12010.iniexit[K./lab13a lab13data/lab13-12010.iniexit[K./lab13a lab13data/lab13-12008.iniexit[K./lab13a lab13data/lab13-12006.iniexit[K./lab13a lab13data/lab13-12004.ini
+:12004> quit
+Console thread terminated
+
+]0;student@student-VirtualBox: ~/lab13[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab13[00m$ ./lab13a lab13data/lab13-12004.ini
+:12004> quit
+Console thread terminated
+
+]0;student@student-VirtualBox: ~/lab13[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab13[00m$ quit
+No command 'quit' found, did you mean:
+ Command 'quilt' from package 'quilt' (universe)
+ Command 'qgit' from package 'qgit' (universe)
+ Command 'quot' from package 'quota' (main)
+ Command 'luit' from package 'x11-utils' (main)
+ Command 'quiz' from package 'bsdgames' (universe)
+quit: command not found
+]0;student@student-VirtualBox: ~/lab13[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab13[00m$ exit
+exit
+
+Script done on Sun 27 Apr 2025 02:27:16 AM PDT

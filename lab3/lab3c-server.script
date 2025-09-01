@@ -1,0 +1,22 @@
+Script started on Wed 05 Feb 2025 08:59:00 AM PST
+]0;student@student-VirtualBox: ~/lab3[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab3[00m$ ./lab3c 1000
+[DBG-SVR]	argv[0]: './lab3c'
+[DBG-SVR]	argv[1]: '1000'
+bind() system call: Permission denied
+]0;student@student-VirtualBox: ~/lab3[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab3[00m$ ./lab3c 12345
+[DBG-SVR]	argv[0]: './lab3c'
+[DBG-SVR]	argv[1]: '12345'
+[SERVER]	listening at 127.0.0.1:12345
+[DBG-SVR] 13 bytes received from 127.0.0.1:57872 (data displayed in next line, <TAB>-indented):
+	Hello World!
+	0x48 0x65 0x6c 0x6c 0x6f 0x20 0x57 0x6f 0x72 0x6c 0x64 0x21 0x0a 
+[DBG-SVR] 18 bytes received from 127.0.0.1:57874 (data displayed in next line, <TAB>-indented):
+	Good-bye for now.
+	0x47 0x6f 0x6f 0x64 0x2d 0x62 0x79 0x65 0x20 0x66 0x6f 0x72 0x20 0x6e 0x6f 0x77 0x2e 0x0a 
+[DBG-SVR] 0 bytes received from 127.0.0.1:57876 (data displayed in next line, <TAB>-indented):
+	
+^C
+]0;student@student-VirtualBox: ~/lab3[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab3[00m$ exit
+exit
+
+Script done on Wed 05 Feb 2025 09:01:07 AM PST

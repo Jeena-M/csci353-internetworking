@@ -1,0 +1,40 @@
+pa2 client at 127.0.0.1:54356 connected to server at 127.0.0.1:12345.
+	GET /textbooks-2-small.jpg HTTP/1.1
+	Host: 127.0.0.1:12345
+	Accept: text/html, */*
+	User-Agent: pa2 (bill.cheng@usc.edu)
+	
+	HTTP/1.1 200 OK
+	Server: pa2 (bill.cheng@usc.edu)
+	Content-Type: application/octet-stream
+	Content-Length: 10525
+	Content-MD5: 3f21950127b581aa1d9a264e8d06845b
+	
+[printout of the progress bar surpressed here]
+textbooks-2-small.jpg saved into out.1.
+	GET /textbooks-3-small.jpg HTTP/1.1
+	Host: 127.0.0.1:12345
+	Accept: text/html, */*
+	User-Agent: pa2 (bill.cheng@usc.edu)
+	
+	HTTP/1.1 200 OK
+	Server: pa2 (bill.cheng@usc.edu)
+	Content-Type: application/octet-stream
+	Content-Length: 14265
+	Content-MD5: 0fa2a445f252d4355aa760a54c93825e
+	
+[printout of the progress bar surpressed here]
+textbooks-3-small.jpg saved into out.2.
+	GET /usctommy.gif HTTP/1.1
+	Host: 127.0.0.1:12345
+	Accept: text/html, */*
+	User-Agent: pa2 (bill.cheng@usc.edu)
+	
+	HTTP/1.1 200 OK
+	Server: pa2 (bill.cheng@usc.edu)
+	Content-Type: application/octet-stream
+	Content-Length: 1689
+	Content-MD5: 0e7c16723f8e70c751ddd01c51d7c27d
+	
+[printout of the progress bar surpressed here]
+usctommy.gif saved into out.3.

@@ -1,0 +1,60 @@
+Script started on Wed 02 Apr 2025 10:32:59 PM PDT
+]0;student@student-VirtualBox: ~/lab10[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab10[00m$ exitscript lab10c-12002.scriptb-12002.script./lab10a lab10data/lab10-12002.iniexit[K./lab10a lab10data/lab10-12000.iniexit[K./lab10a lab10data/lab10-12002.iniexit[Krm lab10c-12000.script lab10c-12002.script laab10c-12004.script lab10d-12012.script[Aexit[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./lab10a lab10data/lab10-12000.iniexit[Kmore lab10data/*.log./lab10a lab10data/lab10-12012.ini
+:12012> neighbors
+Active connections of :12012:
+	:12002,	:12004,
+:12012> neighbors
+Active connections of :12012:
+	:12004,
+:12012> neihgor    ghbors
+Active connections of :12012:
+	:12004,	:12002,
+:12012> quit
+]0;student@student-VirtualBox: ~/lab10[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab10[00m$ more lab10data/*.log
+::::::::::::::
+lab10data/12000.log
+::::::::::::::
+[Wed Apr  2 2025 22:33:17.383233] r SAYHELLO 12002 1 - 0
+[Wed Apr  2 2025 22:33:17.383293] i SAYHELLO 12002 1 - 0
+[Wed Apr  2 2025 22:34:19.119339] r SAYHELLO 12002 1 - 0
+[Wed Apr  2 2025 22:34:19.119373] i SAYHELLO 12002 1 - 0
+[7m--More--(Next file: lab10data/12002.log)[27m::::::::::::::[K
+lab10data/12002.log
+::::::::::::::
+[Wed Apr  2 2025 22:33:17.383656] i SAYHELLO 12000 1 - 0
+[Wed Apr  2 2025 22:33:17.384005] r SAYHELLO 12000 1 - 0
+[Wed Apr  2 2025 22:33:30.708122] r SAYHELLO 12004 1 - 0
+[Wed Apr  2 2025 22:33:30.708188] i SAYHELLO 12004 1 - 0
+[Wed Apr  2 2025 22:33:47.668458] r SAYHELLO 12012 1 - 0
+[Wed Apr  2 2025 22:33:47.668501] i SAYHELLO 12012 1 - 0
+[Wed Apr  2 2025 22:34:19.118189] i SAYHELLO 12012 1 - 0
+[Wed Apr  2 2025 22:34:19.118569] r SAYHELLO 12012 1 - 0
+[Wed Apr  2 2025 22:34:19.118569] r SAYHELLO 12012 1 - 0
+[Wed Apr  2 2025 22:34:19.119207] i SAYHELLO 12004 1 - 0
+[Wed Apr  2 2025 22:34:19.120033] i SAYHELLO 12000 1 - 0
+[Wed Apr  2 2025 22:34:19.120408] r SAYHELLO 12004 1 - 0
+[Wed Apr  2 2025 22:34:19.120523] r SAYHELLO 12000 1 - 0
+[7m--More--(Next file: lab10data/12004.log)[27m::::::::::::::[K
+lab10data/12004.log
+::::::::::::::
+[Wed Apr  2 2025 22:33:30.708595] i SAYHELLO 12002 1 - 0
+[Wed Apr  2 2025 22:33:30.708976] r SAYHELLO 12002 1 - 0
+[Wed Apr  2 2025 22:33:47.667011] r SAYHELLO 12012 1 - 0
+[Wed Apr  2 2025 22:33:47.667054] i SAYHELLO 12012 1 - 0
+[Wed Apr  2 2025 22:34:19.118924] r SAYHELLO 12002 1 - 0
+[Wed Apr  2 2025 22:34:19.118962] i SAYHELLO 12002 1 - 0
+[7m--More--(Next file: lab10data/12012.log)[27m::::::::::::::[K
+lab10data/12012.log
+::::::::::::::
+[Wed Apr  2 2025 22:33:47.667436] i SAYHELLO 12004 1 - 0
+[Wed Apr  2 2025 22:33:47.667826] r SAYHELLO 12004 1 - 0
+[Wed Apr  2 2025 22:33:47.667826] r SAYHELLO 12004 1 - 0
+[Wed Apr  2 2025 22:33:47.668799] i SAYHELLO 12002 1 - 0
+[Wed Apr  2 2025 22:33:47.669165] r SAYHELLO 12002 1 - 0
+[Wed Apr  2 2025 22:34:19.116442] r SAYHELLO 12002 1 - 0
+[Wed Apr  2 2025 22:34:19.116487] i SAYHELLO 12002 1 - 0
+]0;student@student-VirtualBox: ~/lab10[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab10[00m$ exit
+exit
+
+Script done on Wed 02 Apr 2025 10:35:11 PM PDT

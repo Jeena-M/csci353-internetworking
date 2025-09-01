@@ -1,0 +1,49 @@
+#!/bin/tcsh -f
+#
+# This script is for your convenience.  It's NOT EXACTLY THE SAME as going throught the steps in the grading guidelines.
+# It's best that you run through section (D) of the grading guidelines manually so you won't get any grading surprises!
+#
+# This file should be in the "lab6data" subdirectory of the directory where you have your "lab6c" executable.  To run it do:
+#     chmod 755 ./lab6data/tmux-lab6c.txt
+#     ./lab6data/tmux-lab6c.txt
+# To switch to use a different pane, please type <Cntrl+b> follwed the up/down/left/right key on your keyboard.
+
+set session_name="lab6c"
+set running=`tmux list-sessions | grep "${session_name}:"`
+
+if ("x$running" != "x") then
+    # it's running
+    echo "Session '${session_name}' already exists.  Type 'tmux kill-session -t ${session_name}' to kill it."
+else
+    # create 4 panes, one at the bottom, two on the left, and one on the right
+
+    # create a tmux session
+    /bin/rm -f lab6data/*.log
+    tmux new-session -d -s ${session_name} 'echo "(window1) "; \
+            script -c "lab6data/lab6c-10.csh" lab6c10.script; \
+            script -c "lab6data/lab6c-30.csh" lab6c30.script; \
+            script -c "lab6data/lab6c-50.csh" lab6c50.script; \
+            script -c "lab6data/lab6c-70.csh" lab6c70.script; \
+            script -c "lab6data/lab6c-90.csh" lab6c90.script; \
+            echo "[ (1) type <Ctrl+d> to close this pane ]"; cat'
+    # split the current pane vertically 95/5
+    tmux split-window -v -p 5
+    # split the top pane horizontally 60/40
+    tmux split-window -h -t top -p 40 'more lab6data/lab6c-notes.txt; cat'
+    # split the left pane vertically 50/50
+    tmux split-window -v -t 0 -p 50 '\
+            echo "(window2) "; \
+            echo "[ (2) type <Ctrl+d> to run "\""wget -O x http://localhost:12345/viterbi-seal-rev-770x360.png"\"" ]"; cat; \
+            wget -O x http://localhost:12345/viterbi-seal-rev-770x360.png; \
+            echo "[ (2) type <Ctrl+d> to run "\""wget -O x http://localhost:12345/usc-seal-1597x360.png"\"" ]"; cat; \
+            wget -O x http://localhost:12345/usc-seal-1597x360.png; \
+            echo "[ (2) type <Ctrl+d> to run "\""wget -O x http://localhost:12345/usc-seal-1597x360.png"\"" ]"; cat; \
+            wget -O x http://localhost:12345/usc-seal-1597x360.png; \
+            echo "[ (2) type <Ctrl+d> to run "\""wget -O x http://localhost:12345/upc_map.gif"\"" ]"; cat; \
+            wget -O x http://localhost:12345/upc_map.gif; \
+            echo "[ (2) type <Ctrl+d> to run "\""wget -O x http://localhost:12345/upc_map.pdf"\"" ]"; cat; \
+            wget -O x http://localhost:12345/upc_map.pdf; \
+            echo "[ (2) type <Ctrl+d> to close this pane ]"; cat'
+
+    tmux attach-session -d -t ${session_name}
+endif

@@ -1,0 +1,43 @@
+Topology for lab14b:
+    +-------+   +-------+     +-------+ 
+    | 12000 +---+ 12002 +-----+ 12004 | 
+    +-------+   +---+---+     +---+---+ 
+in all windows, type "netgraph" and verify
+in all windows, type "forwarding" and verify
+TC#1: in 1st window, type "echoapp :12004"
+      in 1st window, type "hey", should eventually see echoed "hey"
+      in 1st window, press <ENTER>, should see empty line echoed
+      echoapp should self-terminate and give back original prompt
+TC#2: in 1st window, type "echoapp :12004"
+      in 1st window, type "world"
+      after 1 second, in 2nd window, type "quit"
+          should start seeing timeout in 1st window
+          wait to see at least 3 timeouts in 1st window
+      in 2nd window, type <Ctrl+d> to restart :12002
+      in 1st window, should eventually see echoed "world"
+      in 1st window, press <ENTER>, should see empty line echoed
+      echoapp should self-terminate and give back original prompt
+TC#3: in 1st window, type "echoapp :12004"
+      in 3rd window, type "echoapp :12000"
+      do the following quickly:
+          in 1st window, type "hello"
+          in 3rd window, type "howdy"
+      in 1st window, should eventually see echoed "hello"
+      in 3rd window, should eventually see echoed "howdy"
+      do the following quickly:
+          in 1st window, type "bye"
+          in 3rd window, press <ENTER> to terminate echoapp
+      in 1st window, should eventually see echoed "bye"
+      in 1st window, press <ENTER> to terminate echoapp
+TC#4: in 1st window, type "echoapp :12002"
+      in 3rd window, type "echoapp :12002"
+      do the following quickly:
+          in 1st window, type "byenow"
+          in 3rd window, type "goodday"
+      in 1st window, should eventually see echoed "byenow"
+      in 3rd window, should eventually see echoed "goodday"
+      in 1st window, press <ENTER> to terminate echoapp
+      in 3rd window, press <ENTER> to terminate echoapp
+type "quit" in all windows
+in 3rd window, type "more lab14data/*.log"
+type <Ctrl+d> after server has quit to close this pane

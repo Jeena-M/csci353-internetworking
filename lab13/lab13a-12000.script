@@ -1,0 +1,144 @@
+Script started on Sun 27 Apr 2025 01:09:47 AM PDT
+]0;student@student-VirtualBox: ~/lab13[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab13[00m$ uname -a
+Linux student-VirtualBox 4.15.0-142-generic #146~16.04.1-Ubuntu SMP Tue Apr 13 09:26:57 UTC 2021 i686 i686 i686 GNU/Linux
+]0;student@student-VirtualBox: ~/lab13[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab13[00m$     cat /etc/os-release
+NAME="Ubuntu"
+VERSION="16.04.7 LTS (Xenial Xerus)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 16.04.7 LTS"
+VERSION_ID="16.04"
+HOME_URL="http://www.ubuntu.com/"
+SUPPORT_URL="http://help.ubuntu.com/"
+BUG_REPORT_URL="http://bugs.launchpad.net/ubuntu/"
+VERSION_CODENAME=xenial
+UBUNTU_CODENAME=xenial
+]0;student@student-VirtualBox: ~/lab13[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab13[00m$     make clean
+rm -f *.o lab13a 
+]0;student@student-VirtualBox: ~/lab13[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab13[00m$     make lab13a
+g++ -g -Wall -std=c++11 -DLOCALHOST=\"127.0.0.1\" -o lab13a lab13a.cpp my_socket.cpp my_timestamp.cpp -lcrypto -pthread
+[01m[Klab13a.cpp:[m[K In function ‘[01m[Kvoid udt_send(std::__cxx11::string, std::__cxx11::string, std::__cxx11::string, std::shared_ptr<Connection>)[m[K’:
+[01m[Klab13a.cpp:245:14:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[KisIn[m[K’ set but not used [-Wunused-but-set-variable]
+         bool isIn = false;
+[01;32m[K              ^[m[K
+[01m[Klab13a.cpp:[m[K In function ‘[01m[Kvoid read_from_client(std::shared_ptr<Connection>)[m[K’:
+[01m[Klab13a.cpp:788:47:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [-Wsign-compare]
+                     if (line.find("UCASTAPP") != -1) {
+[01;32m[K                                               ^[m[K
+[01m[Klab13a.cpp:913:47:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [-Wsign-compare]
+                         if (body.find("PING") != -1){
+[01;32m[K                                               ^[m[K
+[01m[Klab13a.cpp:937:57:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [-Wsign-compare]
+                         } else if (body.find("TTLZERO") != -1){
+[01;32m[K                                                         ^[m[K
+[01m[Klab13a.cpp:910:30:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[KisPing[m[K’ set but not used [-Wunused-but-set-variable]
+                         bool isPing = false;
+[01;32m[K                              ^[m[K
+[01m[Klab13a.cpp:911:30:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[KisTTLZERO[m[K’ set but not used [-Wunused-but-set-variable]
+                         bool isTTLZERO = false;
+[01;32m[K                              ^[m[K
+[01m[Klab13a.cpp:912:30:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[KisPong[m[K’ set but not used [-Wunused-but-set-variable]
+                         bool isPong = false; 
+[01;32m[K                              ^[m[K
+[01m[Klab13a.cpp:989:51:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [-Wsign-compare]
+                             if (body.find("PING") != -1) {
+[01;32m[K                                                   ^[m[K
+[01m[Klab13a.cpp:1044:42:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[KisIn[m[K’ set but not used [-Wunused-but-set-variable]
+                                     bool isIn = false;
+[01;32m[K                                          ^[m[K
+[01m[Klab13a.cpp:1180:49:[m[K [01;35m[Kwarning: [m[Ksuggest parentheses around assignment used as truth value [-Wparentheses]
+                                 if (isIn = false){
+[01;32m[K                                                 ^[m[K
+[01m[Klab13a.cpp:[m[K In function ‘[01m[Kvoid neighbors_thread(std::vector<std::__cxx11::basic_string<char> >&, std::__cxx11::string, std::__cxx11::string)[m[K’:
+[01m[Klab13a.cpp:1781:14:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [-Wsign-compare]
+     while (i < file_lines.size() && file_lines[i][0] != '[') { 
+[01;32m[K              ^[m[K
+[01m[Klab13a.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[Klab13a.cpp:2451:18:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [-Wsign-compare]
+         while (i < file_lines.size() && file_lines[i][0] != '['){
+[01;32m[K                  ^[m[K
+[01m[Klab13a.cpp:2481:18:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [-Wsign-compare]
+         while (j < file_lines.size() && file_lines[j][0] != '['){
+[01;32m[K                  ^[m[K
+[01m[Klab13a.cpp:2520:18:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [-Wsign-compare]
+         while (k < file_lines.size() && file_lines[k][0] != '['){
+[01;32m[K                  ^[m[K
+[01m[Klab13a.cpp:[m[K At global scope:
+[01m[Klab13a.cpp:310:6:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid usage_server()[m[K’ defined but not used [-Wunused-function]
+ void usage_server()
+[01;32m[K      ^[m[K
+[01m[Klab13a.cpp:338:5:[m[K [01;35m[Kwarning: [m[K‘[01m[Kint get_file_size(std::__cxx11::string)[m[K’ defined but not used [-Wunused-function]
+ int get_file_size(string path)
+[01;32m[K     ^[m[K
+]0;student@student-VirtualBox: ~/lab13[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab13[00m$     rm -f lab13data/*.log
+]0;student@student-VirtualBox: ~/lab13[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab13[00m$     ./lab13a lab13data/lab13-12000.ini
+:12000> netgraph
+:12000: :12002
+:12002: :12000,:12004,:12010
+:12004: :12006,:12002
+:12006: :12004,:12008
+:12008: :12006,:12010
+:12010: :12008,:12002
+:12000> forwarding
+:12002: :12002
+:12004: :12002
+:12006: :12002
+:12008: :12002
+:12010: :12002
+:12000> traceroute 12000
+Cannot traceroute to yourself
+:12000> traceroute 12002
+[Sun Apr 27 2025 01:31:43.962035] i UCASTAPP :12002 1 - 42 :12000_14_1745742703.962025  :12000 :12002 1 353UDT/1.0 PING 12000_13_1745742703.961933
+.[Sun Apr 27 2025 01:31:43.962635] r UCASTAPP :12002 9 - 42 :12002_12_1745742703.962334  :12002 :12000 1 353UDT/1.0 PONG 12000_13_1745742703.961933
+12000_13_1745742703.961933 12000_13_1745742703.961933
+1 - 12000, 0.000717
+
+12002 is reached in 1 steps
+:12000> traceroute 1200 12
+..................................................
+1 - *
+..................................................
+2 - *
+..................................................
+3 - *
+..................................................
+4 - *
+..................................................
+5 - *
+..................................................
+6 - *
+..................................................
+7 - *
+..................................................
+8 - *
+..................................................
+9 - *
+traceroute: 12012 not reached after 9 steps
+:12000> traceroute 12008
+[Sun Apr 27 2025 01:33:58.242632] i UCASTAPP :12002 1 - 42 :12000_17_1745742838.242615  :12000 :12008 1 353UDT/1.0 PING 12000_16_1745742838.242546
+.[Sun Apr 27 2025 01:33:58.243508] r UCASTAPP :12002 9 - 45 :12002_13_1745742838.243222  :12002 :12000 1 353UDT/1.0 TTLZERO 12000_16_1745742838.242546
+1 - 12000, 0.00096
+
+[Sun Apr 27 2025 01:34:01.343026] i UCASTAPP :12002 2 - 42 :12000_18_1745742841.343001  :12000 :12008 1 353UDT/1.0 PING 12000_16_1745742838.242546
+.[Sun Apr 27 2025 01:34:01.344474] r UCASTAPP :12002 8 - 45 :12010_26_1745742841.343780  :12010 :12000 1 353UDT/1.0 TTLZERO 12000_16_1745742838.242546
+2 - 12000, 0.00154
+
+[Sun Apr 27 2025 01:34:04.443680] i UCASTAPP :12002 3 - 42 :12000_19_1745742844.443664  :12000 :12008 1 353UDT/1.0 PING 12000_16_1745742838.242546
+.[Sun Apr 27 2025 01:34:04.445706] r UCASTAPP :12002 7 - 42 :12008_27_1745742844.444618  :12008 :12000 1 353UDT/1.0 PONG 12000_16_1745742838.242546
+12000_16_1745742838.242546 12000_16_1745742838.242546
+3 - 12000, 0.002117
+
+12008 is reached in 3 steps
+:12000> [Sun Apr 27 2025 01:39:35.888565] r UCASTAPP :12002 1 - 42 :12006_47_1745743175.887527  :12006 :12000 1 353UDT/1.0 PING 12006_44_1745743169.686110
+[Sun Apr 27 2025 01:39:35.888625] i UCASTAPP :12002 9 - 42 :12000_20_1745743175.888590  :12000 :12006 1 353UDT/1.0 PONG 12006_44_1745743169.686110
+[Sun Apr 27 2025 01:40:35.705412] r UCASTAPP :12002 1 - 42 :12006_54_1745743235.704204  :12006 :12000 1 353UDT/1.0 PING 12006_48_1745743226.401980
+[Sun Apr 27 2025 01:40:35.705490] i UCASTAPP :12002 9 - 42 :12000_21_1745743235.705440  :12000 :12006 1 353UDT/1.0 PONG 12006_48_1745743226.401980
+[Sun Apr 27 2025 01:41:29.302604] r UCASTAPP :12002 1 - 42 :12006_81_1745743289.301681  :12006 :12000 1 353UDT/1.0 PING 12006_78_1745743283.100325
+[Sun Apr 27 2025 01:41:29.302675] i UCASTAPP :12002 9 - 42 :12000_29_1745743289.302629  :12000 :12006 1 353UDT/1.0 PONG 12006_78_1745743283.100325
+quit
+Console thread terminated
+
+]0;student@student-VirtualBox: ~/lab13[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab13[00m$ exit
+exit
+
+Script done on Sun 27 Apr 2025 01:42:51 AM PDT

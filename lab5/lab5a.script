@@ -1,0 +1,63 @@
+Script started on Fri 14 Feb 2025 01:39:54 AM PST
+]0;student@student-VirtualBox: ~/lab5[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab5[00m$ uname -a
+Linux student-VirtualBox 4.15.0-142-generic #146~16.04.1-Ubuntu SMP Tue Apr 13 09:26:57 UTC 2021 i686 i686 i686 GNU/Linux
+]0;student@student-VirtualBox: ~/lab5[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab5[00m$ cat /etc/os-release
+NAME="Ubuntu"
+VERSION="16.04.7 LTS (Xenial Xerus)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 16.04.7 LTS"
+VERSION_ID="16.04"
+HOME_URL="http://www.ubuntu.com/"
+SUPPORT_URL="http://help.ubuntu.com/"
+BUG_REPORT_URL="http://bugs.launchpad.net/ubuntu/"
+VERSION_CODENAME=xenial
+UBUNTU_CODENAME=xenial
+]0;student@student-VirtualBox: ~/lab5[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab5[00m$ make clean
+rm -f xyzzy xyzzy.log split lab5a lab5b lab5c lab5d
+]0;student@student-VirtualBox: ~/lab5[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab5[00m$ make lab5a
+g++ -g -Wall -std=c++11 -DLOCALHOST=\"127.0.0.1\" -o lab5a lab5a.cpp
+[01m[Klab5a.cpp:[m[K In function ‘[01m[Kvoid printAllKeys(std::__cxx11::string, std::vector<std::__cxx11::basic_string<char> >&, std::__cxx11::string)[m[K’:
+[01m[Klab5a.cpp:90:11:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [-Wsign-compare]
+  while (i < file_lines.size() && file_lines[i][0] != '['){
+[01;32m[K           ^[m[K
+[01m[Klab5a.cpp:[m[K In function ‘[01m[Kvoid printValue(std::__cxx11::string, std::__cxx11::string, std::vector<std::__cxx11::basic_string<char> >&, std::__cxx11::string)[m[K’:
+[01m[Klab5a.cpp:126:11:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [-Wsign-compare]
+  while (i < file_lines.size() && file_lines[i][0] != '['){
+[01;32m[K           ^[m[K
+]0;student@student-VirtualBox: ~/lab5[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab5[00m$ ./lab5a sections lab5data/test3.ini
+startup
+startup2
+startup3
+]0;student@student-VirtualBox: ~/lab5[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab5[00m$ ./lab5a keys startup2 lab5data/test3.ini
+host
+port
+pidfile
+rootdir_xyz
+logfile
+]0;student@student-VirtualBox: ~/lab5[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab5[00m$ ./lab5a keys startup2x lab5data/test3.ini
+Cannot find the [startup2x] section in lab5data/test3.ini
+]0;student@student-VirtualBox: ~/lab5[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab5[00m$ ./lab5a value startup3 logfile_abc lab5data/test3.ini
+lab5.log4
+]0;student@student-VirtualBox: ~/lab5[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab5[00m$ ./lab5a value startup3 host lab5data/test3.ini
+There is no value for the "host" key in the [startup3] section in lab5data/test3.ini.
+]0;student@student-VirtualBox: ~/lab5[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab5[00m$ ./lab5a value startup3 logfile_abcx lab5data/test3.ini
+Cannot find the "logfile_abcx" key in the [startup3] section in lab5data/test3.ini.
+]0;student@student-VirtualBox: ~/lab5[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab5[00m$ ./lab5a keys startup3 lab5data/test1.ini
+Cannot find the [startup3] section in lab5data/test1.ini
+]0;student@student-VirtualBox: ~/lab5[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab5[00m$ ./lab5a value startup port lab5data/test1.ini
+12345
+]0;student@student-VirtualBox: ~/lab5[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab5[00m$ ./lab5a value startup2 port lab5data/test3.ini
+1234
+]0;student@student-VirtualBox: ~/lab5[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab5[00m$ ./lab5a value startup pidfile lab5data/test2.ini
+lab5.pid
+]0;student@student-VirtualBox: ~/lab5[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab5[00m$ ./lab5a value startup3 rootdir lab5data/test3.ini
+pa4data3
+]0;student@student-VirtualBox: ~/lab5[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab5[00m$ ./lab5a value startup3 rootdir lab5data/test2.ini
+Cannot find the [startup3] section in lab5data/test2.ini
+]0;student@student-VirtualBox: ~/lab5[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab5[00m$ ./lab5a value endup rootdir lab5data/test1.ini
+Cannot find the [endup] section in lab5data/test1.ini
+]0;student@student-VirtualBox: ~/lab5[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab5[00m$ exit
+exit
+
+Script done on Fri 14 Feb 2025 01:42:38 AM PST

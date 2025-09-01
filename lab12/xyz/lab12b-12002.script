@@ -1,0 +1,30 @@
+Script started on Wed 16 Apr 2025 09:18:16 PM PDT
+]0;student@student-VirtualBox: ~/lab12[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab12[00m$ exit./lab12b lab12data/lab12-12012.ini[1P2.ini02.ini
+:12002> netgraph
+:12002: :12000,:12004,:12012
+:12000: :12002
+:12004: :12002,:12012
+:12012: :12002,:12004
+:12002> forwarding
+:12000: :12000
+:12004: :12004
+:12012: :12012
+:12002> [Wed Apr 16 2025 21:19:38.702071] r UCASTAPP :12000 9 - 5 :12000_13_1744863578.701762  :12000 :12004 1 hello
+[Wed Apr 16 2025 21:19:38.702116] f UCASTAPP :12004 8 - 5 :12000_13_1744863578.701762  :12000 :12004 1 hello
+quit
+Console thread terminated
+
+]0;student@student-VirtualBox: ~/lab12[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab12[00m$ ./lab12b lab12data/lab12-12002.ini
+:12002> forwarding
+:12000: :12000
+:12004: :12004
+:12012: :12012
+:12002> [Wed Apr 16 2025 21:21:19.931717] r UCASTAPP :12012 9 - 3 :12012_12_1744863679.931443  :12012 :12000 1 bye
+[Wed Apr 16 2025 21:21:19.931781] f UCASTAPP :12000 8 - 3 :12012_12_1744863679.931443  :12012 :12000 1 bye
+quit
+Console thread terminated
+
+]0;student@student-VirtualBox: ~/lab12[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab12[00m$ exit
+exit
+
+Script done on Wed 16 Apr 2025 09:23:20 PM PDT

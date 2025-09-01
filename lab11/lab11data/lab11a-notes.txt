@@ -1,0 +1,45 @@
+Topology for lab11a:
+    +-------+   +-------+     +-------+
+    | 12000 +---+ 12002 +-----+ 12004 |
+    +-------+   +---+---+     +---+---+
+in 1st window, type "neighbors" and then "netgraph", should both see:
+    :12000 has no active neighbors
+in 2nd window, type <Ctrl+d> to start :12002
+  should see 2 LSUPDATE messages in 1st window (1 r, 1 i)
+  should see 2 LSUPDATE messages in 2nd window (1 r, 1 i)
+in 1st and 2nd windows, type "netgraph", should see:
+    :12000: :12002
+    :12002: :12000
+in 3rd window, type <Ctrl+d> to start :12004
+  should see 4 LSUPDATE messages in 1st window (3 r, 1 i)
+  should see 8 LSUPDATE messages in 2nd window (3 r, 2 i, 3 d)
+  should see 4 LSUPDATE messages in 3rd window (2 r, 2 i)
+in all 3 windows, type "netgraph", all should see:
+    :12000: :12002
+    :12002: :12000,:12004
+    :12004: :12002
+in 2nd window, type "quit", :12002 should self-terminate
+in 1st window, type "netgraph", should see:
+    :12000 has no active neighbors
+in 3rd window, type "netgraph", should see:
+    :12004 has no active neighbors
+in 2nd window, type <Ctrl+d> to restart :12002
+  should see 6 LSUPDATE messages in 1st window (4 r, 2 i)
+  should see 12 LSUPDATE messages in 2nd window (4 r, 4 i, 4 d)
+  should see 6 LSUPDATE messages in 3rd window (4 r, 2 i)
+in all 3 windows, type "netgraph", should see:
+    :12000: :12002
+    :12002: :12000,:12004
+    :12004: :12002
+in 1st window, type "quit", :12000 should self-terminate
+  should see 1 LSUPDATE messages in 2nd window (1 i)
+  should see 1 LSUPDATE messages in 3rd window (1 r)
+in 2nd window, type "netgraph", should see:
+    :12002: :12004
+    :12004: :12002
+in 3rd window, type "netgraph", should see:
+    :12002: :12004
+    :12004: :12002
+type "quit" in 2nd and 3rd windows
+in 3rd window, type "more lab11data/*.log"
+type <Ctrl+d> after server has quit to close this pane

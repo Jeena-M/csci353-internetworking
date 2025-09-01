@@ -1,0 +1,61 @@
+#!/bin/tcsh -f
+#
+# This script is for your convenience.  It's NOT EXACTLY THE SAME as going throught the steps in the grading guidelines.
+# It's best that you run through section (A) of the grading guidelines manually so you won't get any grading surprises!
+#
+# This file should be in the "lab13data" subdirectory of the directory where you have your "lab13a" executable.  To run it do:
+#     chmod 755 ./lab13data/tmux-lab13a.txt
+#     ./lab13data/tmux-lab13a.txt
+# To switch to use a different pane, please type <Cntrl+b> follwed the up/down/left/right key on your keyboard.
+#
+# lab13a topology:
+#                        +-------+
+#                     /--+ 12010 +--------------------------\
+#                     |  +-------+                          |
+#                     |                                     |
+#     +-------+   +---+---+     +-------+   +-------+   +---+---+
+#     | 12000 +---+ 12002 +-----+ 12004 +---+ 12006 +---+ 12008 |
+#     +-------+   +-------+     +-------+   +-------+   +-------+
+
+set session_name="lab13a"
+set running=`tmux list-sessions | grep "${session_name}:"`
+
+if ("x$running" != "x") then
+    # it's running
+    echo "Session '${session_name}' already exists"
+else
+    # create 4 panes, one at the bottom, two on the left, and one on the right
+
+    # create a tmux session
+    /bin/rm -f lab13data/*.log
+    tmux new-session -d -s ${session_name} 'echo "(window1) "; \
+            script -c "lab13data/lab13a-12000.csh" lab13a-12000.script; \
+            echo "[ (1) type <Ctrl+d> after server has quit to close this pane ]"; cat'
+    # split the current pane vertically 95/5
+    tmux split-window -v -p 5
+    # split the top pane horizontally 60/40
+    tmux split-window -h -t top -p 40 'more lab13data/lab13a-notes.txt; cat'
+    # split the left pane vertically 33/67
+    tmux split-window -v -t 0 -p 50 '\
+            sleep 7; echo "(window4) "; \
+            script -c "lab13data/lab13a-12006.csh" lab13a-12006.script; \
+            echo "[ (4) type <Ctrl+d> after server has quit to close this pane ]"; cat'
+    tmux split-window -v -t 0 -p 33 '\
+            sleep 6; echo "(window3) "; \
+            script -c "lab13data/lab13a-12004.csh" lab13a-12004.script; \
+            echo "[ (3) type <Ctrl+d> after server has quit to close this pane ]"; cat'
+    tmux split-window -v -t 0 -p 50 '\
+            sleep 5; echo "(window2) "; \
+            script -c "lab13data/lab13a-12002.csh" lab13a-12002.script; \
+            echo "[ (2) type <Ctrl+d> after server has quit to close this pane ]"; cat'
+    tmux split-window -v -t 3 -p 33 '\
+            sleep 9; echo "(window6) "; \
+            script -c "lab13data/lab13a-12010.csh" lab13a-12010.script; \
+            echo "[ (6) type <Ctrl+d> after server has quit to close this pane ]"; cat'
+    tmux split-window -v -t 3 -p 50 '\
+            sleep 8; echo "(window5) "; \
+            script -c "lab13data/lab13a-12008.csh" lab13a-12008.script; \
+            echo "[ (5) type <Ctrl+d> after server has quit to close this pane ]"; cat'
+
+    tmux attach-session -d -t ${session_name}
+endif

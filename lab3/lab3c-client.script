@@ -1,0 +1,20 @@
+Script started on Wed 05 Feb 2025 08:59:38 AM PST
+]0;student@student-VirtualBox: ~/lab3[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab3[00m$ ./lab3c -c 12345
+echo-client at 127.0.0.1:57872 is connected to server at 127.0.0.1:12345
+Enter a string to send to the echo server: Hello WOrl   orld!
+13 bytes sent from 127.0.0.1:57872
+13 bytes received, see next line for data...
+Hello World!
+]0;student@student-VirtualBox: ~/lab3[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab3[00m$ ./lab3c -c 12345
+echo-client at 127.0.0.1:57874 is connected to server at 127.0.0.1:12345
+Enter a string to send to the echo server: Good bye      -bye for now.
+18 bytes sent from 127.0.0.1:57874
+18 bytes received, see next line for data...
+Good-bye for now.
+]0;student@student-VirtualBox: ~/lab3[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab3[00m$ ./lab3c -c 12345
+echo-client at 127.0.0.1:57876 is connected to server at 127.0.0.1:12345
+Enter a string to send to the echo server: 
+]0;student@student-VirtualBox: ~/lab3[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab3[00m$ exit
+exit
+
+Script done on Wed 05 Feb 2025 09:00:53 AM PST

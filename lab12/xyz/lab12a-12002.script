@@ -1,0 +1,33 @@
+Script started on Wed 16 Apr 2025 05:54:38 PM PDT
+]0;student@student-VirtualBox: ~/lab12[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab12[00m$ exit./lab12a lab12data/lab12-12012.iniexit[K./lab12a lab12data/lab12-12004.iniexit[K./lab12a lab12data/lab12-12002.ini
+:12002> netgraph
+:12002: :12000,:12004,:12012
+:12000: :12002
+:12004: :12002,:12012
+:12012: :12002,:12004
+:12002> forwarding
+:12000: :12000
+:12004: :12004
+:12012: :12012
+:12002> quit
+Console thread terminated
+
+]0;student@student-VirtualBox: ~/lab12[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab12[00m$ ./lab12a lab12data/lab12-12002.ini
+:12002> quit
+Console thread terminated
+
+]0;student@student-VirtualBox: ~/lab12[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab12[00m$ ./lab12a lab12data/lab12-12002.ini
+:12002> forwarding
+:12000: :12000
+:12004: :12004
+:12012: :12012
+:12002> forwarding
+:12004: :12004
+:12012: :12012
+:12002> quit
+Console thread terminated
+
+]0;student@student-VirtualBox: ~/lab12[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab12[00m$ exit
+exit
+
+Script done on Wed 16 Apr 2025 05:59:58 PM PDT

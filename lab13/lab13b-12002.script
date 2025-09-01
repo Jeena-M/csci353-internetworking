@@ -1,0 +1,16 @@
+Script started on Sun 27 Apr 2025 02:16:14 AM PDT
+]0;student@student-VirtualBox: ~/lab13[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab13[00m$ exit./lab13a lab13data/lab13-12010.iniexit[K./lab13a lab13data/lab13-12008.iniexit[K./lab13a lab13data/lab13-12006.iniexit[K./lab13a lab13data/lab13-12004.iniexit[K./lab13a lab13data/lab13-12002.ini
+:12002> traceroute 12008
+.1 - 12010, 0.000695
+
+.12002_27_1745745446.238380 12002_27_1745745446.238380
+2 - 12008, 0.001475
+
+12008 is reached in 2 steps
+:12002> quit
+Console thread terminated
+
+]0;student@student-VirtualBox: ~/lab13[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab13[00m$ exit
+exit
+
+Script done on Sun 27 Apr 2025 02:27:13 AM PDT

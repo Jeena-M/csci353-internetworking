@@ -1,0 +1,36 @@
+Script started on Fri 31 Jan 2025 11:34:25 PM PST
+]0;student@student-VirtualBox: ~/lab3[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab3[00m$ uname -a
+Linux student-VirtualBox 4.15.0-142-generic #146~16.04.1-Ubuntu SMP Tue Apr 13 09:26:57 UTC 2021 i686 i686 i686 GNU/Linux
+]0;student@student-VirtualBox: ~/lab3[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab3[00m$ cat /etc/os-release
+NAME="Ubuntu"
+VERSION="16.04.7 LTS (Xenial Xerus)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 16.04.7 LTS"
+VERSION_ID="16.04"
+HOME_URL="http://www.ubuntu.com/"
+SUPPORT_URL="http://help.ubuntu.com/"
+BUG_REPORT_URL="http://bugs.launchpad.net/ubuntu/"
+VERSION_CODENAME=xenial
+UBUNTU_CODENAME=xenial
+]0;student@student-VirtualBox: ~/lab3[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab3[00m$ make echo-server
+g++ -g -Wall -std=c++11 -DLOCALHOST=\"127.0.0.1\" -o echo-server echo-server.cpp my_socket.cpp
+]0;student@student-VirtualBox: ~/lab3[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab3[00m$ make echo-client
+g++ -g -Wall -std=c++11 -DLOCALHOST=\"127.0.0.1\" -o echo-client echo-client.cpp my_socket.cpp
+]0;student@student-VirtualBox: ~/lab3[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab3[00m$ ./echo-server 12345
+[DBG-SVR]	argv[0]: './echo-server'
+[DBG-SVR]	argv[1]: '12345'
+[SERVER]	listening at 127.0.0.1:12345
+[DBG-SVR] 13 bytes received from 127.0.0.1:56732 (data displayed in next line, <TAB>-indented):
+	Hello World!
+	0x48 0x65 0x6c 0x6c 0x6f 0x20 0x57 0x6f 0x72 0x6c 0x64 0x21 0x0a 
+[DBG-SVR] 18 bytes received from 127.0.0.1:56734 (data displayed in next line, <TAB>-indented):
+	Good-bye for now.
+	0x47 0x6f 0x6f 0x64 0x2d 0x62 0x79 0x65 0x20 0x66 0x6f 0x72 0x20 0x6e 0x6f 0x77 0x2e 0x0a 
+[DBG-SVR] 0 bytes received from 127.0.0.1:56736 (data displayed in next line, <TAB>-indented):
+	
+^C
+]0;student@student-VirtualBox: ~/lab3[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab3[00m$ exit
+exit
+
+Script done on Fri 31 Jan 2025 11:37:54 PM PST

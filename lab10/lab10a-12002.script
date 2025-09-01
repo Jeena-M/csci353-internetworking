@@ -1,0 +1,18 @@
+Script started on Wed 02 Apr 2025 10:00:20 PM PDT
+]0;student@student-VirtualBox: ~/lab10[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab10[00m$ ./lab10a lab10data/lab10-12002.ini
+:12002> [Wed Apr  2 2025 22:00:31.101147] i SAYHELLO 12000 1 - 0
+[Wed Apr  2 2025 22:00:31.101486] r SAYHELLO 12000 1 - 0
+
+:12002> neighbors
+Active connections of :12002:
+	:12000,
+:12002> neighbors
+:12002 has no active neighbors
+:12002> [Wed Apr  2 2025 22:01:23.692021] r SAYHELLO 12000 1 - 0
+[Wed Apr  2 2025 22:01:23.692060] i SAYHELLO 12000 1 - 0
+
+:12002> quit
+]0;student@student-VirtualBox: ~/lab10[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab10[00m$ exit
+exit
+
+Script done on Wed 02 Apr 2025 10:01:47 PM PDT

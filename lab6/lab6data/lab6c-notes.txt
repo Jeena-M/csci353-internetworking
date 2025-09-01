@@ -1,0 +1,36 @@
+wait for lab6c server to get compiled and running in 1st window
+in 2nd window, type <Ctrl+d> to run:
+  wget -O x http://localhost:12345/viterbi-seal-rev-770x360.png
+observe wget's download rate, is it around 10 KB/sec?
+wait for downloading to finish in 2nd window
+in 1st window, type <Ctrl+c> to kill lab6c server
+
+wait for lab6c server to restart in 1st window
+in 2nd window, type <Ctrl+d> to run:
+  wget -O x http://localhost:12345/usc-seal-1597x360.png
+observe wget's download rate, is it around 30 KB/sec?
+wait for downloading to finish in 2nd window
+in 1st window, type <Ctrl+c> to kill lab6c server
+
+wait for lab6c server to restart in 1st window
+in 2nd window, type <Ctrl+d> to run:
+  wget -O x http://localhost:12345/usc-seal-1597x360.png
+observe wget's download rate, is it around 50 KB/sec?
+wait for downloading to finish in 2nd window
+in 1st window, type <Ctrl+c> to kill lab6c server
+
+wait for lab6c server to restart in 1st window
+in 2nd window, type <Ctrl+d> to run:
+  wget -O x http://localhost:12345/upc_map.gif
+observe wget's download rate, is it around 70 KB/sec?
+wait for downloading to finish in 2nd window
+in 1st window, type <Ctrl+c> to kill lab6c server
+
+wait for lab6c server to restart in 1st window
+in 2nd window, type <Ctrl+d> to run:
+  wget -O x http://localhost:12345/upc_map.pdf
+observe wget's download rate, is it around 90 KB/sec?
+wait for downloading to finish in 2nd window
+in 1st window, type <Ctrl+c> to kill lab6c server
+
+type <Ctrl+d> to close this pane

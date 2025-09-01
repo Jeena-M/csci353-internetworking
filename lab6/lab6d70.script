@@ -1,0 +1,45 @@
+Script started on Wed 26 Feb 2025 07:40:44 PM PST
+]0;student@student-VirtualBox: ~/lab6[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab6[00m$ wget -O x http://localhost:12345/upc_map.gif  --debug
+DEBUG output created by Wget 1.17.1 on linux-gnu.
+
+Reading HSTS entries from /home/student/.wget-hsts
+URI encoding = ‘UTF-8’
+--2025-02-26 19:40:47--  http://localhost:12345/upc_map.gif
+Resolving localhost (localhost)... 127.0.0.1
+Caching localhost => 127.0.0.1
+Connecting to localhost (localhost)|127.0.0.1|:12345... connected.
+Created socket 4.
+Releasing 0x021cc2a8 (new refcount 1).
+
+---request begin---
+GET /upc_map.gif HTTP/1.1
+User-Agent: Wget/1.17.1 (linux-gnu)
+Accept: */*
+Accept-Encoding: identity
+Host: localhost:12345
+Connection: Keep-Alive
+
+---request end---
+HTTP request sent, awaiting response... 
+---response begin---
+HTTP/1.1 200 OK
+Server: lab4a
+Content-Type: application/octet-stream
+Content-Length: 416140
+
+---response end---
+200 OK
+Registered socket 4 for persistent reuse.
+Length: 416140 (406K) [application/octet-stream]
+Saving to: ‘x’
+
+x                     0%[                    ]       0  --.-KB/s               x                     3%[                    ]  16.00K  74.8KB/s               x                     7%[>                   ]  32.00K  70.4KB/s               x                    12%[=>                  ]  49.00K  70.1KB/s               x                    16%[==>                 ]  67.00K  71.1KB/s               x                    20%[===>                ]  84.00K  70.8KB/s               x                    24%[===>                ]  99.00K  70.7KB/s               x                    28%[====>               ] 114.00K  70.6KB/s               x                    31%[=====>              ] 128.00K  70.6KB/s               x                    35%[======>             ] 144.00K  70.1KB/s               x                    38%[======>             ] 158.00K  70.1KB/s               x                    43%[=======>            ] 175.00K  70.0KB/s               x                    47%[========>           ] 193.00K  70.4KB/s               x                    50%[=========>          ] 207.00K  70.3KB/s               x                    54%[=========>          ] 221.00K  70.3KB/s    eta 3s     x                    58%[==========>         ] 238.00K  70.0KB/s    eta 3s     x                    62%[===========>        ] 252.00K  70.0KB/s    eta 3s     x                    65%[============>       ] 267.00K  70.3KB/s    eta 3s     x                    69%[============>       ] 281.00K  70.3KB/s    eta 3s     x                    72%[=============>      ] 296.00K  70.0KB/s    eta 2s     x                    76%[==============>     ] 312.00K  69.7KB/s    eta 2s     x                    80%[===============>    ] 329.00K  70.0KB/s    eta 2s     x                    84%[===============>    ] 343.00K  69.7KB/s    eta 2s     x                    87%[================>   ] 357.00K  69.7KB/s    eta 2s     x                    92%[=================>  ] 375.00K  70.3KB/s    eta 0s     x                    95%[==================> ] 389.00K  70.3KB/s    eta 0s     x                    99%[==================> ] 403.00K  70.0KB/s    eta 0s     x                   100%[===================>] 406.39K  69.8KB/s    in 5.8s    
+
+2025-02-26 19:40:53 (70.1 KB/s) - ‘x’ saved [416140/416140]
+
+Saving HSTS entries to /home/student/.wget-hsts
+]0;student@student-VirtualBox: ~/lab6[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab6[00m$ diff x lab4data/upc_map.gif
+]0;student@student-VirtualBox: ~/lab6[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab6[00m$ exit
+exit
+
+Script done on Wed 26 Feb 2025 07:41:12 PM PST

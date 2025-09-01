@@ -1,0 +1,42 @@
+[Wed Feb  3 2021 10:22:11.837470] START: port=12345, rootdir='pa2data'
+[Wed Feb  3 2021 10:22:16.703478] CONNECT: 127.0.0.1:40362
+[Wed Feb  3 2021 10:22:16.704210] REQUEST: 127.0.0.1:40362, uri=/textbooks-2-small.jpg
+	GET /textbooks-2-small.jpg HTTP/1.1
+	Host: 127.0.0.1:12345
+	Accept: text/html, */*
+	User-Agent: pa2 (bill.cheng@usc.edu)
+
+[Wed Feb  3 2021 10:22:16.713053] RESPONSE: 127.0.0.1:40362, status=200
+	HTTP/1.1 200 OK
+	Server: pa2 (bill.cheng@usc.edu)
+	Content-Type: application/octet-stream
+	Content-Length: 10525
+	Content-MD5: 3f21950127b581aa1d9a264e8d06845b
+	
+[Wed Feb  3 2021 10:22:19.527820] REQUEST: 127.0.0.1:40362, uri=/textbooks-3-small.jpg
+	GET /textbooks-3-small.jpg HTTP/1.1
+	Host: 127.0.0.1:12345
+	Accept: text/html, */*
+	User-Agent: pa2 (bill.cheng@usc.edu)
+
+[Wed Feb  3 2021 10:22:19.537678] RESPONSE: 127.0.0.1:40362, status=200
+	HTTP/1.1 200 OK
+	Server: pa2 (bill.cheng@usc.edu)
+	Content-Type: application/octet-stream
+	Content-Length: 14265
+	Content-MD5: 0fa2a445f252d4355aa760a54c93825e
+	
+[Wed Feb  3 2021 10:22:23.050157] REQUEST: 127.0.0.1:40362, uri=/usctommy.gif
+	GET /usctommy.gif HTTP/1.1
+	Host: 127.0.0.1:12345
+	Accept: text/html, */*
+	User-Agent: pa2 (bill.cheng@usc.edu)
+
+[Wed Feb  3 2021 10:22:23.060195] RESPONSE: 127.0.0.1:40362, status=200
+	HTTP/1.1 200 OK
+	Server: pa2 (bill.cheng@usc.edu)
+	Content-Type: application/octet-stream
+	Content-Length: 1689
+	Content-MD5: 0e7c16723f8e70c751ddd01c51d7c27d
+	
+[Wed Feb  3 2021 10:22:23.561947] CLOSE: 127.0.0.1:40362

@@ -1,0 +1,83 @@
+#!/bin/tcsh -f
+#
+# This script is for your convenience.  It's NOT EXACTLY THE SAME as going throught the steps in the grading guidelines.
+# It's best that you run through section (D) of the grading guidelines manually so you won't get any grading surprises!
+#
+# This file should be in the "pa4data" subdirectory of the directory where you have your "pa4" executable.  To run it do:
+#     chmod 755 ./pa4data/tmux-pa4-D.txt
+#     ./pa4data/tmux-pa4-D.txt
+# To switch to use a different pane, please type <Cntrl+b> follwed the up/down/left/right key on your keyboard.
+#
+# pa4D topology:
+#     +-------+   +-------+     +-------+
+#     | 12000 +---+ 12002 +-----+ 12004 |
+#     +-------+   +---+---+     +---+---+
+#                     |             |
+#                     |  +-------+  |
+#                     \--+ 12012 +--/
+#                        +-------+
+
+export SHELL="/bin/tcsh"
+setenv SHELL "/bin/tcsh"
+set session_name="pa4D"
+set running=`tmux list-sessions | grep "${session_name}:"`
+
+if ("x$running" != "x") then
+    # it's running
+    echo "Session '${session_name}' already exists"
+else
+    # create a tmux session
+    tmux new-session -d -s ${session_name} '\
+            /bin/rm -f pa4data/*.log pa4data/*.pid; \
+            script -c "./pa4 pa4data/pa4CD-12000.ini" script.D00.txt; \
+            echo "[ (1) type <Ctrl+d> after server has quit to close this pane ]"; cat'
+    # split the current pane vertically 95/5
+    tmux split-window -v -p 5
+    # split the top pane horizontally 60/40
+    tmux split-window -h -t top -p 40 '\
+            echo "[   +-------+   +-------+     +-------+  ]"; \
+            echo "[   | 12000 +---+ 12002 +-----+ 12004 |  ]"; \
+            echo "[   +-------+   +---+---+     +---+---+  ]"; \
+            echo "[                   |             |      ]"; \
+            echo "[                   |  +-------+  |      ]"; \
+            echo "[                   \--+ 12012 +--/      ]"; \
+            echo "[                      +-------+      ]"; \
+            echo "[ wait for a bunch of LSUPDATE messages to be exchanged ]"; \
+            echo "[ in all 4 windows, type "\""netgraph"\"", should see: ]"; \
+            echo "[     :12000: :12002                                 ]"; \
+            echo "[     :12002: :12000,:12012,:12004 ]"; \
+            echo "[     :12004: :12002,:12012                 ]"; \
+            echo "[     :12012: :12004,:12002                 ]"; \
+            echo "[ in 2nd window, type "\""quit"\"", :12002 should self-terminate ]"; \
+            echo "[ in 1st window, type "\""netgraph"\"", should see: ]"; \
+            echo "[     :12000 has no active neighbors ]"; \
+            echo "[ in 3rd and 4th windows, type "\""netgraph"\"", should see: ]"; \
+            echo "[     :12004: :12012        ]"; \
+            echo "[     :12012: :12004        ]"; \
+            echo "[ in 2nd window, type <Ctrl+d> to run :12002 again ]"; \
+            echo "[ wait 10 seconds ]"; \
+            echo "[ in all 4 windows, type "\""netgraph"\"", should see: ]"; \
+            echo "[     :12000: :12002                                 ]"; \
+            echo "[     :12002: :12000,:12012,:12004 ]"; \
+            echo "[     :12004: :12002,:12012                 ]"; \
+            echo "[     :12012: :12004,:12002                 ]"; \
+            echo "[ type "\""quit"\"" in all windows ]"; \
+            echo "[ type <Ctrl+d> after server has quit to close this pane ]"; cat'
+    # split the left pane vertically 50/50
+    tmux split-window -v -t 0 -p 50 '\
+            sleep 2; \
+            script -c "./pa4 pa4data/pa4CD-12004.ini" script.D04.txt; \
+            echo "[ (3) type <Ctrl+d> after server has quit to close this pane ]"; cat'
+    tmux split-window -v -t 0 -p 50 '\
+            sleep 1; \
+            script -c "./pa4 pa4data/pa4CD-12002.ini" script.D02a.txt; \
+            echo "[ (2) type <Ctrl+d> to run :12002 again ]"; cat; \
+            script -c "./pa4 pa4data/pa4CD-12002.ini" script.D02b.txt; \
+            echo "[ (2) type <Ctrl+d> after server has quit to close this pane ]"; cat'
+    tmux split-window -v -t 3 -p 50 '\
+            sleep 3; \
+            script -c "./pa4 pa4data/pa4CD-12012.ini" script.D12.txt; \
+            echo "[ (4) type <Ctrl+d> after server has quit to close this pane ]"; cat'
+
+    tmux attach-session -d -t ${session_name}
+endif

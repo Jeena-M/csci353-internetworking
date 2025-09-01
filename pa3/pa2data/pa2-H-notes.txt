@@ -1,0 +1,23 @@
+wait for pa2 to start running in 1st window
+
+in 2nd window, type <Ctrl+d> to run "./pa2 -c 127.0.0.1 12345 textbooks-2-small.jpg out.1 textbooks-3-small.jpg out.2 extra/USCHelmet.JPG out.3"
+    wait for all downloads to finish
+    should see a bunch of printout in 1st window
+
+in 2nd window, type <Ctrl+d> to run "kill `cat pa2.pid`"
+    should see "Terminated" in 1st window
+
+in 2nd window, type <Ctrl+d> to run "ls -l out.?"
+    make sure that file size of out.1 is 10525 bytes
+    make sure that file size of out.2 is 14265 bytes
+    make sure that file size of out.3 is 28623 bytes
+
+in 2nd window, type <Ctrl+d> to run "openssl md5 out.?"
+    make sure MD5 of out.1 is 3f21950127b581aa1d9a264e8d06845b
+    make sure MD5 of out.2 is 0fa2a445f252d4355aa760a54c93825e
+    make sure MD5 of out.3 is 43a1be149bbd2f24d07d167caf070736
+
+in 2nd window, type <Ctrl+d> to run "lsof -i 4"
+    make sure you don't see pa2 running
+
+type <Ctrl+d> to close this pane

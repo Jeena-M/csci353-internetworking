@@ -1,0 +1,77 @@
+> status
+[1]	Client at 127.0.0.1:41076
+	Path: /extra/rdt.pdf
+	Content-Length: 283864
+	Start-Time: [Tue Jan 19 2021 08:56:42.694701]
+	Shaper-Params: P=5, MAXR=96 tokens/s, DIAL=25%, rate=4.8 KB/s
+	Sent: 46.0 KB (16.5%), time elapsed: 9.43s
+[2]	Client at 127.0.0.1:41078
+	Path: /extra/rdt.pdf
+	Content-Length: 283864
+	Start-Time: [Tue Jan 19 2021 08:56:44.061788]
+	Shaper-Params: P=5, MAXR=96 tokens/s, DIAL=25%, rate=4.8 KB/s
+	Sent: 39.0 KB (14.0%), time elapsed: 8.06s
+> status
+[1]	Client at 127.0.0.1:41076
+	Path: /extra/rdt.pdf
+	Content-Length: 283864
+	Start-Time: [Tue Jan 19 2021 08:56:42.694701]
+	Shaper-Params: P=5, MAXR=96 tokens/s, DIAL=25%, rate=4.8 KB/s
+	Sent: 86.0 KB (31.0%), time elapsed: 17.8s
+[2]	Client at 127.0.0.1:41078
+	Path: /extra/rdt.pdf
+	Content-Length: 283864
+	Start-Time: [Tue Jan 19 2021 08:56:44.061788]
+	Shaper-Params: P=5, MAXR=96 tokens/s, DIAL=25%, rate=4.8 KB/s
+	Sent: 80.0 KB (28.8%), time elapsed: 16.4s
+> dial 1 100
+Dial for connection 1 at 100%.  Token rate at 96 tokens/s.  Data rate at 19.2 KB/s
+> status
+[1]	Client at 127.0.0.1:41076
+	Path: /viterbi-seal-rev-770x360.png
+	Content-Length: 95957
+	Start-Time: [Tue Jan 19 2021 08:57:16.093377]
+	Shaper-Params: P=3, MAXR=21 tokens/s, DIAL=15%, rate=1.05 KB/s
+	Sent: 2.00 KB (2.13%), time elapsed: 1.23s
+[2]	Client at 127.0.0.1:41078
+	Path: /extra/rdt.pdf
+	Content-Length: 283864
+	Start-Time: [Tue Jan 19 2021 08:56:44.061788]
+	Shaper-Params: P=5, MAXR=96 tokens/s, DIAL=25%, rate=4.8 KB/s
+	Sent: 160 KB (57.7%), time elapsed: 33.2s
+> close 2
+Closing connection 2 ...
+> status
+[1]	Client at 127.0.0.1:41076
+	Path: /viterbi-seal-rev-770x360.png
+	Content-Length: 95957
+	Start-Time: [Tue Jan 19 2021 08:57:16.093377]
+	Shaper-Params: P=3, MAXR=21 tokens/s, DIAL=15%, rate=1.05 KB/s
+	Sent: 26.0 KB (27.7%), time elapsed: 24.1s
+[3]	Client at 127.0.0.1:41080
+	Path: /extra/rdt.pdf
+	Content-Length: 283864
+	Start-Time: [Tue Jan 19 2021 08:57:32.260796]
+	Shaper-Params: P=5, MAXR=96 tokens/s, DIAL=25%, rate=4.8 KB/s
+	Sent: 39.0 KB (14.0%), time elapsed: 7.94s
+> dial 1 100
+Dial for connection 1 at 100%.  Token rate at 21 tokens/s.  Data rate at 7 KB/s
+> dial 3 100
+Dial for connection 3 at 100%.  Token rate at 96 tokens/s.  Data rate at 19.2 KB/s
+> dial 1 100
+Dial for connection 1 at 100%.  Token rate at 10 tokens/s.  Data rate at 5 KB/s
+> dial 3 100
+Dial for connection 3 at 100%.  Token rate at 21 tokens/s.  Data rate at 7 KB/s
+> dial 3 100
+Dial for connection 3 at 100%.  Token rate at 10 tokens/s.  Data rate at 5 KB/s
+> status
+[3]	Client at 127.0.0.1:41080
+	Path: /extra/usctommy-photo.jpg
+	Content-Length: 104441
+	Start-Time: [Tue Jan 19 2021 08:58:36.423759]
+	Shaper-Params: P=2, MAXR=10 tokens/s, DIAL=100%, rate=5 KB/s
+	Sent: 66.0 KB (64.7%), time elapsed: 16.4s
+> status
+No active connections
+> quit
+Console thread terminated

@@ -1,0 +1,75 @@
+Script started on Wed 16 Apr 2025 05:54:34 PM PDT
+]0;student@student-VirtualBox: ~/lab12[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab12[00m$ uname -a
+Linux student-VirtualBox 4.15.0-142-generic #146~16.04.1-Ubuntu SMP Tue Apr 13 09:26:57 UTC 2021 i686 i686 i686 GNU/Linux
+]0;student@student-VirtualBox: ~/lab12[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab12[00m$     cat /etc/os-release
+NAME="Ubuntu"
+VERSION="16.04.7 LTS (Xenial Xerus)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 16.04.7 LTS"
+VERSION_ID="16.04"
+HOME_URL="http://www.ubuntu.com/"
+SUPPORT_URL="http://help.ubuntu.com/"
+BUG_REPORT_URL="http://bugs.launchpad.net/ubuntu/"
+VERSION_CODENAME=xenial
+UBUNTU_CODENAME=xenial
+]0;student@student-VirtualBox: ~/lab12[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab12[00m$     make clean
+rm -f *.o lab12a
+]0;student@student-VirtualBox: ~/lab12[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab12[00m$     make lab12a
+g++ -g -Wall -std=c++11 -DLOCALHOST=\"127.0.0.1\" -o lab12a lab12a.cpp my_socket.cpp my_timestamp.cpp -lcrypto -pthread
+[01m[Klab12a.cpp:[m[K In function ‘[01m[Kvoid neighbors_thread(std::vector<std::__cxx11::basic_string<char> >&, std::__cxx11::string, std::__cxx11::string)[m[K’:
+[01m[Klab12a.cpp:1141:14:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [-Wsign-compare]
+     while (i < file_lines.size() && file_lines[i][0] != '[') { 
+[01;32m[K              ^[m[K
+[01m[Klab12a.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[Klab12a.cpp:1613:18:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [-Wsign-compare]
+         while (i < file_lines.size() && file_lines[i][0] != '['){
+[01;32m[K                  ^[m[K
+[01m[Klab12a.cpp:1643:18:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [-Wsign-compare]
+         while (j < file_lines.size() && file_lines[j][0] != '['){
+[01;32m[K                  ^[m[K
+[01m[Klab12a.cpp:1681:18:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [-Wsign-compare]
+         while (k < file_lines.size() && file_lines[k][0] != '['){
+[01;32m[K                  ^[m[K
+[01m[Klab12a.cpp:[m[K At global scope:
+[01m[Klab12a.cpp:168:6:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid usage_server()[m[K’ defined but not used [-Wunused-function]
+ void usage_server()
+[01;32m[K      ^[m[K
+[01m[Klab12a.cpp:196:5:[m[K [01;35m[Kwarning: [m[K‘[01m[Kint get_file_size(std::__cxx11::string)[m[K’ defined but not used [-Wunused-function]
+ int get_file_size(string path)
+[01;32m[K     ^[m[K
+]0;student@student-VirtualBox: ~/lab12[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab12[00m$     ./lab12a lab12data/lab12-12000.ini
+:12000> netgraph
+:12000: :12002
+:12002: :12000,:12004,:12012
+:12004: :12002,:12012
+:12012: :12002,:12004
+:12000> forardi    warding
+:12002: :12002
+:12004: :12002
+:12012: :12002
+:12000> forwarding
+:12002: :12002
+:12004: :12002
+:12012: :12002
+:12000> forwarding
+:12000 has an empty forwarding table
+:12000> forwarding
+:12002: :12002
+:12004: :12002
+:12012: :12002
+:12000> quit
+Console thread terminated
+
+]0;student@student-VirtualBox: ~/lab12[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab12[00m$ quit
+No command 'quit' found, did you mean:
+ Command 'qgit' from package 'qgit' (universe)
+ Command 'quiz' from package 'bsdgames' (universe)
+ Command 'quilt' from package 'quilt' (universe)
+ Command 'quot' from package 'quota' (main)
+ Command 'luit' from package 'x11-utils' (main)
+quit: command not found
+]0;student@student-VirtualBox: ~/lab12[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab12[00m$ exit
+exit
+
+Script done on Wed 16 Apr 2025 05:59:56 PM PDT

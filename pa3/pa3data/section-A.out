@@ -1,0 +1,50 @@
+> status
+[1]	Client at 127.0.0.1:39758
+	Path: /extra/usctommy-photo.jpg
+	Content-Length: 104441
+	Start-Time: [Mon Jan 18 2021 14:15:56.154948]
+	Shaper-Params: P=2, MAXR=10 tokens/s, DIAL=30%, rate=1.5 KB/s
+	Sent: 14.0 KB (13.7%), time elapsed: 8.70s
+[2]	Client at 127.0.0.1:39760
+	Path: /viterbi-seal-rev-770x360.png
+	Content-Length: 95957
+	Start-Time: [Mon Jan 18 2021 14:15:59.532381]
+	Shaper-Params: P=3, MAXR=21 tokens/s, DIAL=15%, rate=1.05 KB/s
+	Sent: 6.00 KB (6.40%), time elapsed: 5.33s
+> status
+[1]	Client at 127.0.0.1:39758
+	Path: /extra/usctommy-photo.jpg
+	Content-Length: 104441
+	Start-Time: [Mon Jan 18 2021 14:15:56.154948]
+	Shaper-Params: P=2, MAXR=10 tokens/s, DIAL=30%, rate=1.5 KB/s
+	Sent: 35.0 KB (34.3%), time elapsed: 23.0s
+[2]	Client at 127.0.0.1:39760
+	Path: /viterbi-seal-rev-770x360.png
+	Content-Length: 95957
+	Start-Time: [Mon Jan 18 2021 14:15:59.532381]
+	Shaper-Params: P=3, MAXR=21 tokens/s, DIAL=15%, rate=1.05 KB/s
+	Sent: 21.0 KB (22.4%), time elapsed: 19.6s
+> status
+[1]	Client at 127.0.0.1:39758
+	Path: /extra/usctommy-photo.jpg
+	Content-Length: 104441
+	Start-Time: [Mon Jan 18 2021 14:15:56.154948]
+	Shaper-Params: P=2, MAXR=10 tokens/s, DIAL=30%, rate=1.5 KB/s
+	Sent: 68.0 KB (66.6%), time elapsed: 45.0s
+[2]	Client at 127.0.0.1:39760
+	Path: /viterbi-seal-rev-770x360.png
+	Content-Length: 95957
+	Start-Time: [Mon Jan 18 2021 14:15:59.532381]
+	Shaper-Params: P=3, MAXR=21 tokens/s, DIAL=15%, rate=1.05 KB/s
+	Sent: 44.0 KB (46.9%), time elapsed: 41.6s
+> status
+[2]	Client at 127.0.0.1:39760
+	Path: /viterbi-seal-rev-770x360.png
+	Content-Length: 95957
+	Start-Time: [Mon Jan 18 2021 14:15:59.532381]
+	Shaper-Params: P=3, MAXR=21 tokens/s, DIAL=15%, rate=1.05 KB/s
+	Sent: 71.0 KB (75.7%), time elapsed: 1min 7.43s
+> status
+No active connections
+> quit
+Console thread terminated

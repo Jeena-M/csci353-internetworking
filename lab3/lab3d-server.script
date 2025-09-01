@@ -1,0 +1,37 @@
+Script started on Wed 05 Feb 2025 06:28:48 PM PST
+]0;student@student-VirtualBox: ~/lab3[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab3[00m$ ..[K/lab3d 12345
+[DBG-SVR]	argv[0]: './lab3d'
+[DBG-SVR]	argv[1]: '12345'
+[SERVER]	listening at 127.0.0.1:12345
+[DBG-SVR] 6 bytes received from 127.0.0.1:57990 (data displayed in next line, <TAB>-indented):
+	hello
+	0x68 0x65 0x6c 0x6c 0x6f 0x0a 
+[DBG-SVR] 13 bytes received from 127.0.0.1:57990 (data displayed in next line, <TAB>-indented):
+	how are you?
+	0x68 0x6f 0x77 0x20 0x61 0x72 0x65 0x20 0x79 0x6f 0x75 0x3f 0x0a 
+[DBG-SVR] 4 bytes received from 127.0.0.1:57990 (data displayed in next line, <TAB>-indented):
+	bye
+	0x62 0x79 0x65 0x0a 
+[DBG-SVR] 1 bytes received from 127.0.0.1:57990 (data displayed in next line, <TAB>-indented):
+	
+	0x0a 
+[DBG-SVR] 8 bytes received from 127.0.0.1:57992 (data displayed in next line, <TAB>-indented):
+	testing
+	0x74 0x65 0x73 0x74 0x69 0x6e 0x67 0x0a 
+[DBG-SVR] 2 bytes received from 127.0.0.1:57992 (data displayed in next line, <TAB>-indented):
+	1
+	0x31 0x0a 
+[DBG-SVR] 2 bytes received from 127.0.0.1:57992 (data displayed in next line, <TAB>-indented):
+	2
+	0x32 0x0a 
+[DBG-SVR] 2 bytes received from 127.0.0.1:57992 (data displayed in next line, <TAB>-indented):
+	3
+	0x33 0x0a 
+[DBG-SVR] 1 bytes received from 127.0.0.1:57992 (data displayed in next line, <TAB>-indented):
+	
+	0x0a 
+Encountered a non-ASCII character (0x0c) in read_a_line().  Abort program!
+]0;student@student-VirtualBox: ~/lab3[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab3[00m$ exit
+exit
+
+Script done on Wed 05 Feb 2025 06:32:02 PM PST

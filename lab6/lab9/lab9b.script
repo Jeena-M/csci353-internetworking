@@ -1,0 +1,64 @@
+Script started on Tue 25 Mar 2025 06:40:45 PM PDT
+]0;student@student-VirtualBox: ~/lab9[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab9[00m$ make clean
+rm -f *.o lab9b
+]0;student@student-VirtualBox: ~/lab9[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab9[00m$ make lab9b
+g++ -g -Wall -std=c++11 -DLOCALHOST=\"127.0.0.1\" -o lab9b lab9b.cpp my_socket.cpp my_timestamp.cpp -lcrypto -pthread
+[01m[Klab9b.cpp:[m[K In function ‘[01m[Kvoid talk_to_client(std::shared_ptr<Connection>)[m[K’:
+[01m[Klab9b.cpp:459:25:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[KnumIterations[m[K’ [-Wunused-variable]
+                     int numIterations = 0;
+[01;32m[K                         ^[m[K
+[01m[Klab9b.cpp:[m[K In function ‘[01m[Kvoid talk_to_user_and_server(int, std::vector<std::__cxx11::basic_string<char> >&, std::__cxx11::string, int, std::vector<std::__cxx11::basic_string<char> >&)[m[K’:
+[01m[Klab9b.cpp:601:23:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [-Wsign-compare]
+     for (int j = 0; j < uris.size(); j++){
+[01;32m[K                       ^[m[K
+]0;student@student-VirtualBox: ~/lab9[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab9[00m$ ./lab9b 12345 lab9b.logfile
+> help
+Available commands are:
+	close
+	help
+	status
+	quit
+> status
+No active connections.
+> status
+Active connections:
+[1]	Client: 127.0.0.1:12345, Socket: 5, KB sent: 13.1475
+[2]	Client: 127.0.0.1:12345, Socket: 6, KB sent: 7.55273
+> close 1
+[1]	Close connection requested.
+> status
+Active connections:
+[2]	Client: 127.0.0.1:12345, Socket: 6, KB sent: 18.9609
+[3]	Client: 127.0.0.1:12345, Socket: 8, KB sent: 2.99902
+> close 2
+[2]	Close connection requested.
+> status
+Active connections:
+[3]	Client: 127.0.0.1:12345, Socket: 8, KB sent: 17.1377
+[4]	Client: 127.0.0.1:12345, Socket: 5, KB sent: 4.24609
+> quit
+]0;student@student-VirtualBox: ~/lab9[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab9[00m$ cat lab9.[Kb.logfile
+[Tue Mar 25 2025 18:40:58.837797] Server 127.0.0.1:12345 started
+[Tue Mar 25 2025 18:41:26.723237] [1]	Client connected from 127.0.0.1:50230 and requesting /textbooks-1-small.jpg
+[Tue Mar 25 2025 18:41:28.772804] [2]	Client connected from 127.0.0.1:50232 and requesting /viterbi-seal-rev-770x360.png
+[Tue Mar 25 2025 18:41:33.642146] [1]	Connection closed with client at 127.0.0.1:50230
+[Tue Mar 25 2025 18:41:33.642210] [1]	Reaper has joined with connection thread
+[Tue Mar 25 2025 18:41:34.643277] [3]	Client connected from 127.0.0.1:50234 and requesting /textbooks-1-small.jpg
+[Tue Mar 25 2025 18:41:38.364080] [2]	Connection closed with client at 127.0.0.1:50232
+[Tue Mar 25 2025 18:41:38.364163] [2]	Reaper has joined with connection thread
+[Tue Mar 25 2025 18:41:39.365001] [4]	Client connected from 127.0.0.1:50236 and requesting /viterbi-seal-rev-770x360.png
+[Tue Mar 25 2025 18:41:42.077326] [3]	Connection closed with client at 127.0.0.1:50234
+[Tue Mar 25 2025 18:41:42.077377] [3]	Reaper has joined with connection thread
+[Tue Mar 25 2025 18:41:43.605786] [4]	Connection closed with client at 127.0.0.1:50236
+[Tue Mar 25 2025 18:41:43.606065] [4]	Reaper has joined with connection thread
+[Tue Mar 25 2025 18:41:43.606184] Server 127.0.0.1:12345 stopped
+]0;student@student-VirtualBox: ~/lab9[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab9[00m$ cat lab9b.logfile[10@./lab9b 12345[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+> status
+Active connections:
+[1]	Client: 127.0.0.1:12345, Socket: 5, KB sent: 15.4951
+[2]	Client: 127.0.0.1:12345, Socket: 6, KB sent: 8.79883
+> quit
+]0;student@student-VirtualBox: ~/lab9[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab9[00m$ exit
+exit
+
+Script done on Tue 25 Mar 2025 06:42:54 PM PDT

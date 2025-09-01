@@ -1,0 +1,47 @@
+Topology for lab13b:
+                       +-------+                               
+                    /--+ 12010 +--------------------------\    
+                    |  +-------+                          |    
+                    |                                     |    
+    +-------+   +---+---+     +-------+   +-------+   +---+---+
+    | 12000 +---+ 12002 +-----+ 12004 +---+ 12006 +---+ 12008 |
+    +-------+   +-------+     +-------+   +-------+   +-------+
+in all windows, type "netgraph" and verify
+in all windows, type "forwarding" and verify
+do the following as quickly as possible to run traceroute in parallel
+    in 1st window, type "traceroute :12008"
+    in 2nd window, type "traceroute :12008"
+    in 4th window, type "traceroute :12000", should see:
+  in 1st window, should eventually see:
+    1 - :12002, TTL1            
+    2 - :12010, TTL2            
+    3 - :12008, TTL3            
+    :12008 is reached in 3 steps
+  in 2nd window, should eventually see:
+    1 - :12010, TTL4            
+    2 - :12008, TTL5            
+    :12008 is reached in 2 steps
+  in 4th window, should eventually see:
+    1 - :12004, TTL6            
+    2 - :12002, TTL7            
+    3 - :12000, TTL8            
+    :12000 is reached in 3 steps
+do the following as quickly as possible to run traceroute in parallel
+    in 4th window, type "traceroute :12000", wait to see:
+        1 - :12004, TTL9            
+    then type "quit" in the 3rd window, :12004 should self-terminate
+    in 1st window, type "traceroute :12006"
+  in 4th window should eventually see:
+    2 - :12010, TTL10           
+    3 - :12002, TTL11           
+    4 - :12000, TTL12           
+    :12000 is reached in 4 steps
+  in 1st window, should eventually see:
+    1 - :12002, TTL13           
+    2 - :12010, TTL14           
+    3 - :12008, TTL15           
+    4 - :12006, TTL16           
+    :12006 is reached in 4 steps
+type "quit" in all remaining windows
+in 6th window, type "more lab13data/*.log"
+type <Ctrl+d> after server has quit to close this pane

@@ -1,0 +1,16 @@
+[Tue Mar 11 2025 21:53:26.907192] Server 127.0.0.1:12345 started
+[Tue Mar 11 2025 21:53:44.300762] [1]	Client connected from 127.0.0.1:44532 and requesting /textbooks-1-small.jpg
+[Tue Mar 11 2025 21:53:47.152795] [2]	Client connected from 127.0.0.1:44534 and requesting /usc-seal-1597x360.png
+[Tue Mar 11 2025 21:53:57.301357] [1]	Connection closed with client at 127.0.0.1:44532
+[Tue Mar 11 2025 21:53:57.987943] [3]	Client connected from 127.0.0.1:44536 and requesting /textbooks-1-small.jpg
+[Tue Mar 11 2025 21:54:02.152973] [2]	Connection closed with client at 127.0.0.1:44534
+[Tue Mar 11 2025 21:54:02.771563] [4]	Client connected from 127.0.0.1:44538 and requesting /usc-seal-1597x360.png
+[Tue Mar 11 2025 21:54:08.772267] [4]	Connection closed with client at 127.0.0.1:44538
+[Tue Mar 11 2025 21:54:08.988135] [3]	Connection closed with client at 127.0.0.1:44536
+[Tue Mar 11 2025 21:54:08.988268] Server 127.0.0.1:12345 stopped
+[Tue Mar 11 2025 21:54:13.337299] Server 127.0.0.1:12345 started
+[Tue Mar 11 2025 21:54:17.604755] [1]	Client connected from 127.0.0.1:44548 and requesting /usc-seal-1597x360.png
+[Tue Mar 11 2025 21:54:21.787351] [2]	Client connected from 127.0.0.1:44550 and requesting /textbooks-1-small.jpg
+[Tue Mar 11 2025 21:54:30.605260] [1]	Connection closed with client at 127.0.0.1:44548
+[Tue Mar 11 2025 21:54:30.787519] [2]	Connection closed with client at 127.0.0.1:44550
+[Tue Mar 11 2025 21:54:30.787603] Server 127.0.0.1:12345 stopped

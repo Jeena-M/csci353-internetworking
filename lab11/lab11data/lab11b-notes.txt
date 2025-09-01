@@ -1,0 +1,34 @@
+Topology for lab11b:
+    +-------+   +-------+     +-------+
+    | 12000 +---+ 12002 +-----+ 12004 |
+    +-------+   +---+---+     +---+---+
+                    |             |
+                    |  +-------+  |
+                    \--+ 12012 +--/
+                       +-------+
+in all windows, type "neighbors and verify against above
+in all windows, type "netgraph", should see:
+    :12000: :12002
+    :12002: :12000,:12004,:12012
+    :12004: :12002,:12012
+    :12012: :12002,:12004
+in 2nd window, type "quit", :12002 should self-terminate
+in 1st window, type "netgraph", should see:
+    :12000 has no active neighbors
+in 3rd and 4th window, type "netgraph", should see:
+    :12004: :12012
+    :12012: :12004
+in 2nd window, type <Ctrl+d> to restart :12002
+in all windows, type "netgraph", should see:
+    :12000: :12002
+    :12002: :12000,:12004,:12012
+    :12004: :12002,:12012
+    :12012: :12002,:12004
+in 1st window, type "quit", :12000 should self-terminate
+in 2nd, 3rd, and 4th windows, type "netgraph", should see:
+    :12002: :12004,:12012
+    :12004: :12002,:12012
+    :12012: :12002,:12004
+type "quit" in 2nd, 3rd, and 4th windows
+in 4th window, type "more lab11data/*.log"
+type <Ctrl+d> after server has quit to close this pane

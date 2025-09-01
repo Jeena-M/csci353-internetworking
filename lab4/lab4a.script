@@ -1,0 +1,145 @@
+Script started on Mon 10 Feb 2025 10:45:37 PM PST
+]0;student@student-VirtualBox: ~/lab4[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab4[00m$ uname -a
+Linux student-VirtualBox 4.15.0-142-generic #146~16.04.1-Ubuntu SMP Tue Apr 13 09:26:57 UTC 2021 i686 i686 i686 GNU/Linux
+]0;student@student-VirtualBox: ~/lab4[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab4[00m$ cat /etc/os-release
+NAME="Ubuntu"
+VERSION="16.04.7 LTS (Xenial Xerus)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 16.04.7 LTS"
+VERSION_ID="16.04"
+HOME_URL="http://www.ubuntu.com/"
+SUPPORT_URL="http://help.ubuntu.com/"
+BUG_REPORT_URL="http://bugs.launchpad.net/ubuntu/"
+VERSION_CODENAME=xenial
+UBUNTU_CODENAME=xenial
+]0;student@student-VirtualBox: ~/lab4[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab4[00m$ make clean
+rm -f *.o lab4a
+]0;student@student-VirtualBox: ~/lab4[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab4[00m$ make lab4a
+g++ -g -Wall -std=c++11 -DLOCALHOST=\"127.0.0.1\" -o lab4a lab4a.cpp my_socket.cpp
+]0;student@student-VirtualBox: ~/lab4[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab4[00m$ ./lab4a 12345
+	GET /textbooks-2-small.jpg HTTP/1.1
+	User-Agent: Wget/1.17.1 (linux-gnu)
+	Accept: */*
+	Accept-Encoding: identity
+	Host: localhost:12345
+	Connection: Keep-Alive
+	
+	HTTP/1.1 200 OK
+	Server: lab4a
+	Content-Type: application/octet-stream
+	Content-Length: 10525
+	
+	GET /textbooks-2-small.jpg HTTP/1.1
+	User-Agent: Wget/1.17.1 (linux-gnu)
+	Accept: */*
+	Accept-Encoding: identity
+	Host: localhost:12345
+	Connection: Keep-Alive
+	
+	HTTP/1.1 200 OK
+	Server: lab4a
+	Content-Type: application/octet-stream
+	Content-Length: 10525
+	
+	GET /textbooks-2-small.jpg HTTP/1.1
+	User-Agent: Wget/1.17.1 (linux-gnu)
+	Accept: */*
+	Accept-Encoding: identity
+	Host: localhost:12345
+	Connection: Keep-Alive
+	
+	HTTP/1.1 200 OK
+	Server: lab4a
+	Content-Type: application/octet-stream
+	Content-Length: 10525
+	
+	GET /textbooks-3-small.jpg HTTP/1.1
+	User-Agent: Wget/1.17.1 (linux-gnu)
+	Accept: */*
+	Accept-Encoding: identity
+	Host: localhost:12345
+	Connection: Keep-Alive
+	
+	HTTP/1.1 200 OK
+	Server: lab4a
+	Content-Type: application/octet-stream
+	Content-Length: 14265
+	
+	GET /usc-seal-1597x360.png HTTP/1.1
+	User-Agent: Wget/1.17.1 (linux-gnu)
+	Accept: */*
+	Accept-Encoding: identity
+	Host: localhost:12345
+	Connection: Keep-Alive
+	
+	HTTP/1.1 200 OK
+	Server: lab4a
+	Content-Type: application/octet-stream
+	Content-Length: 250749
+	
+	GET /viterbi-seal-rev-770x360.png HTTP/1.1
+	User-Agent: Wget/1.17.1 (linux-gnu)
+	Accept: */*
+	Accept-Encoding: identity
+	Host: localhost:12345
+	Connection: Keep-Alive
+	
+	HTTP/1.1 200 OK
+	Server: lab4a
+	Content-Type: application/octet-stream
+	Content-Length: 95957
+	
+	GET /hamlet.txt HTTP/1.1
+	User-Agent: Wget/1.17.1 (linux-gnu)
+	Accept: */*
+	Accept-Encoding: identity
+	Host: localhost:12345
+	Connection: Keep-Alive
+	
+	HTTP/1.1 200 OK
+	Server: lab4a
+	Content-Type: application/octet-stream
+	Content-Length: 194271
+	
+	GET /random.garbage HTTP/1.1
+	User-Agent: Wget/1.17.1 (linux-gnu)
+	Accept: */*
+	Accept-Encoding: identity
+	Host: localhost:12345
+	Connection: Keep-Alive
+	
+	HTTP/1.1 200 OK
+	Server: lab4a
+	Content-Type: application/octet-stream
+	Content-Length: 262144
+	
+	GET /rfc7540.txt HTTP/1.1
+	User-Agent: Wget/1.17.1 (linux-gnu)
+	Accept: */*
+	Accept-Encoding: identity
+	Host: localhost:12345
+	Connection: Keep-Alive
+	
+	HTTP/1.1 200 OK
+	Server: lab4a
+	Content-Type: application/octet-stream
+	Content-Length: 209580
+	
+	GET /rfc793.txt HTTP/1.1
+	User-Agent: Wget/1.17.1 (linux-gnu)
+	Accept: */*
+	Accept-Encoding: identity
+	Host: localhost:12345
+	Connection: Keep-Alive
+	
+	HTTP/1.1 200 OK
+	Server: lab4a
+	Content-Type: application/octet-stream
+	Content-Length: 172710
+	
+^C
+]0;student@student-VirtualBox: ~/lab4[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab4[00m$ exit
+exit
+
+Script done on Mon 10 Feb 2025 10:52:10 PM PST

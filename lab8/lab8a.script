@@ -1,0 +1,80 @@
+Script started on Tue 11 Mar 2025 08:40:07 PM PDT
+]0;student@student-VirtualBox: ~/lab8[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab8[00m$ uname -a
+Linux student-VirtualBox 4.15.0-142-generic #146~16.04.1-Ubuntu SMP Tue Apr 13 09:26:57 UTC 2021 i686 i686 i686 GNU/Linux
+]0;student@student-VirtualBox: ~/lab8[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab8[00m$ cat /etc/os-release
+NAME="Ubuntu"
+VERSION="16.04.7 LTS (Xenial Xerus)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 16.04.7 LTS"
+VERSION_ID="16.04"
+HOME_URL="http://www.ubuntu.com/"
+SUPPORT_URL="http://help.ubuntu.com/"
+BUG_REPORT_URL="http://bugs.launchpad.net/ubuntu/"
+VERSION_CODENAME=xenial
+UBUNTU_CODENAME=xenial
+]0;student@student-VirtualBox: ~/lab8[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab8[00m$ make clean
+rm -f *.o lab8a 
+]0;student@student-VirtualBox: ~/lab8[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab8[00m$ make lab8a 
+g++ -g -Wall -std=c++11 -DLOCALHOST=\"127.0.0.1\" -o lab8a lab8a.cpp my_socket.cpp my_timestamp.cpp -lcrypto -pthread
+[01m[Klab8a.cpp:[m[K In function ‘[01m[Kvoid talk_to_client(std::shared_ptr<Connection>)[m[K’:
+[01m[Klab8a.cpp:426:25:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[KnumIterations[m[K’ [-Wunused-variable]
+                     int numIterations = 0;
+[01;32m[K                         ^[m[K
+[01m[Klab8a.cpp:[m[K In function ‘[01m[Kvoid talk_to_user_and_server(int, std::vector<std::__cxx11::basic_string<char> >&, std::__cxx11::string, int, std::vector<std::__cxx11::basic_string<char> >&)[m[K’:
+[01m[Klab8a.cpp:556:23:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [-Wsign-compare]
+     for (int j = 0; j < uris.size(); j++){
+[01;32m[K                       ^[m[K
+]0;student@student-VirtualBox: ~/lab8[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab8[00m$ ./lab8a 12345 lab8a.logfile
+> help
+Available commands are:
+	close
+	help
+	status
+	quit
+> status
+No active connections.
+> status
+Active connections:
+[1]	Client: 108.146.182.183:0, Socket: 5, KB sent: 10
+[2]	Client: 108.146.182.183:0, Socket: 6, KB sent: 7
+> close 1
+[1]	Close connection requested.
+> status
+Active connections:
+[2]	Client: 108.146.182.183:0, Socket: 6, KB sent: 15
+[3]	Client: 108.146.182.183:0, Socket: 8, KB sent: 3
+> close 2
+[2]	Close connection requested.
+> status
+Active connections:
+[3]	Client: 108.146.182.183:0, Socket: 8, KB sent: 13
+[4]	Client: 108.146.182.183:0, Socket: 10, KB sent: 3
+> quit
+]0;student@student-VirtualBox: ~/lab8[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab8[00m$ ./lab8a 12345 lab8a.logfile
+> status
+Active connections:
+[1]	Client: 235.135.240.183:0, Socket: 5, KB sent: 11
+[2]	Client: 235.135.240.183:0, Socket: 6, KB sent: 8
+> quit
+]0;student@student-VirtualBox: ~/lab8[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab8[00m$ cat lab8a.logfile
+[Tue Mar 11 2025 20:41:06.664656] Server 127.0.0.1:12345 started
+[Tue Mar 11 2025 20:41:23.967124] [1]	Client connected from 127.0.0.1:44300 and requesting /textbooks-1-small.jpg
+[Tue Mar 11 2025 20:41:27.114220] [2]	Client connected from 127.0.0.1:44302 and requesting /viterbi-seal-rev-770x360.png
+[Tue Mar 11 2025 20:41:38.967302] [1]	Connection closed with client at 127.0.0.1:44300
+[Tue Mar 11 2025 20:41:39.656551] [3]	Client connected from 127.0.0.1:44304 and requesting /textbooks-1-small.jpg
+[Tue Mar 11 2025 20:41:49.114389] [2]	Connection closed with client at 127.0.0.1:44302
+[Tue Mar 11 2025 20:41:49.405767] [4]	Client connected from 127.0.0.1:44306 and requesting /viterbi-seal-rev-770x360.png
+[Tue Mar 11 2025 20:41:57.405929] [4]	Connection closed with client at 127.0.0.1:44306
+[Tue Mar 11 2025 20:41:57.656717] [3]	Connection closed with client at 127.0.0.1:44304
+[Tue Mar 11 2025 20:41:57.656827] Server 127.0.0.1:12345 stopped
+[Tue Mar 11 2025 20:42:03.811450] Server 127.0.0.1:12345 started
+[Tue Mar 11 2025 20:42:07.114761] [1]	Client connected from 127.0.0.1:44316 and requesting /textbooks-1-small.jpg
+[Tue Mar 11 2025 20:42:09.580148] [2]	Client connected from 127.0.0.1:44318 and requesting /viterbi-seal-rev-770x360.png
+[Tue Mar 11 2025 20:42:21.580321] [2]	Connection closed with client at 127.0.0.1:44318
+[Tue Mar 11 2025 20:42:22.114920] [1]	Connection closed with client at 127.0.0.1:44316
+[Tue Mar 11 2025 20:42:22.115011] Server 127.0.0.1:12345 stopped
+]0;student@student-VirtualBox: ~/lab8[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab8[00m$ [K]0;student@student-VirtualBox: ~/lab8[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab8[00m$ exit
+exit
+
+Script done on Tue 11 Mar 2025 08:42:59 PM PDT

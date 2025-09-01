@@ -1,0 +1,42 @@
+> status
+[1]	Client at 127.0.0.1:39774
+	Path: /usc-seal-1597x360.png
+	Content-Length: 250749
+	Start-Time: [Mon Jan 18 2021 14:21:51.088531]
+	Shaper-Params: P=3, MAXR=21 tokens/s, DIAL=15%, rate=1.05 KB/s
+	Sent: 4.00 KB (1.63%), time elapsed: 3.69s
+> status
+[1]	Client at 127.0.0.1:39774
+	Path: /usc-seal-1597x360.png
+	Content-Length: 250749
+	Start-Time: [Mon Jan 18 2021 14:21:51.088531]
+	Shaper-Params: P=3, MAXR=21 tokens/s, DIAL=15%, rate=1.05 KB/s
+	Sent: 14.0 KB (5.71%), time elapsed: 13.3s
+> close 1
+Closing connection 1 ...
+> status
+[2]	Client at 127.0.0.1:39784
+	Path: /usc-seal-1597x360.png
+	Content-Length: 250749
+	Start-Time: [Mon Jan 18 2021 14:22:12.561552]
+	Shaper-Params: P=3, MAXR=21 tokens/s, DIAL=15%, rate=1.05 KB/s
+	Sent: 7.00 KB (2.85%), time elapsed: 6.56s
+> close 2
+Closing connection 2 ...
+> status
+[3]	Client at 127.0.0.1:39786
+	Path: /usc-seal-1597x360.png
+	Content-Length: 250749
+	Start-Time: [Mon Jan 18 2021 14:22:26.589326]
+	Shaper-Params: P=3, MAXR=21 tokens/s, DIAL=15%, rate=1.05 KB/s
+	Sent: 4.00 KB (1.63%), time elapsed: 3.57s
+> dial 3 100
+Dial for connection 3 at 100%.  Token rate at 21 tokens/s.  Data rate at 7 KB/s
+> dial 3 50
+Dial for connection 3 at 50%.  Token rate at 10.5 tokens/s.  Data rate at 3.5 KB/s
+> dial 3 100
+Dial for connection 3 at 100%.  Token rate at 21 tokens/s.  Data rate at 7 KB/s
+> status
+No active connections
+> quit
+Console thread terminated

@@ -1,0 +1,40 @@
+Script started on Tue 11 Feb 2025 07:39:25 PM PST
+]0;student@student-VirtualBox: ~/lab4[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab4[00m$ ./lab4d -c localhost 12345 upc_map.pdf x2 per sistent.html x3 upc_map.gif x4 
+echo-client at 127.0.0.1:32790 is connected to server at 127.0.0.1:12345
+	GET /upc_map.pdf HTTP/1.1
+	User-Agent: lab4b
+	Accept: */*
+	Host: localhost:12345
+	
+	HTTP/1.1 200 OK
+	Server: lab4a
+	Content-Type: application/octet-stream
+	Content-Length: 746248
+	
+	GET /persistent.html HTTP/1.1
+	User-Agent: lab4b
+	Accept: */*
+	Host: localhost:12345
+	
+	HTTP/1.1 200 OK
+	Server: lab4a
+	Content-Type: text/html
+	Content-Length: 186
+	
+	GET /upc_map.gif HTTP/1.1
+	User-Agent: lab4b
+	Accept: */*
+	Host: localhost:12345
+	
+	HTTP/1.1 200 OK
+	Server: lab4a
+	Content-Type: application/octet-stream
+	Content-Length: 416140
+	
+]0;student@student-VirtualBox: ~/lab4[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab4[00m$ diff lab4data/upc_map.pdf x2
+]0;student@student-VirtualBox: ~/lab4[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab4[00m$ diff lab4data/persistent.html x3
+]0;student@student-VirtualBox: ~/lab4[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab4[00m$ diff lab4data/upc_map.gif x4
+]0;student@student-VirtualBox: ~/lab4[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab4[00m$ exit
+exit
+
+Script done on Tue 11 Feb 2025 07:40:32 PM PST

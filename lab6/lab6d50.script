@@ -1,0 +1,45 @@
+Script started on Wed 26 Feb 2025 07:39:18 PM PST
+]0;student@student-VirtualBox: ~/lab6[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab6[00m$ wget -O x http://localhost:12345/usc-seal-159 7x360.png --debug
+DEBUG output created by Wget 1.17.1 on linux-gnu.
+
+Reading HSTS entries from /home/student/.wget-hsts
+URI encoding = ‘UTF-8’
+--2025-02-26 19:39:26--  http://localhost:12345/usc-seal-1597x360.png
+Resolving localhost (localhost)... 127.0.0.1
+Caching localhost => 127.0.0.1
+Connecting to localhost (localhost)|127.0.0.1|:12345... connected.
+Created socket 4.
+Releasing 0x006762f0 (new refcount 1).
+
+---request begin---
+GET /usc-seal-1597x360.png HTTP/1.1
+User-Agent: Wget/1.17.1 (linux-gnu)
+Accept: */*
+Accept-Encoding: identity
+Host: localhost:12345
+Connection: Keep-Alive
+
+---request end---
+HTTP request sent, awaiting response... 
+---response begin---
+HTTP/1.1 200 OK
+Server: lab4a
+Content-Type: application/octet-stream
+Content-Length: 250749
+
+---response end---
+200 OK
+Registered socket 4 for persistent reuse.
+Length: 250749 (245K) [application/octet-stream]
+Saving to: ‘x’
+
+x                     0%[                    ]       0  --.-KB/s               x                     4%[                    ]  12.00K  54.6KB/s               x                     8%[>                   ]  22.00K  51.1KB/s               x                    13%[=>                  ]  33.00K  51.6KB/s               x                    17%[==>                 ]  43.00K  50.1KB/s               x                    22%[===>                ]  54.00K  50.6KB/s               x                    26%[====>               ]  65.00K  50.5KB/s               x                    30%[=====>              ]  75.00K  50.2KB/s               x                    35%[======>             ]  86.00K  50.5KB/s               x                    39%[======>             ]  97.00K  50.4KB/s               x                    43%[=======>            ] 107.00K  50.2KB/s               x                    48%[========>           ] 118.00K  50.4KB/s               x                    52%[=========>          ] 128.00K  50.0KB/s               x                    56%[==========>         ] 139.00K  50.2KB/s               x                    61%[===========>        ] 150.00K  50.2KB/s               x                    65%[============>       ] 160.00K  50.1KB/s    eta 2s     x                    69%[============>       ] 171.00K  50.3KB/s    eta 2s     x                    74%[=============>      ] 182.00K  50.0KB/s    eta 2s     x                    78%[==============>     ] 192.00K  49.9KB/s    eta 2s     x                    82%[===============>    ] 203.00K  50.3KB/s    eta 2s     x                    86%[================>   ] 213.00K  50.0KB/s    eta 1s     x                    91%[=================>  ] 224.00K  49.9KB/s    eta 1s     x                    95%[==================> ] 235.00K  50.2KB/s    eta 1s     x                   100%[===================>] 244.87K  49.8KB/s    eta 0s     x                   100%[===================>] 244.87K  49.8KB/s    in 4.9s    
+
+2025-02-26 19:39:31 (50.0 KB/s) - ‘x’ saved [250749/250749]
+
+Saving HSTS entries to /home/student/.wget-hsts
+]0;student@student-VirtualBox: ~/lab6[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab6[00m$ diff x lab4data/usc-seal-1597x360.png
+]0;student@student-VirtualBox: ~/lab6[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab6[00m$ exit
+exit
+
+Script done on Wed 26 Feb 2025 07:39:59 PM PST

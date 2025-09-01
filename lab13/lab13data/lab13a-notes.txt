@@ -1,0 +1,47 @@
+Topology for lab13a:
+                       +-------+                               
+                    /--+ 12010 +--------------------------\    
+                    |  +-------+                          |    
+                    |                                     |    
+    +-------+   +---+---+     +-------+   +-------+   +---+---+
+    | 12000 +---+ 12002 +-----+ 12004 +---+ 12006 +---+ 12008 |
+    +-------+   +-------+     +-------+   +-------+   +-------+
+in all windows, type "netgraph" and verify
+in all windows, type "forwarding" and verify
+in 1st window, type "traceroute :12000", should see:
+        Cannot traceroute to yourself
+in 1st window, type "traceroute :12002", should see:
+    1 - :12002, TTL1
+    :12002 is reached in 1 steps
+in 1st window, type "traceroute :12012", should see:
+    1 - *
+    ...
+    9 - *
+    traceroute: :12012 not reached after 9 steps
+in 1st window, type "traceroute :12008"
+    1 - :12002, TTL2
+    2 - :12010, TTL3
+    3 - :12008, TTL4
+    :12008 is reached in 3 steps
+in 4th window, type "traceroute :12000", should see:
+    1 - :12004, TTL5
+    2 - :12002, TTL6
+    3 - :12000, TTL7
+    :12000 is reached in 3 steps
+in 4th window, type "traceroute :12000", as soon as you see:
+    1 - :12004, TTL8
+    type "quit" in the 3rd window, :12004 should self-terminate
+in 4th window should see:
+    2 - :12010, TTL9
+    3 - :12002, TTL10
+    4 - :12000, TTL11
+    :12000 is reached in 4 steps
+in 3rd window, type <Ctrl+d> to restart :12004
+in 4th window, type "traceroute :12000", should see:
+    1 - :12004, TTL12
+    2 - :12002, TTL13
+    3 - :12000, TTL14
+    :12000 is reached in 3 steps
+type "quit" in all windows
+in 6th window, type "more lab13data/*.log"
+type <Ctrl+d> after server has quit to close this pane

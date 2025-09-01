@@ -1,0 +1,74 @@
+Script started on Wed 16 Apr 2025 09:18:09 PM PDT
+]0;student@student-VirtualBox: ~/lab12[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab12[00m$ exit./lab12b lab12data/lab12-12012.iniexit[K[Kuname -a
+Linux student-VirtualBox 4.15.0-142-generic #146~16.04.1-Ubuntu SMP Tue Apr 13 09:26:57 UTC 2021 i686 i686 i686 GNU/Linux
+]0;student@student-VirtualBox: ~/lab12[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab12[00m$     cat /etc/os-release
+NAME="Ubuntu"
+VERSION="16.04.7 LTS (Xenial Xerus)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 16.04.7 LTS"
+VERSION_ID="16.04"
+HOME_URL="http://www.ubuntu.com/"
+SUPPORT_URL="http://help.ubuntu.com/"
+BUG_REPORT_URL="http://bugs.launchpad.net/ubuntu/"
+VERSION_CODENAME=xenial
+UBUNTU_CODENAME=xenial
+]0;student@student-VirtualBox: ~/lab12[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab12[00m$     make clean
+rm -f *.o lab12a
+]0;student@student-VirtualBox: ~/lab12[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab12[00m$     make lab12b
+g++ -g -Wall -std=c++11 -DLOCALHOST=\"127.0.0.1\" -o lab12b lab12b.cpp my_socket.cpp my_timestamp.cpp -lcrypto -pthread
+[01m[Klab12b.cpp:[m[K In function ‘[01m[Kvoid read_from_client(std::shared_ptr<Connection>)[m[K’:
+[01m[Klab12b.cpp:644:47:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [-Wsign-compare]
+                     if (line.find("UCASTAPP") != -1) {
+[01;32m[K                                               ^[m[K
+[01m[Klab12b.cpp:842:49:[m[K [01;35m[Kwarning: [m[Ksuggest parentheses around assignment used as truth value [-Wparentheses]
+                                 if (isIn = false){
+[01;32m[K                                                 ^[m[K
+[01m[Klab12b.cpp:[m[K In function ‘[01m[Kvoid neighbors_thread(std::vector<std::__cxx11::basic_string<char> >&, std::__cxx11::string, std::__cxx11::string)[m[K’:
+[01m[Klab12b.cpp:1404:14:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [-Wsign-compare]
+     while (i < file_lines.size() && file_lines[i][0] != '[') { 
+[01;32m[K              ^[m[K
+[01m[Klab12b.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[Klab12b.cpp:2015:18:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [-Wsign-compare]
+         while (i < file_lines.size() && file_lines[i][0] != '['){
+[01;32m[K                  ^[m[K
+[01m[Klab12b.cpp:2045:18:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [-Wsign-compare]
+         while (j < file_lines.size() && file_lines[j][0] != '['){
+[01;32m[K                  ^[m[K
+[01m[Klab12b.cpp:2083:18:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [-Wsign-compare]
+         while (k < file_lines.size() && file_lines[k][0] != '['){
+[01;32m[K                  ^[m[K
+[01m[Klab12b.cpp:[m[K At global scope:
+[01m[Klab12b.cpp:168:6:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid usage_server()[m[K’ defined but not used [-Wunused-function]
+ void usage_server()
+[01;32m[K      ^[m[K
+[01m[Klab12b.cpp:196:5:[m[K [01;35m[Kwarning: [m[K‘[01m[Kint get_file_size(std::__cxx11::string)[m[K’ defined but not used [-Wunused-function]
+ int get_file_size(string path)
+[01;32m[K     ^[m[K
+]0;student@student-VirtualBox: ~/lab12[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab12[00m$     ./lab12b lab12data/lab12-12000.ini
+:12000> netgraph
+:12000: :12002
+:12002: :12000,:12004,:12012
+:12004: :12002,:12012
+:12012: :12002,:12004
+:12000> forwarding
+:12002: :12002
+:12004: :12002
+:12012: :12002
+:12000> udtsend :12004 hello
+[Wed Apr 16 2025 21:19:38.701775] i UCASTAPP :12002 9 - 5 :12000_13_1744863578.701762  :12000 :12004 1 hello
+:12000> udt  send :12000 he ow are you?
+Cannot use udtsend command to send message to yourself.
+:12000> fow rwarding
+:12002: :12002
+:12004: :12002
+:12012: :12002
+:12000> [Wed Apr 16 2025 21:21:19.931985] r UCASTAPP :12002 8 - 3 :12012_12_1744863679.931443  :12012 :12000 1 bye
+No receiver for UDT message 'bye' from :12012.
+quit
+Console thread terminated
+
+]0;student@student-VirtualBox: ~/lab12[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab12[00m$ exit
+exit
+
+Script done on Wed 16 Apr 2025 09:23:18 PM PDT

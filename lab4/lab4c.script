@@ -1,0 +1,211 @@
+Script started on Tue 11 Feb 2025 12:49:43 AM PST
+]0;student@student-VirtualBox: ~/lab4[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab4[00m$ tcsh
+[4mstudent-VirtualBox[24m:[1m~/lab4[0m> ./lab4b 12345 &
+[1] 21411
+[4mstudent-VirtualBox[24m:[1m~/lab4[0m> lsof -i 4
+COMMAND   PID    USER   FD   TYPE  DEVICE SIZE/OFF NODE NAME
+Xvnc4   16709 student    0u  IPv4  979584      0t0  TCP *:x11-1 (LISTEN)
+firefox 17477 student   42u  IPv4  993164      0t0  TCP ip-172-31-18-216.us-west-2.compute.internal:58788->162.159.61.4:https (ESTABLISHED)
+firefox 17477 student   77u  IPv4  994133      0t0  TCP ip-172-31-18-216.us-west-2.compute.internal:37188->93.243.107.34.bc.googleusercontent.com:https (ESTABLISHED)
+lab4b   21411 student    3u  IPv4 1000482      0t0  TCP localhost:12345 (LISTEN)
+[4mstudent-VirtualBox[24m:[1m~/lab4[0m> jobs
+[1]  + Running                       ./lab4b 12345
+[4mstudent-VirtualBox[24m:[1m~/lab4[0m> foreach f (textbooks-2-small.jpg textbooks-3-small.jpg usc-seal-1597x360.png vi terbi-seal-rev-770x360.png)
+foreach?     ./lab4b -c localhost 12345 /$f x
+foreach?     chmod 600 x
+foreach?     diff x lab4data/$f
+foreach?     echo -n 'Make sure "diff" comand above did not print anything, then press the <ENTER> key to  continue... '
+foreach?     set junk=$<
+foreach? end
+echo-client at 127.0.0.1:60242 is connected to server at 127.0.0.1:12345
+	GET /textbooks-2-small.jpg HTTP/1.1
+	User-Agent: lab4b
+	Accept: */*
+	Host: localhost:12345
+	
+	GET /textbooks-2-small.jpg HTTP/1.1
+	User-Agent: lab4b
+	Accept: */*
+	Host: localhost:12345
+	
+	HTTP/1.1 200 OK
+	Server: lab4a
+	Content-Type: application/octet-stream
+	Content-Length: 10525
+	
+	HTTP/1.1 200 OK
+	Server: lab4a
+	Content-Type: application/octet-stream
+	Content-Length: 10525
+	
+Make sure "diff" comand above did not print anything, then press the <ENTER> key to continue... 
+echo-client at 127.0.0.1:60244 is connected to server at 127.0.0.1:12345
+	GET /textbooks-3-small.jpg HTTP/1.1
+	User-Agent: lab4b
+	Accept: */*
+	Host: localhost:12345
+	
+	GET /textbooks-3-small.jpg HTTP/1.1
+	User-Agent: lab4b
+	Accept: */*
+	Host: localhost:12345
+	
+	HTTP/1.1 200 OK
+	Server: lab4a
+	Content-Type: application/octet-stream
+	Content-Length: 14265
+	
+	HTTP/1.1 200 OK
+	Server: lab4a
+	Content-Type: application/octet-stream
+	Content-Length: 14265
+	
+Make sure "diff" comand above did not print anything, then press the <ENTER> key to continue... 
+echo-client at 127.0.0.1:60246 is connected to server at 127.0.0.1:12345
+	GET /usc-seal-1597x360.png HTTP/1.1
+	User-Agent: lab4b
+	Accept: */*
+	Host: localhost:12345
+	
+	GET /usc-seal-1597x360.png HTTP/1.1
+	User-Agent: lab4b
+	Accept: */*
+	Host: localhost:12345
+	
+	HTTP/1.1 200 OK
+	Server: lab4a
+	Content-Type: application/octet-stream
+	Content-Length: 250749
+	
+	HTTP/1.1 200 OK
+	Server: lab4a
+	Content-Type: application/octet-stream
+	Content-Length: 250749
+	
+Make sure "diff" comand above did not print anything, then press the <ENTER> key to continue... 
+echo-client at 127.0.0.1:60248 is connected to server at 127.0.0.1:12345
+	GET /viterbi-seal-rev-770x360.png HTTP/1.1
+	User-Agent: lab4b
+	Accept: */*
+	Host: localhost:12345
+	
+	GET /viterbi-seal-rev-770x360.png HTTP/1.1
+	User-Agent: lab4b
+	Accept: */*
+	Host: localhost:12345
+	
+	HTTP/1.1 200 OK
+	Server: lab4a
+	Content-Type: application/octet-stream
+	Content-Length: 95957
+	
+	HTTP/1.1 200 OK
+	Server: lab4a
+	Content-Type: application/octet-stream
+	Content-Length: 95957
+	
+Make sure "diff" comand above did not print anything, then press the <ENTER> key to continue... 
+[4mstudent-VirtualBox[24m:[1m~/lab4[0m> foreach f (hamlet.txt random.garbage rfc7540.txt rfc793.txt)
+foreach?     ./lab4b -c localhost 12345 /$f x
+foreach?     chmod 600 x
+foreach?     diff x lab4data/$f
+foreach?     echo -n 'Make sure "diff" comand above did not print anything, then press the <ENTER> key to  continue... '
+foreach?     set junk=$<
+foreach? end
+echo-client at 127.0.0.1:60252 is connected to server at 127.0.0.1:12345
+	GET /hamlet.txt HTTP/1.1
+	User-Agent: lab4b
+	Accept: */*
+	Host: localhost:12345
+	
+	GET /hamlet.txt HTTP/1.1
+	User-Agent: lab4b
+	Accept: */*
+	Host: localhost:12345
+	
+	HTTP/1.1 200 OK
+	Server: lab4a
+	Content-Type: application/octet-stream
+	Content-Length: 194271
+	
+	HTTP/1.1 200 OK
+	Server: lab4a
+	Content-Type: application/octet-stream
+	Content-Length: 194271
+	
+Make sure "diff" comand above did not print anything, then press the <ENTER> key to continue... 
+echo-client at 127.0.0.1:60254 is connected to server at 127.0.0.1:12345
+	GET /random.garbage HTTP/1.1
+	User-Agent: lab4b
+	Accept: */*
+	Host: localhost:12345
+	
+	GET /random.garbage HTTP/1.1
+	User-Agent: lab4b
+	Accept: */*
+	Host: localhost:12345
+	
+	HTTP/1.1 200 OK
+	Server: lab4a
+	Content-Type: application/octet-stream
+	Content-Length: 262144
+	
+	HTTP/1.1 200 OK
+	Server: lab4a
+	Content-Type: application/octet-stream
+	Content-Length: 262144
+	
+Make sure "diff" comand above did not print anything, then press the <ENTER> key to continue... 
+echo-client at 127.0.0.1:60256 is connected to server at 127.0.0.1:12345
+	GET /rfc7540.txt HTTP/1.1
+	User-Agent: lab4b
+	Accept: */*
+	Host: localhost:12345
+	
+	GET /rfc7540.txt HTTP/1.1
+	User-Agent: lab4b
+	Accept: */*
+	Host: localhost:12345
+	
+	HTTP/1.1 200 OK
+	Server: lab4a
+	Content-Type: application/octet-stream
+	Content-Length: 209580
+	
+	HTTP/1.1 200 OK
+	Server: lab4a
+	Content-Type: application/octet-stream
+	Content-Length: 209580
+	
+Make sure "diff" comand above did not print anything, then press the <ENTER> key to continue... 
+echo-client at 127.0.0.1:60258 is connected to server at 127.0.0.1:12345
+	GET /rfc793.txt HTTP/1.1
+	User-Agent: lab4b
+	Accept: */*
+	Host: localhost:12345
+	
+	GET /rfc793.txt HTTP/1.1
+	User-Agent: lab4b
+	Accept: */*
+	Host: localhost:12345
+	
+	HTTP/1.1 200 OK
+	Server: lab4a
+	Content-Type: application/octet-stream
+	Content-Length: 172710
+	
+	HTTP/1.1 200 OK
+	Server: lab4a
+	Content-Type: application/octet-stream
+	Content-Length: 172710
+	
+Make sure "diff" comand above did not print anything, then press the <ENTER> key to continue... 
+[4mstudent-VirtualBox[24m:[1m~/lab4[0m> fg
+./lab4b 12345
+^C
+[4mstudent-VirtualBox[24m:[1m~/lab4[0m> exit
+exit
+]0;student@student-VirtualBox: ~/lab4[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab4[00m$ exit
+exit
+
+Script done on Tue 11 Feb 2025 12:51:46 AM PST

@@ -1,0 +1,26 @@
+wait for lab6b server to get compiled and running in 1st window
+do the following in the 2nd and 3rd windows in parallel:
+  in 2nd window, type <Ctrl+d> to run:
+    wget -O x http://localhost:12345/textbooks-3-small.jpg
+  in 3rd window, type <Ctrl+d> to run:
+    wget -O y http://localhost:12345/textbooks-2-small.jpg
+check if wget is showing about 1 KB/sec
+wait for downloading to finish in 2nd and 3rd windows
+
+do the following in the 2nd and 3rd windows in parallel:
+  in 2nd window, type <Ctrl+d> to run:
+    wget -O z1 http://localhost:12345/viterbi-seal-rev-770x360.png"
+  in 3rd window, type <Ctrl+d> to run:
+    wget -O z2 http://localhost:12345/viterbi-seal-rev-770x360.png"
+check if wget is showing about 1 KB/sec
+wait for downloading to finish in 2nd and 3rd windows
+  this should take a little more than a minute and a half
+
+in 1st window, type <Ctrl+c> to kill lab6b server
+
+in 2nd window, type <Ctrl+d> to run these commands:
+    diff x lab4data/textbooks-3-small.jpg
+    diff y lab4data/textbooks-2-small.jpg
+    diff z1 lab4data/viterbi-seal-rev-770x360.png
+    diff z2 lab4data/viterbi-seal-rev-770x360.png
+type <Ctrl+d> to close this pane

@@ -1,0 +1,29 @@
+Try the following commands:
+    ls
+    ls -a
+    ls -l
+    echo "hello"
+    echo -n "hello"
+    echo `date`
+    echo `date +%m%d%y-%H%M%S`
+    cat /etc/sysctl.conf
+    more /etc/sysctl.conf
+    mkdir tmp
+    pwd
+    cd tmp
+    pwd
+    ls
+    cd ..
+    cp /etc/sysctl.conf tmp
+    cp tmp/sysctl.conf tmp/abc
+    ls -aF tmp
+    mv tmp/sysctl.conf tmp/xyz
+    ls -aF tmp
+    man g++
+    rm tmp/abc
+    touch tmp/defg
+    ps -x
+    ps -auxw
+    pico tmp/xyz
+    exit
+type <Ctrl+d> to close this pane

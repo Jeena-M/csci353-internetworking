@@ -1,0 +1,13 @@
+Script started on Sun 27 Apr 2025 02:16:40 AM PDT
+]0;student@student-VirtualBox: ~/lab13[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab13[00m$ exit./lab13a lab13data/lab13-12010.iniexit[K./lab13a lab13data/lab13-12010.iniexit[K./lab13a lab13data/lab13-12008.ini
+:12008> quit
+Console thread terminated
+
+]0;student@student-VirtualBox: ~/lab13[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab13[00m$ exot
+No command 'exot' found, did you mean:
+ Command 'emot' from package 'ruby-emot' (universe)
+exot: command not found
+]0;student@student-VirtualBox: ~/lab13[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab13[00m$ exit
+exit
+
+Script done on Sun 27 Apr 2025 02:27:23 AM PDT

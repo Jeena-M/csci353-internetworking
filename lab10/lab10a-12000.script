@@ -1,0 +1,56 @@
+Script started on Wed 02 Apr 2025 09:59:31 PM PDT
+]0;student@student-VirtualBox: ~/lab10[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab10[00m$ uname -a
+Linux student-VirtualBox 4.15.0-142-generic #146~16.04.1-Ubuntu SMP Tue Apr 13 09:26:57 UTC 2021 i686 i686 i686 GNU/Linux
+]0;student@student-VirtualBox: ~/lab10[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab10[00m$ cat /etc/os-release
+NAME="Ubuntu"
+VERSION="16.04.7 LTS (Xenial Xerus)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 16.04.7 LTS"
+VERSION_ID="16.04"
+HOME_URL="http://www.ubuntu.com/"
+SUPPORT_URL="http://help.ubuntu.com/"
+BUG_REPORT_URL="http://bugs.launchpad.net/ubuntu/"
+VERSION_CODENAME=xenial
+UBUNTU_CODENAME=xenial
+]0;student@student-VirtualBox: ~/lab10[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab10[00m$ make clean
+rm -f *.o lab10a 
+]0;student@student-VirtualBox: ~/lab10[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab10[00m$ make lab10a
+g++ -g -Wall -std=c++11 -DLOCALHOST=\"127.0.0.1\" -o lab10a lab10a.cpp my_socket.cpp my_timestamp.cpp -lcrypto -pthread
+[01m[Klab10a.cpp:[m[K In function ‘[01m[Kvoid neighbors_thread(std::vector<std::__cxx11::basic_string<char> >&, std::__cxx11::string, std::__cxx11::string)[m[K’:
+[01m[Klab10a.cpp:604:14:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [-Wsign-compare]
+     while (i < file_lines.size() && file_lines[i][0] != '[') { 
+[01;32m[K              ^[m[K
+[01m[Klab10a.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[Klab10a.cpp:924:18:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [-Wsign-compare]
+         while (i < file_lines.size() && file_lines[i][0] != '['){
+[01;32m[K                  ^[m[K
+[01m[Klab10a.cpp:952:18:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [-Wsign-compare]
+         while (j < file_lines.size() && file_lines[j][0] != '['){
+[01;32m[K                  ^[m[K
+[01m[Klab10a.cpp:[m[K At global scope:
+[01m[Klab10a.cpp:114:6:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid usage_server()[m[K’ defined but not used [-Wunused-function]
+ void usage_server()
+[01;32m[K      ^[m[K
+[01m[Klab10a.cpp:142:5:[m[K [01;35m[Kwarning: [m[K‘[01m[Kint get_file_size(std::__cxx11::string)[m[K’ defined but not used [-Wunused-function]
+ int get_file_size(string path)
+[01;32m[K     ^[m[K
+]0;student@student-VirtualBox: ~/lab10[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab10[00m$ ./lab10a lab10data/lab10-12000.ini
+:12000> neighbors
+:12000 has no active neighbors
+:12000> [Wed Apr  2 2025 22:00:31.100962] r SAYHELLO 12002 1 - 0
+[Wed Apr  2 2025 22:00:31.101006] i SAYHELLO 12002 1 - 0
+
+:12000> neighbors
+Active connections of :12000:
+	:12002,
+:12000> quit
+]0;student@student-VirtualBox: ~/lab10[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab10[00m$ ./lab10a lab10data/lab10-12000.ini
+:12000> [Wed Apr  2 2025 22:01:23.692098] i SAYHELLO 12002 1 - 0
+[Wed Apr  2 2025 22:01:23.692474] r SAYHELLO 12002 1 - 0
+
+:12000> quit
+]0;student@student-VirtualBox: ~/lab10[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab10[00m$ exit
+exit
+
+Script done on Wed 02 Apr 2025 10:01:51 PM PDT

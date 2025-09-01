@@ -1,0 +1,39 @@
+Topology for lab12b:
+    +-------+   +-------+     +-------+ 
+    | 12000 +---+ 12002 +-----+ 12004 | 
+    +-------+   +---+---+     +---+---+ 
+                    |             |     
+                    |  +-------+  |     
+                    \--+ 12012 +--/     
+                       +-------+        
+in all windows, type "negraph" and verify
+in all windows, type "forwarding" and verify
+in 1st window, type "udtsend :12004 hello",
+    should see 1 UCASTAPP messages in 1st window (1 i)
+    should see 2 UCASTAPP messages in 2nd window (1 r, 1 f)
+    should see 1 UCASTAPP messages in 3rd window (1 r)
+    should see in 3rd window:
+        No receiver for UDT message 'hello' from :12000.
+in 2nd window, type "quit", :12002 should self-terminate
+in 1st window, type "udtsend :12000 how are you?",
+    should see in 1st window:
+        Cannot use udtsend command to send message to yourself.
+in 3rd window, type "udtsend :12000 how are you?",
+    should see:
+        :12000 is not reachable 
+in 3rd window, type "udtsend :12012 how are you?",
+    should see 1 UCASTAPP messages in 3rd window (1 i)
+    should see 1 UCASTAPP messages in 4th window (1 r)
+    should see in 4th window:
+        No receiver for UDT message 'how are you?' from :12004.
+in 2nd window, type <Ctrl+d> to restart :12002
+in all windows, type "forwarding" and verify
+in 4th window, type "udtsend :12000 bye",
+    should see 1 UCASTAPP messages in 1st window (1 r)
+    should see 2 UCASTAPP messages in 2nd window (1 r, 1 f)
+    should see 1 UCASTAPP messages in 4th window (1 i)
+    should see in 1st window:
+        No receiver for UDT message 'bye' from :12012.
+type "quit" in all 4 windows
+in 4th window, type "more lab12data/*.log"
+type <Ctrl+d> after server has quit to close this pane

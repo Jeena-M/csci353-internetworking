@@ -1,0 +1,146 @@
+Script started on Tue 11 Feb 2025 12:29:24 AM PST
+]0;student@student-VirtualBox: ~/lab4[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab4[00m$ uname -a
+Linux student-VirtualBox 4.15.0-142-generic #146~16.04.1-Ubuntu SMP Tue Apr 13 09:26:57 UTC 2021 i686 i686 i686 GNU/Linux
+]0;student@student-VirtualBox: ~/lab4[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab4[00m$ cat /etc/os-release
+NAME="Ubuntu"
+VERSION="16.04.7 LTS (Xenial Xerus)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 16.04.7 LTS"
+VERSION_ID="16.04"
+HOME_URL="http://www.ubuntu.com/"
+SUPPORT_URL="http://help.ubuntu.com/"
+BUG_REPORT_URL="http://bugs.launchpad.net/ubuntu/"
+VERSION_CODENAME=xenial
+UBUNTU_CODENAME=xenial
+]0;student@student-VirtualBox: ~/lab4[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab4[00m$ make clean
+rm -f *.o lab4a lab4b
+]0;student@student-VirtualBox: ~/lab4[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab4[00m$ make lab4b 
+g++ -g -Wall -std=c++11 -DLOCALHOST=\"127.0.0.1\" -o lab4b lab4b.cpp my_socket.cpp
+]0;student@student-VirtualBox: ~/lab4[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab4[00m$ /bin/rm -f x?
+]0;student@student-VirtualBox: ~/lab4[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab4[00m$ ./lab4b -c merlot.usc.edu 80 /index.html x0
+echo-client at 172.31.18.216:40486 is connected to server at 68.181.32.44:80
+	GET /index.html HTTP/1.1
+	User-Agent: lab4b
+	Accept: */*
+	Host: merlot.usc.edu:80
+	
+	HTTP/1.1 200 OK
+	Date: Tue, 11 Feb 2025 08:29:30 GMT
+	Server: Apache
+	Vary: Accept-Encoding
+	X-Frame-Options: SAMEORIGIN
+	X-XSS-Protection: 1; mode=block
+	Content-Length: 190
+	Content-Type: text/html; charset=UTF-8
+	
+]0;student@student-VirtualBox: ~/lab4[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab4[00m$ ./lab4b -c merlot.usc.edu 80 /cs353/images/usctommy.gif x1
+echo-client at 172.31.18.216:40488 is connected to server at 68.181.32.44:80
+	GET /cs353/images/usctommy.gif HTTP/1.1
+	User-Agent: lab4b
+	Accept: */*
+	Host: merlot.usc.edu:80
+	
+	HTTP/1.1 200 OK
+	Date: Tue, 11 Feb 2025 08:29:30 GMT
+	Server: Apache
+	Last-Modified: Wed, 06 Nov 2002 22:46:44 GMT
+	Accept-Ranges: bytes
+	Content-Length: 1689
+	X-Frame-Options: SAMEORIGIN
+	X-XSS-Protection: 1; mode=block
+	Content-Type: image/gif
+	
+]0;student@student-VirtualBox: ~/lab4[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab4[00m$ ./lab4b -c merlot.usc.edu 80 /cs353/images/upc_map.gif x2
+echo-client at 172.31.18.216:40490 is connected to server at 68.181.32.44:80
+	GET /cs353/images/upc_map.gif HTTP/1.1
+	User-Agent: lab4b
+	Accept: */*
+	Host: merlot.usc.edu:80
+	
+	HTTP/1.1 200 OK
+	Date: Tue, 11 Feb 2025 08:29:30 GMT
+	Server: Apache
+	Last-Modified: Tue, 26 Jul 2011 04:19:23 GMT
+	Accept-Ranges: bytes
+	Content-Length: 416140
+	X-Frame-Options: SAMEORIGIN
+	X-XSS-Protection: 1; mode=block
+	Content-Type: image/gif
+	
+]0;student@student-VirtualBox: ~/lab4[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab4[00m$ ./lab4b -c merlot.usc.edu 80 /william/usc/images/upc_map.pdf x3
+echo-client at 172.31.18.216:40492 is connected to server at 68.181.32.44:80
+	GET /william/usc/images/upc_map.pdf HTTP/1.1
+	User-Agent: lab4b
+	Accept: */*
+	Host: merlot.usc.edu:80
+	
+	HTTP/1.1 200 OK
+	Date: Tue, 11 Feb 2025 08:29:31 GMT
+	Server: Apache
+	Last-Modified: Mon, 18 Mar 2019 04:52:41 GMT
+	Accept-Ranges: bytes
+	Content-Length: 746248
+	X-Frame-Options: SAMEORIGIN
+	X-XSS-Protection: 1; mode=block
+	Content-Type: application/pdf
+	
+]0;student@student-VirtualBox: ~/lab4[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab4[00m$ ./lab4b -c merlot.usc.edu 80 /cs353/images/viterbi-seal-rev-770x360.pn g x4
+echo-client at 172.31.18.216:40494 is connected to server at 68.181.32.44:80
+	GET /cs353/images/viterbi-seal-rev-770x360.png HTTP/1.1
+	User-Agent: lab4b
+	Accept: */*
+	Host: merlot.usc.edu:80
+	
+	HTTP/1.1 200 OK
+	Date: Tue, 11 Feb 2025 08:29:32 GMT
+	Server: Apache
+	Last-Modified: Wed, 26 Sep 2018 23:41:07 GMT
+	Accept-Ranges: bytes
+	Content-Length: 95957
+	X-Frame-Options: SAMEORIGIN
+	X-XSS-Protection: 1; mode=block
+	Content-Type: image/png
+	
+]0;student@student-VirtualBox: ~/lab4[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab4[00m$ ./lab4b -c merlot.usc.edu 80 /cs353/images/usc-seal-1597x360.png x5
+echo-client at 172.31.18.216:40496 is connected to server at 68.181.32.44:80
+	GET /cs353/images/usc-seal-1597x360.png HTTP/1.1
+	User-Agent: lab4b
+	Accept: */*
+	Host: merlot.usc.edu:80
+	
+	HTTP/1.1 200 OK
+	Date: Tue, 11 Feb 2025 08:29:32 GMT
+	Server: Apache
+	Last-Modified: Wed, 26 Sep 2018 23:42:14 GMT
+	Accept-Ranges: bytes
+	Content-Length: 250749
+	X-Frame-Options: SAMEORIGIN
+	X-XSS-Protection: 1; mode=block
+	Content-Type: image/png
+	
+]0;student@student-VirtualBox: ~/lab4[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab4[00m$ ./lab4b -c merlot.usc.edu 80 /cs353/invalid x6
+echo-client at 172.31.18.216:40498 is connected to server at 68.181.32.44:80
+	GET /cs353/invalid HTTP/1.1
+	User-Agent: lab4b
+	Accept: */*
+	Host: merlot.usc.edu:80
+	
+	HTTP/1.1 404 Not Found
+	Date: Tue, 11 Feb 2025 08:29:35 GMT
+	Server: Apache
+	Content-Length: 196
+	Content-Type: text/html; charset=iso-8859-1
+	
+]0;student@student-VirtualBox: ~/lab4[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab4[00m$ ls -l x?
+-rw------- 1 student student    190 Feb 11 00:29 x0
+-rw------- 1 student student   1689 Feb 11 00:29 x1
+-rw------- 1 student student 416140 Feb 11 00:29 x2
+-rw------- 1 student student 746248 Feb 11 00:29 x3
+-rw------- 1 student student  95957 Feb 11 00:29 x4
+-rw------- 1 student student 250749 Feb 11 00:29 x5
+-rw------- 1 student student    196 Feb 11 00:29 x6
+]0;student@student-VirtualBox: ~/lab4[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab4[00m$ exit
+exit
+
+Script done on Tue 11 Feb 2025 12:31:16 AM PST

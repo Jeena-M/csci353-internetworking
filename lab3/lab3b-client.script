@@ -1,0 +1,80 @@
+Script started on Tue 04 Feb 2025 08:56:05 PM PST
+]0;student@student-VirtualBox: ~/lab3[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab3[00m$ ./echo-client 12345
+echo-client at 127.0.0.1:57740 is connected to server at 127.0.0.1:12345
+Enter a string to send to the echo server: Hello!
+7 bytes sent from 127.0.0.1:57740
+7 bytes received, see next line for data...
+Hello!
+]0;student@student-VirtualBox: ~/lab3[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab3[00m$ gdb echo-client
+GNU gdb (Ubuntu 7.11.1-0ubuntu1~16.5) 7.11.1
+Copyright (C) 2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "i686-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from echo-client...done.
+(gdb) list 61
+56	void talk_to_user_and_server(int client_socket_fd)
+57	{
+58	    cout << "Enter a string to send to the echo server: ";
+59	    string message;
+60	    getline(cin, message);
+61	    if (message.length() > 0) {
+62	        message += '\n';
+63	        int bytes_sent = write(client_socket_fd, message.c_str(), message.length());
+64	        cout << bytes_sent << " bytes sent from " << get_ip_and_port_for_client(client_socket_fd, 1) << endl;
+65	
+(gdb) break 61
+Breakpoint 1 at 0x804955a: file echo-client.cpp, line 61.
+(gdb) run 12345
+Starting program: /home/student/lab3/echo-client 12345
+echo-client at 127.0.0.1:57742 is connected to server at 127.0.0.1:12345
+Enter a string to send to the echo server: Bye.
+
+Breakpoint 1, talk_to_user_and_server (client_socket_fd=3)
+    at echo-client.cpp:61
+61	    if (message.length() > 0) {
+(gdb) list
+56	void talk_to_user_and_server(int client_socket_fd)
+57	{
+58	    cout << "Enter a string to send to the echo server: ";
+59	    string message;
+60	    getline(cin, message);
+61	    if (message.length() > 0) {
+62	        message += '\n';
+63	        int bytes_sent = write(client_socket_fd, message.c_str(), message.length());
+64	        cout << bytes_sent << " bytes sent from " << get_ip_and_port_for_client(client_socket_fd, 1) << endl;
+65	
+(gdb) p messaa[Kge.c_str()
+$1 = 0xbfffeed4 "Bye."
+(gdb) p message.length()
+$2 = 4
+(gdb) p message [K.c_t[Kstr()[0]
+$3 = 66 'B'
+(gdb) p message.c_str()[1]
+$4 = 121 'y'
+(gdb) p message.c_str()[2]
+$5 = 101 'e'
+(gdb) p message.c_str()[3]
+$6 = 46 '.'
+(gdb) p message c[K[K.c_str()[4]
+$7 = 0 '\000'
+(gdb) c
+Continuing.
+5 bytes sent from 127.0.0.1:57742
+5 bytes received, see next line for data...
+Bye.
+[Inferior 1 (process 12897) exited normally]
+(gdb) quit
+]0;student@student-VirtualBox: ~/lab3[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab3[00m$ exit
+exit
+
+Script done on Tue 04 Feb 2025 09:01:18 PM PST

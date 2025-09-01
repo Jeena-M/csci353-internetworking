@@ -1,0 +1,30 @@
+Script started on Sat 25 Jan 2025 12:26:56 PM PST
+]0;student@student-VirtualBox: ~/lab2[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab2[00m$ make clean
+rm -f lab2a lab2b lab2c *.o
+]0;student@student-VirtualBox: ~/lab2[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab2[00m$ make lab2c
+g++ -g -Wall -std=c++11 -DLOCALHOST=\"127.0.0.1\" -o lab2c lab2c.cpp
+]0;student@student-VirtualBox: ~/lab2[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab2[00m$ ./lab2c 0 lab2data/graph4.txt
+itr 0: add node 0, distance 0, predecessor 0
+itr 1: add node 2, distance 1, predecessor 0
+itr 2: add node 3, distance 4, predecessor 2
+itr 3: add node 1, distance 5, predecessor 0
+]0;student@student-VirtualBox: ~/lab2[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab2[00m$ ./al[K[Klab2c 2 lab2data/graph5.txt
+itr 0: add node 2, distance 0, predecessor 2
+itr 1: add node 3, distance 2, predecessor 2
+itr 2: add node 1, distance 3, predecessor 3
+itr 3: add node 0, distance 4, predecessor 2
+itr 4: add node 5, distance 5, predecessor 3
+itr 5: add node 4, distance 8, predecessor 1
+]0;student@student-VirtualBox: ~/lab2[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab2[00m$ ./lab2c 4 lab2data/graph6.txt
+itr 0: add node 4, distance 0, predecessor 4
+itr 1: add node 3, distance 4, predecessor 4
+itr 2: add node 5, distance 7, predecessor 4
+itr 3: add node 1, distance 8, predecessor 5
+itr 4: add node 2, distance 10, predecessor 1
+itr 5: add node 0, distance 12, predecessor 5
+]0;student@student-VirtualBox: ~/lab2[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab2[00m$ make clan[K[Kean
+rm -f lab2a lab2b lab2c *.o
+]0;student@student-VirtualBox: ~/lab2[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab2[00m$ exit
+exit
+
+Script done on Sat 25 Jan 2025 12:28:21 PM PST

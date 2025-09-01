@@ -1,0 +1,50 @@
+Script started on Wed 05 Feb 2025 06:29:08 PM PST
+]0;student@student-VirtualBox: ~/lab3[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab3[00m$ ./lab3d -c 12345
+echo-client at 127.0.0.1:57990 is connected to server at 127.0.0.1:12345
+Enter a string to send to the echo server: hello
+6 bytes sent from 127.0.0.1:57990
+6 bytes received, see next line for data...
+hello
+Enter a string to send to the echo server: how are o you?
+13 bytes sent from 127.0.0.1:57990
+13 bytes received, see next line for data...
+how are you?
+Enter a string to send to the echo server: bye
+4 bytes sent from 127.0.0.1:57990
+4 bytes received, see next line for data...
+bye
+Enter a string to send to the echo server: 
+1 bytes sent from 127.0.0.1:57990
+1 bytes received, see next line for data...
+
+]0;student@student-VirtualBox: ~/lab3[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab3[00m$ ./lab3d -c 12345
+echo-client at 127.0.0.1:57992 is connected to server at 127.0.0.1:12345
+Enter a string to send to the echo server: testing
+8 bytes sent from 127.0.0.1:57992
+8 bytes received, see next line for data...
+testing
+Enter a string to send to the echo server: 1
+2 bytes sent from 127.0.0.1:57992
+2 bytes received, see next line for data...
+1
+Enter a string to send to the echo server: 2
+2 bytes sent from 127.0.0.1:57992
+2 bytes received, see next line for data...
+2
+Enter a string to send to the echo server: 3
+2 bytes sent from 127.0.0.1:57992
+2 bytes received, see next line for data...
+3
+Enter a string to send to the echo server: 
+1 bytes sent from 127.0.0.1:57992
+1 bytes received, see next line for data...
+
+]0;student@student-VirtualBox: ~/lab3[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab3[00m$ ./k[Klab3d -c 12345
+echo-client at 127.0.0.1:57994 is connected to server at 127.0.0.1:12345
+Enter a string to send to the echo server: ^L
+2 bytes sent from 127.0.0.1:57994
+Error: Failure in reading line from server
+]0;student@student-VirtualBox: ~/lab3[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab3[00m$ exit
+exit
+
+Script done on Wed 05 Feb 2025 06:31:56 PM PST

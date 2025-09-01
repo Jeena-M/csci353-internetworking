@@ -1,0 +1,81 @@
+[Wed Feb  3 2021 10:15:53.206932] START: port=12345, rootdir='pa2data'
+[Wed Feb  3 2021 10:16:00.542538] CONNECT: 127.0.0.1:40346
+[Wed Feb  3 2021 10:16:00.542861] REQUEST: 127.0.0.1:40346, uri=/persistent-3.html
+	GET /persistent-3.html HTTP/1.1
+	User-Agent: Wget/1.17.1 (linux-gnu)
+	Accept: */*
+	Accept-Encoding: identity
+	Host: 127.0.0.1:12345
+	Connection: Keep-Alive
+
+[Wed Feb  3 2021 10:16:00.543217] RESPONSE: 127.0.0.1:40346, status=200
+	HTTP/1.1 200 OK
+	Server: pa2 (bill.cheng@usc.edu)
+	Content-Type: text/html
+	Content-Length: 194
+	Content-MD5: 6d10dec6ff0376b76b706ee0741e2ab7
+	
+[Wed Feb  3 2021 10:16:00.794785] REQUEST: 127.0.0.1:40346, uri=/robots.txt
+	GET /robots.txt HTTP/1.1
+	User-Agent: Wget/1.17.1 (linux-gnu)
+	Accept: */*
+	Accept-Encoding: identity
+	Host: 127.0.0.1:12345
+	Connection: Keep-Alive
+
+[Wed Feb  3 2021 10:16:00.794978] RESPONSE: 127.0.0.1:40346, status=404
+	HTTP/1.1 404 Not Found
+	Server: pa2 (bill.cheng@usc.edu)
+	Content-Type: text/html
+	Content-Length: 63
+	Content-MD5: 5b7e68429c49c66e88489a80d9780025
+	
+[Wed Feb  3 2021 10:16:00.971990] REQUEST: 127.0.0.1:40346, uri=/textbooks-2-small.jpg
+	GET /textbooks-2-small.jpg HTTP/1.1
+	Referer: http://127.0.0.1:12345/persistent-3.html
+	User-Agent: Wget/1.17.1 (linux-gnu)
+	Accept: */*
+	Accept-Encoding: identity
+	Host: 127.0.0.1:12345
+	Connection: Keep-Alive
+
+[Wed Feb  3 2021 10:16:00.982032] RESPONSE: 127.0.0.1:40346, status=200
+	HTTP/1.1 200 OK
+	Server: pa2 (bill.cheng@usc.edu)
+	Content-Type: application/octet-stream
+	Content-Length: 10525
+	Content-MD5: 3f21950127b581aa1d9a264e8d06845b
+	
+[Wed Feb  3 2021 10:16:03.924796] REQUEST: 127.0.0.1:40346, uri=/textbooks-3-small.jpg
+	GET /textbooks-3-small.jpg HTTP/1.1
+	Referer: http://127.0.0.1:12345/persistent-3.html
+	User-Agent: Wget/1.17.1 (linux-gnu)
+	Accept: */*
+	Accept-Encoding: identity
+	Host: 127.0.0.1:12345
+	Connection: Keep-Alive
+
+[Wed Feb  3 2021 10:16:03.934790] RESPONSE: 127.0.0.1:40346, status=200
+	HTTP/1.1 200 OK
+	Server: pa2 (bill.cheng@usc.edu)
+	Content-Type: application/octet-stream
+	Content-Length: 14265
+	Content-MD5: 0fa2a445f252d4355aa760a54c93825e
+	
+[Wed Feb  3 2021 10:16:07.513774] REQUEST: 127.0.0.1:40346, uri=/extra/usctommy-2.gif
+	GET /extra/usctommy-2.gif HTTP/1.1
+	Referer: http://127.0.0.1:12345/persistent-3.html
+	User-Agent: Wget/1.17.1 (linux-gnu)
+	Accept: */*
+	Accept-Encoding: identity
+	Host: 127.0.0.1:12345
+	Connection: Keep-Alive
+
+[Wed Feb  3 2021 10:16:07.524552] RESPONSE: 127.0.0.1:40346, status=200
+	HTTP/1.1 200 OK
+	Server: pa2 (bill.cheng@usc.edu)
+	Content-Type: application/octet-stream
+	Content-Length: 1433
+	Content-MD5: 27a020415f3afc20eb433f2c931dc52e
+	
+[Wed Feb  3 2021 10:16:08.025947] CLOSE: 127.0.0.1:40346

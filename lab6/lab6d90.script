@@ -1,0 +1,46 @@
+Script started on Wed 26 Feb 2025 07:43:00 PM PST
+]0;student@student-VirtualBox: ~/lab6[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab6[00m$ exitywget -O x http://localhost:12345/upc_map.pdf ---debug
+DEBUG output created by Wget 1.17.1 on linux-gnu.
+
+Reading HSTS entries from /home/student/.wget-hsts
+URI encoding = ‘UTF-8’
+--2025-02-26 19:43:09--  http://localhost:12345/upc_map.pdf
+Resolving localhost (localhost)... 127.0.0.1
+Caching localhost => 127.0.0.1
+Connecting to localhost (localhost)|127.0.0.1|:12345... connected.
+Created socket 4.
+Releasing 0x01f232a8 (new refcount 1).
+
+---request begin---
+GET /upc_map.pdf HTTP/1.1
+User-Agent: Wget/1.17.1 (linux-gnu)
+Accept: */*
+Accept-Encoding: identity
+Host: localhost:12345
+Connection: Keep-Alive
+
+---request end---
+HTTP request sent, awaiting response... 
+---response begin---
+HTTP/1.1 200 OK
+Server: lab4a
+Content-Type: application/octet-stream
+Content-Length: 746248
+
+---response end---
+200 OK
+Registered socket 4 for persistent reuse.
+Length: 746248 (729K) [application/octet-stream]
+Saving to: ‘x’
+
+x                     0%[                    ]       0  --.-KB/s               x                     2%[                    ]  19.00K  91.0KB/s               x                     5%[>                   ]  39.00K  91.0KB/s               x                     8%[>                   ]  59.00K  90.9KB/s               x                    10%[=>                  ]  79.00K  90.9KB/s               x                    13%[=>                  ]  99.00K  90.9KB/s               x                    16%[==>                 ] 119.00K  90.4KB/s               x                    19%[==>                 ] 139.00K  90.4KB/s               x                    21%[===>                ] 157.00K  90.2KB/s               x                    24%[===>                ] 177.00K  90.3KB/s               x                    27%[====>               ] 197.00K  90.3KB/s               x                    29%[====>               ] 217.00K  90.4KB/s               x                    32%[=====>              ] 237.00K  90.2KB/s               x                    35%[======>             ] 257.00K  90.2KB/s               x                    38%[======>             ] 277.00K  90.3KB/s    eta 5s     x                    40%[=======>            ] 297.00K  90.3KB/s    eta 5s     x                    43%[=======>            ] 317.00K  90.1KB/s    eta 5s     x                    46%[========>           ] 337.00K  89.9KB/s    eta 5s     x                    48%[========>           ] 357.00K  90.2KB/s    eta 5s     x                    51%[=========>          ] 377.00K  90.0KB/s    eta 4s     x                    54%[=========>          ] 397.00K  90.0KB/s    eta 4s     x                    57%[==========>         ] 417.00K  89.9KB/s    eta 4s     x                    59%[==========>         ] 437.00K  90.2KB/s    eta 4s     x                    62%[===========>        ] 457.00K  90.0KB/s    eta 4s     x                    65%[============>       ] 477.00K  90.1KB/s    eta 3s     x                    68%[============>       ] 497.00K  90.1KB/s    eta 3s     x                    70%[=============>      ] 516.00K  89.8KB/s    eta 3s     x                    73%[=============>      ] 537.00K  89.9KB/s    eta 3s     x                    76%[==============>     ] 557.00K  89.9KB/s    eta 3s     x                    79%[==============>     ] 577.00K  90.1KB/s    eta 2s     x                    81%[===============>    ] 597.00K  89.8KB/s    eta 2s     x                    84%[===============>    ] 617.00K  89.8KB/s    eta 2s     x                    87%[================>   ] 637.00K  90.0KB/s    eta 2s     x                    90%[=================>  ] 657.00K  90.0KB/s    eta 2s     x                    92%[=================>  ] 677.00K  90.0KB/s    eta 1s     x                    95%[==================> ] 696.00K  89.7KB/s    eta 1s     x                    98%[==================> ] 717.00K  90.0KB/s    eta 1s     x                   100%[===================>] 728.76K  89.9KB/s    in 8.1s    
+
+2025-02-26 19:43:17 (90.1 KB/s) - ‘x’ saved [746248/746248]
+
+Saving HSTS entries to /home/student/.wget-hsts
+]0;student@student-VirtualBox: ~/lab6[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab6[00m$ diff x lab4data/upc_map.pdf
+]0;student@student-VirtualBox: ~/lab6[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab6[00m$ diff y lab4data/upc_map.pdf
+]0;student@student-VirtualBox: ~/lab6[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab6[00m$ exit
+exit
+
+Script done on Wed 26 Feb 2025 07:43:45 PM PST

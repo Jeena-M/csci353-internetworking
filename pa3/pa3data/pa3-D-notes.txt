@@ -1,0 +1,35 @@
+wait for pa3 prompt in 1st window to appear
+in 2nd window, type <Ctrl+d> to run "wget -r -l 1 $url6" in dir2
+in 3rd window, type <Ctrl+d> to run "wget -r -l 1 $url6" in dir3
+in 1st window, wait for downloads to start, then type "status"
+    should see status of connections [1] and [2]
+windows 2 and 3 throughput should settle around 4.8 KB/s (+/- 10%)
+in 1st window, then type "status" again
+    should see status of connections [1] and [2]
+in 1st window, type "dial 1 100",
+    should see window 2 settle around 19.2 KB/s (+/- 10%)
+wait for window 2 to finish downloading /extra/rdt.pdf and
+  start downloading /viterbi-seal-rev-770x360.png
+in 1st window, type "status"
+    should see status of connections [1] and [2]
+wait for window 2 to settle around 1.05 KB/s (+/- 10%)
+in 1st window, type "close 2", wget in 3rd window should restart
+    should see window 3 settle around 4.8 KB/s (+/- 10%)
+in 1st window, type "status"
+    should see status of connections [1] and [3]
+in 1st window, type "dial 1 100" and then "dial 3 100"
+from now on, every time you see wget downloads a new file, type
+  "dial 1 100" and "dial 3 100" in 1st window
+    if downloading .png, rate should settle around 7 KB/s (+/- 10%)
+    if downloading .jpg, rate should settle around 5 KB/s (+/- 10%)
+    if downloading .pdf, rate should settle around 19.2 KB/s (+/- 10%)
+window 2 should finish all downloads first, type "status" in 1st window
+    make sure that only connection [3] is active
+wait for window 3 to finish all downloads, type "status" in 1st window
+    should see "No active connections"
+type "quit" in 1st window
+    pa3 should self-terminate
+in 1st window, type <Ctrl+d> to run a bunch of "diff" commands
+    should see no printout from "diff" commands
+in 1st window, type <Ctrl+d> to run "cat pa3.log"
+type <Ctrl+d> to close this pane

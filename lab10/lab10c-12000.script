@@ -1,0 +1,15 @@
+Script started on Wed 02 Apr 2025 10:32:28 PM PDT
+]0;student@student-VirtualBox: ~/lab10[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab10[00m$ exitscript lab10c-12002.scriptb-12002.script./lab10a lab10data/lab10-12002.iniexit[K./lab10a lab10data/lab10-12000.ini
+:12000> neighbors
+Active connections of :12000:
+	:12002,
+:12000> neighbors
+:12000 has no active neighbors
+:12000> neighbors
+Active connections of :12000:
+	:12002,
+:12000> quit
+]0;student@student-VirtualBox: ~/lab10[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab10[00m$ exit
+exit
+
+Script done on Wed 02 Apr 2025 10:35:13 PM PDT

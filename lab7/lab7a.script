@@ -1,0 +1,54 @@
+Script started on Mon 03 Mar 2025 01:31:34 PM PST
+]0;student@student-VirtualBox: ~/lab7[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab7[00m$ tcsh
+[4mstudent-VirtualBox[24m:[1m~/lab7[0m> uname -a
+Linux student-VirtualBox 4.15.0-142-generic #146~16.04.1-Ubuntu SMP Tue Apr 13 09:26:57 UTC 2021 i686 i686 i686 GNU/Linux
+[4mstudent-VirtualBox[24m:[1m~/lab7[0m> cat /etc/os-release
+NAME="Ubuntu"
+VERSION="16.04.7 LTS (Xenial Xerus)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 16.04.7 LTS"
+VERSION_ID="16.04"
+HOME_URL="http://www.ubuntu.com/"
+SUPPORT_URL="http://help.ubuntu.com/"
+BUG_REPORT_URL="http://bugs.launchpad.net/ubuntu/"
+VERSION_CODENAME=xenial
+UBUNTU_CODENAME=xenial
+[4mstudent-VirtualBox[24m:[1m~/lab7[0m> cd lab7data
+[4mstudent-VirtualBox[24m:[1m~/lab7/lab7data[0m> make clean
+rm -f a.out
+[4mstudent-VirtualBox[24m:[1m~/lab7/lab7data[0m> foreach f (race no-race no-race-atomic)
+foreach?  make $f
+foreach?     ./a.out
+foreach?     ./a.out
+foreach?     ./a.out
+foreach?     ./a.out
+foreach?     ./a.out
+foreach? end
+g++ -g -Wall -std=c++11 -DLOCALHOST=\"127.0.0.1\" race.cpp -pthread
+499953
+499893
+499654
+499799
+499904
+g++ -g -Wall -std=c++11 -DLOCALHOST=\"127.0.0.1\" no-race.cpp -pthread
+500000
+500000
+500000
+500000
+500000
+g++ -g -Wall -std=c++11 -DLOCALHOST=\"127.0.0.1\" no-race-atomic.cpp -pthread
+500000
+500000
+500000
+500000
+500000
+[4mstudent-VirtualBox[24m:[1m~/lab7/lab7data[0m> make clean
+rm -f a.out
+[4mstudent-VirtualBox[24m:[1m~/lab7/lab7data[0m> cd ..
+[4mstudent-VirtualBox[24m:[1m~/lab7[0m> exit
+exit
+]0;student@student-VirtualBox: ~/lab7[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab7[00m$ exit
+exit
+
+Script done on Mon 03 Mar 2025 01:32:32 PM PST

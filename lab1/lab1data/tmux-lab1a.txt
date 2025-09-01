@@ -1,0 +1,36 @@
+#!/bin/tcsh -f
+#
+# This script is for your convenience.  It's NOT EXACTLY THE SAME as going throught the steps in the grading guidelines.
+# It's best that you run through section (A) of the grading guidelines manually so you won't get any grading surprises!
+#
+# This file should be in the "lab1data" subdirectory of the directory where you have your "lab1a" executable.  To run it do:
+#     chmod 755 ./lab1data/tmux-lab1a.txt
+#     ./lab1data/tmux-lab1a.txt
+# To switch to use a different pane, please type <Cntrl+b> follwed the up/down/left/right key on your keyboard.
+#
+# lab1a topology:
+#     +-------+   +-------+     +-------+
+#     | 12000 +---+ 12002 +-----+ 12004 |
+#     +-------+   +-------+     +-------+
+
+set session_name="lab1a"
+set running=`tmux list-sessions | grep "${session_name}:"`
+
+if ("x$running" != "x") then
+    # it's running
+    echo "Session '${session_name}' already exists"
+else
+    # create 4 panes, one at the bottom, two on the left, and one on the right
+
+    # create a tmux session
+    /bin/rm -f lab1data/*.log
+    tmux new-session -d -s ${session_name} 'echo "(window1) "; \
+            script -c "lab1data/lab1a.csh" lab1a.script; \
+            echo "[ (1) type <Ctrl+d> to close this pane ]"; cat'
+    # split the current pane vertically 95/5
+    tmux split-window -v -p 5
+    # split the top pane horizontally 60/40
+    tmux split-window -h -t top -p 40 'more lab1data/lab1a-notes.txt; cat'
+
+    tmux attach-session -d -t ${session_name}
+endif

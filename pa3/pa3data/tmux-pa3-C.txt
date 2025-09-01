@@ -1,0 +1,39 @@
+#!/bin/tcsh -f
+#
+# This script is for your convenience.  It's NOT EXACTLY THE SAME as going throught the steps in the grading guidelines.
+# It's best that you run through section (C) of the grading guidelines manually so you won't get any grading surprises!
+#
+# This file should be in the "pa3data" subdirectory of the directory where you have your "pa3" executable.  To run it do:
+#     chmod 755 ./pa3data/tmux-pa3-C.txt
+#     ./pa3data/tmux-pa3-C.txt
+# To switch to use a different pane, please type <Cntrl+b> follwed the up/down/left/right key on your keyboard.
+
+setenv SHELL "/bin/tcsh"
+set session_name="pa3"
+set running=`tmux list-sessions | grep "${session_name}:"`
+
+if ("x$running" != "x") then
+    # it's running
+    echo "Session '${session_name}' already exists.  Type 'tmux kill-session -t ${session_name}' to kill it."
+else
+    # create 4 panes, one at the bottom, two on the left, and one on the right
+
+    # create a tmux session
+    /bin/rm -f pa3data/*.log
+    tmux new-session -d -s ${session_name} 'echo "(window1) "; \
+            script -c "pa3data/pa3-C-1.csh" pa3-C.script; \
+            echo "[ (1) type <Ctrl+d> to close this pane ]"; cat'
+    # split the current pane vertically 95/5
+    tmux split-window -v -p 5
+    # split the top pane horizontally 60/40
+    tmux split-window -h -t top -p 40 'more pa3data/pa3-C-notes.txt; cat'
+    # split the left pane vertically 15/85
+    tmux split-window -v -t 0 -p 15 '\
+            echo "(window2) "; \
+            source pa3data/pa3-setup.csh; \
+            echo "[ (2) type <Ctrl+d> to run "\""wget -O f7.out "\$"url7"\"" ]"; cat; \
+            wget -O f7.out $url7; \
+            echo "[ (2) type <Ctrl+d> to close this pane ]"; cat'
+
+    tmux attach-session -d -t ${session_name}
+endif

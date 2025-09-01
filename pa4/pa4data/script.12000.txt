@@ -1,0 +1,14 @@
+Script started on Wed 05 Apr 2023 04:44:52 PM PDT
+
+:12000>
+[16:45:29.319841] r SAYHELLO :12002 1 - 0
+[16:45:29.321264] i SAYHELLO :12002 1 - 0
+neighbors
+Active neighbors of :12000:
+	:12002
+:12000> netgraph
+:12000: :12002
+:12002: :12000
+:12000> quit
+
+Script done on Wed 05 Apr 2023 04:46:08 PM PDT

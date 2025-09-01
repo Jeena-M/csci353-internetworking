@@ -1,0 +1,22 @@
+[Tue Mar 11 2025 21:49:41.027495] Server 127.0.0.1:12345 started
+[Tue Mar 11 2025 21:49:54.190240] [1]	Client connected from 127.0.0.1:44500 and requesting /usc-seal-1597x360.png
+[Tue Mar 11 2025 21:50:24.986310] [2]	Client connected from 127.0.0.1:44502 and requesting /viterbi-seal-rev-770x360.png
+[Tue Mar 11 2025 21:50:33.190619] [1]	Connection closed with client at 127.0.0.1:44500
+[Tue Mar 11 2025 21:50:33.311767] [1]	Reaper has joined with connection thread
+[Tue Mar 11 2025 21:50:33.556293] [3]	Client connected from 127.0.0.1:44504 and requesting /usc-seal-1597x360.png
+[Tue Mar 11 2025 21:50:38.986934] [2]	Connection closed with client at 127.0.0.1:44502
+[Tue Mar 11 2025 21:50:39.066135] [2]	Reaper has joined with connection thread
+[Tue Mar 11 2025 21:50:39.748234] [4]	Client connected from 127.0.0.1:44506 and requesting /viterbi-seal-rev-770x360.png
+[Tue Mar 11 2025 21:50:46.556478] [3]	Connection closed with client at 127.0.0.1:44504
+[Tue Mar 11 2025 21:50:46.570383] [3]	Reaper has joined with connection thread
+[Tue Mar 11 2025 21:50:46.748432] [4]	Connection closed with client at 127.0.0.1:44506
+[Tue Mar 11 2025 21:50:46.820584] [4]	Reaper has joined with connection thread
+[Tue Mar 11 2025 21:50:47.070782] Server 127.0.0.1:12345 stopped
+[Tue Mar 11 2025 21:50:52.240374] Server 127.0.0.1:12345 started
+[Tue Mar 11 2025 21:50:55.688326] [1]	Client connected from 127.0.0.1:44520 and requesting /usc-seal-1597x360.png
+[Tue Mar 11 2025 21:50:58.608138] [2]	Client connected from 127.0.0.1:44522 and requesting /viterbi-seal-rev-770x360.png
+[Tue Mar 11 2025 21:51:07.688872] [1]	Connection closed with client at 127.0.0.1:44520
+[Tue Mar 11 2025 21:51:07.754168] [1]	Reaper has joined with connection thread
+[Tue Mar 11 2025 21:51:08.608335] [2]	Connection closed with client at 127.0.0.1:44522
+[Tue Mar 11 2025 21:51:08.754669] [2]	Reaper has joined with connection thread
+[Tue Mar 11 2025 21:51:09.005100] Server 127.0.0.1:12345 stopped

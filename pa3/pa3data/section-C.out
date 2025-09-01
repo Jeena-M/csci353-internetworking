@@ -1,0 +1,36 @@
+> status
+[1]	Client at 127.0.0.1:41066
+	Path: /extra/USC-Graphic-Identity-Reference-2017.pdf
+	Content-Length: 1129744
+	Start-Time: [Tue Jan 19 2021 08:52:36.248326]
+	Shaper-Params: P=5, MAXR=96 tokens/s, DIAL=25%, rate=4.8 KB/s
+	Sent: 21.0 KB (1.90%), time elapsed: 4.18s
+> status
+[1]	Client at 127.0.0.1:41066
+	Path: /extra/USC-Graphic-Identity-Reference-2017.pdf
+	Content-Length: 1129744
+	Start-Time: [Tue Jan 19 2021 08:52:36.248326]
+	Shaper-Params: P=5, MAXR=96 tokens/s, DIAL=25%, rate=4.8 KB/s
+	Sent: 43.0 KB (3.89%), time elapsed: 8.87s
+> dial 1 100
+Dial for connection 1 at 100%.  Token rate at 96 tokens/s.  Data rate at 19.2 KB/s
+> dial 100
+Malformed dial command.  Correct synatx: dial # percent
+> close 8
+No such connection: 8
+> dial 7 100
+No such connection: 7
+> dial 1 500
+Dial value is out of range (it must be >=1 and <= 100)
+> dial 1 0
+Dial value is out of range (it must be >=1 and <= 100)
+> help
+Command not recognized.  Valid commands are:
+	close #
+	dial # percent
+	quit
+	status
+> status
+No active connections
+> quit
+Console thread terminated

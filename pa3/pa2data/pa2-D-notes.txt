@@ -1,0 +1,27 @@
+wait for pa2 to start running in 1st window
+
+in 2nd window, type <Ctrl+d> to run "wget -r $url10"
+    wait for downloads to finish
+    should see a bunch of printout in 1st window
+
+in 2nd window, type <Ctrl+d> to run "kill `cat pa2.pid`"
+    should see "Terminated" in 1st window
+
+in 2nd window, type <Ctrl+d> to run "ls -l 127.0.0.1:12345"
+    make sure that file size of persistent-2.html is 156 bytes
+
+in 2nd window, type <Ctrl+d> to run "openssl md5 $f10"
+    make sure MD5 is 6b39ad99e589a4e7a4051c9f91bf6a74
+
+in 2nd window, type <Ctrl+d> to run "ls -l 127.0.0.1:12345/extra"
+    make sure file size of binomial.pdf is 46320 bytes
+    make sure file size of USCHelmet.JPG is 28623 bytes
+
+in 2nd window, type <Ctrl+d> to run "openssl md5 127.0.0.1:12345/extra/*"
+    make sure MD5 of binomial.pdf is 4b603e419ef6273add764d24a7176dd8
+    make sure MD5 of USCHelmet.JPG.pdf is 43a1be149bbd2f24d07d167caf070736
+
+in 2nd window, type <Ctrl+d> to run "lsof -i 4"
+    make sure you don't see pa2 running
+
+type <Ctrl+d> to close this pane

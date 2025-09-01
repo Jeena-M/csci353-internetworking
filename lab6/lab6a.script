@@ -1,0 +1,245 @@
+Script started on Tue 25 Feb 2025 11:00:49 AM PST
+]0;student@student-VirtualBox: ~/lab6[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab6[00m$ tcsh
+[4mstudent-VirtualBox[24m:[1m~/lab6[0m> cd lab6data'[K
+[4mstudent-VirtualBox[24m:[1m~/lab6/lab6data[0m> make clean
+rm -f a.out
+[4mstudent-VirtualBox[24m:[1m~/lab6/lab6data[0m> foreach f (first first-arg fac create bad-cr eate join exit-detach detach)
+foreach?     make $f
+foreach?     ./a.out
+foreach? end
+g++ -g -Wall -std=c++11 -DLOCALHOST=\"127.0.0.1\" first.cpp -pthread
+Hello, World
+Hello, World
+Hello, World
+Hello, World
+Hello, World
+Hello, World
+Hello, World
+Hello, World
+Hello, World
+Hello, World
+g++ -g -Wall -std=c++11 -DLOCALHOST=\"127.0.0.1\" first-arg.cpp -pthread
+Hello, I am thread 6
+Hello, I am thread 7
+Hello, I am thread 8
+Hello, I am thread 9
+Hello, I am thread 5
+Hello, I am thread 4
+Hello, I am thread 3
+Hello, I am thread 2
+Hello, I am thread 1
+Hello, I am thread 0
+g++ -g -Wall -std=c++11 -DLOCALHOST=\"127.0.0.1\" fac.cpp -pthread
+6
+g++ -g -Wall -std=c++11 -DLOCALHOST=\"127.0.0.1\" create.cpp -pthread
+Hello, World - 6
+Hello, World - 7
+Hello, World - 8
+Hello, World - 9
+Hello, World - 5
+Hello, World - 4
+Hello, World - 3
+Hello, World - 2
+Hello, World - 1
+Hello, World - 0
+g++ -g -Wall -std=c++11 -DLOCALHOST=\"127.0.0.1\" bad-create.cpp -pthread
+terminate called without an active exception
+Abort (core dumped)
+g++ -g -Wall -std=c++11 -DLOCALHOST=\"127.0.0.1\" join.cpp -pthread
+Hello, World - 7
+Hello, World - 8
+Hello, World - 9
+Hello, World - 5
+Hello, World - 4
+Hello, World - 3
+Hello, World - 6
+Hello, World - 2
+Hello, World - 1
+Hello, World - 0
+Thread 0 joined
+Thread 1 joined
+Thread 2 joined
+Thread 3 joined
+Thread 4 joined
+Thread 5 joined
+Thread 6 joined
+Thread 7 joined
+Thread 8 joined
+Thread 9 joined
+g++ -g -Wall -std=c++11 -DLOCALHOST=\"127.0.0.1\" exit-detach.cpp -pthread
+g++ -g -Wall -std=c++11 -DLOCALHOST=\"127.0.0.1\" detach.cpp -pthread
+Hello, World - 6
+Hello, World - 7
+Hello, World - 8
+Hello, World - 9
+Hello, World - 5
+Hello, World - 4
+Hello, World - 3
+Hello, World - 2
+Hello, World - 1
+Hello, World - 0
+[4mstudent-VirtualBox[24m:[1m~/lab6/lab6data[0m> foreach f (bad-dyn-create bad-dyn-create2 ba d-dyn-create3 bad-dyn-create4)
+foreach?     make $f
+foreach?     ./a.out
+foreach? end
+g++ -g -Wall -std=c++11 -DLOCALHOST=\"127.0.0.1\" bad-dyn-create.cpp -pthread
+terminate called without an active exception
+Abort (core dumped)
+g++ -g -Wall -std=c++11 -DLOCALHOST=\"127.0.0.1\" bad-dyn-create2.cpp -pthread
+Hello, World - 6
+Hello, World - 7
+Hello, World - 8
+Hello, World - 9
+Hello, World - 5
+Hello, World - 4
+Hello, World - 3
+Hello, World - 2
+Hello, World - 1
+Hello, World - 0
+terminate called without an active exception
+Abort (core dumped)
+g++ -g -Wall -std=c++11 -DLOCALHOST=\"127.0.0.1\" bad-dyn-create3.cpp -pthread
+In file included from [01m[K/usr/include/i386-linux-gnu/c++/5/bits/c++allocator.h:33:0[m[K,
+                 from [01m[K/usr/include/c++/5/bits/allocator.h:46[m[K,
+                 from [01m[K/usr/include/c++/5/string:41[m[K,
+                 from [01m[K/usr/include/c++/5/bits/locale_classes.h:40[m[K,
+                 from [01m[K/usr/include/c++/5/bits/ios_base.h:41[m[K,
+                 from [01m[K/usr/include/c++/5/ios:42[m[K,
+                 from [01m[K/usr/include/c++/5/ostream:38[m[K,
+                 from [01m[K/usr/include/c++/5/iostream:39[m[K,
+                 from [01m[Kbad-dyn-create3.cpp:4[m[K:
+/usr/include/c++/5/ext/new_allocator.h: In instantiation of ‘[01m[Kvoid __gnu_cxx::new_allocator<_Tp>::construct(_Up*, _Args&& ...) [with _Up = std::thread; _Args = {const std::thread&}; _Tp = std::thread][m[K’:
+[01m[K/usr/include/c++/5/bits/alloc_traits.h:530:4:[m[K   required from ‘[01m[Kstatic void std::allocator_traits<std::allocator<_CharT> >::construct(std::allocator_traits<std::allocator<_CharT> >::allocator_type&, _Up*, _Args&& ...) [with _Up = std::thread; _Args = {const std::thread&}; _Tp = std::thread; std::allocator_traits<std::allocator<_CharT> >::allocator_type = std::allocator<std::thread>][m[K’
+[01m[K/usr/include/c++/5/bits/stl_vector.h:917:30:[m[K   required from ‘[01m[Kvoid std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = std::thread; _Alloc = std::allocator<std::thread>; std::vector<_Tp, _Alloc>::value_type = std::thread][m[K’
+[01m[Kbad-dyn-create3.cpp:16:20:[m[K   required from here
+[01m[K/usr/include/c++/5/ext/new_allocator.h:120:4:[m[K [01;31m[Kerror: [m[Kuse of deleted function ‘[01m[Kstd::thread::thread(const std::thread&)[m[K’
+  { ::new((void *)__p) _Up(std::forward<_Args>(__args)...); }
+[01;32m[K    ^[m[K
+In file included from [01m[Kbad-dyn-create3.cpp:6:0[m[K:
+[01m[K/usr/include/c++/5/thread:126:5:[m[K [01;36m[Knote: [m[Kdeclared here
+     thread(const thread&) = delete;
+[01;32m[K     ^[m[K
+Makefile:48: recipe for target 'bad-dyn-create3' failed
+make: *** [bad-dyn-create3] Error 1
+Hello, World - 6
+Hello, World - 7
+Hello, World - 8
+Hello, World - 9
+Hello, World - 5
+Hello, World - 4
+Hello, World - 3
+Hello, World - 2
+Hello, World - 1
+Hello, World - 0
+terminate called without an active exception
+Abort (core dumped)
+g++ -g -Wall -std=c++11 -DLOCALHOST=\"127.0.0.1\" bad-dyn-create4.cpp -pthread
+Hello, World - 6
+Hello, World - 7
+Hello, World - 8
+Hello, World - 9
+Hello, World - 5
+Hello, World - 4
+Hello, World - 3
+Hello, World - 2
+Hello, World - 1
+Hello, World - 0
+terminate called without an active exception
+Abort (core dumped)
+[4mstudent-VirtualBox[24m:[1m~/lab6/lab6data[0m> foreach f (join-dyn join-dyn4 join-new join- shared)
+foreach?     make $f
+foreach?     ./a.out
+foreach? end
+g++ -g -Wall -std=c++11 -DLOCALHOST=\"127.0.0.1\" join-dyn.cpp -pthread
+Hello, World - 6
+Hello, World - 7
+Hello, World - 8
+Hello, World - 9
+Hello, World - 5
+Hello, World - 4
+Hello, World - 3
+Hello, World - 2
+Hello, World - 1
+Hello, World - 0
+Joined 1 thread(s)
+Joined 2 thread(s)
+Joined 3 thread(s)
+Joined 4 thread(s)
+Joined 5 thread(s)
+Joined 6 thread(s)
+Joined 7 thread(s)
+Joined 8 thread(s)
+Joined 9 thread(s)
+Joined 10 thread(s)
+g++ -g -Wall -std=c++11 -DLOCALHOST=\"127.0.0.1\" join-dyn4.cpp -pthread
+Hello, World - 6
+Hello, World - 7
+Hello, World - 8
+Hello, World - 9
+Hello, World - 5
+Hello, World - 4
+Hello, World - 3
+Hello, World - 2
+Hello, World - 1
+Hello, World - 0
+Joined 1 thread(s)
+Joined 2 thread(s)
+Joined 3 thread(s)
+Joined 4 thread(s)
+Joined 5 thread(s)
+Joined 6 thread(s)
+Joined 7 thread(s)
+Joined 8 thread(s)
+Joined 9 thread(s)
+Joined 10 thread(s)
+g++ -g -Wall -std=c++11 -DLOCALHOST=\"127.0.0.1\" join-new.cpp -pthread
+Hello, World - 6
+Hello, World - 7
+Hello, World - 8
+Hello, World - 9
+Hello, World - 5
+Hello, World - 4
+Hello, World - 3
+Hello, World - 2
+Hello, World - 1
+Hello, World - 0
+Joined 1 thread(s)
+Joined 2 thread(s)
+Joined 3 thread(s)
+Joined 4 thread(s)
+Joined 5 thread(s)
+Joined 6 thread(s)
+Joined 7 thread(s)
+Joined 8 thread(s)
+Joined 9 thread(s)
+Joined 10 thread(s)
+g++ -g -Wall -std=c++11 -DLOCALHOST=\"127.0.0.1\" join-shared.cpp -pthread
+Hello, World - 6
+Hello, World - 7
+Hello, World - 8
+Hello, World - 9
+Hello, World - 5
+Hello, World - 4
+Hello, World - 3
+Hello, World - 2
+Hello, World - 1
+Hello, World - 0
+Joined 1 thread(s)
+Joined 2 thread(s)
+Joined 3 thread(s)
+Joined 4 thread(s)
+Joined 5 thread(s)
+Joined 6 thread(s)
+Joined 7 thread(s)
+Joined 8 thread(s)
+Joined 9 thread(s)
+Joined 10 thread(s)
+[4mstudent-VirtualBox[24m:[1m~/lab6/lab6data[0m> make clean
+rm -f a.out
+[4mstudent-VirtualBox[24m:[1m~/lab6/lab6data[0m> cd ..
+[4mstudent-VirtualBox[24m:[1m~/lab6[0m> exit
+exit
+]0;student@student-VirtualBox: ~/lab6[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab6[00m$ exit
+exit
+
+Script done on Tue 25 Feb 2025 11:02:45 AM PST

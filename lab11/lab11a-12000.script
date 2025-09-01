@@ -1,0 +1,86 @@
+Script started on Fri 11 Apr 2025 08:07:19 PM PDT
+]0;student@student-VirtualBox: ~/lab11[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab11[00m$ uname -a
+Linux student-VirtualBox 4.15.0-142-generic #146~16.04.1-Ubuntu SMP Tue Apr 13 09:26:57 UTC 2021 i686 i686 i686 GNU/Linux
+]0;student@student-VirtualBox: ~/lab11[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab11[00m$ cat /etc/os-release
+NAME="Ubuntu"
+VERSION="16.04.7 LTS (Xenial Xerus)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 16.04.7 LTS"
+VERSION_ID="16.04"
+HOME_URL="http://www.ubuntu.com/"
+SUPPORT_URL="http://help.ubuntu.com/"
+BUG_REPORT_URL="http://bugs.launchpad.net/ubuntu/"
+VERSION_CODENAME=xenial
+UBUNTU_CODENAME=xenial
+]0;student@student-VirtualBox: ~/lab11[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab11[00m$ make clean
+rm -f *.o lab11a 
+]0;student@student-VirtualBox: ~/lab11[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab11[00m$ make lab11a
+g++ -g -Wall -std=c++11 -DLOCALHOST=\"127.0.0.1\" -o lab11a lab11a.cpp my_socket.cpp my_timestamp.cpp -lcrypto -pthread
+[01m[Klab11a.cpp:[m[K In function ‘[01m[Kvoid neighbors_thread(std::vector<std::__cxx11::basic_string<char> >&, std::__cxx11::string, std::__cxx11::string)[m[K’:
+[01m[Klab11a.cpp:1068:14:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [-Wsign-compare]
+     while (i < file_lines.size() && file_lines[i][0] != '[') { 
+[01;32m[K              ^[m[K
+[01m[Klab11a.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[Klab11a.cpp:1453:18:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [-Wsign-compare]
+         while (i < file_lines.size() && file_lines[i][0] != '['){
+[01;32m[K                  ^[m[K
+[01m[Klab11a.cpp:1481:18:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [-Wsign-compare]
+         while (j < file_lines.size() && file_lines[j][0] != '['){
+[01;32m[K                  ^[m[K
+[01m[Klab11a.cpp:1509:18:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [-Wsign-compare]
+         while (k < file_lines.size() && file_lines[k][0] != '['){
+[01;32m[K                  ^[m[K
+[01m[Klab11a.cpp:[m[K At global scope:
+[01m[Klab11a.cpp:146:6:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid usage_server()[m[K’ defined but not used [-Wunused-function]
+ void usage_server()
+[01;32m[K      ^[m[K
+[01m[Klab11a.cpp:174:5:[m[K [01;35m[Kwarning: [m[K‘[01m[Kint get_file_size(std::__cxx11::string)[m[K’ defined but not used [-Wunused-function]
+ int get_file_size(string path)
+[01;32m[K     ^[m[K
+]0;student@student-VirtualBox: ~/lab11[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab11[00m$ ./lab11a lab11data/lab11-12000.ini
+:12000> neighbors
+:12000 has no active neighbors
+:12000> netgraph
+:12000 has no active neighbors
+:12000> [Fri Apr 11 2025 20:08:13.612783] i LSUPDATE 12002 9 F 5 12000_2_1744427293.612775 1744427293.612769 12000 (12002)
+[Fri Apr 11 2025 20:08:13.613327] r LSUPDATE 12002 9 F 5 12002_2_1744427293.613032 1744427293.613028 12002 (12000)
+
+:12000> netgraph
+12000: 12002,
+12002: 12000
+:12000> [Fri Apr 11 2025 20:09:05.579365] r LSUPDATE 12002 9 F 11 12002_4_1744427345.579065 1744427293.613028 12002 (12000,12004)
+[Fri Apr 11 2025 20:09:05.580281] r LSUPDATE 12002 8 F 5 12004_2_1744427345.579675 1744427345.579671 12004 (12002)
+[Fri Apr 11 2025 20:09:05.580333] i LSUPDATE 12002 9 F 5 12000_5_1744427345.580308 1744427293.612769 12000 (12002)
+[Fri Apr 11 2025 20:09:05.582757] r LSUPDATE 12002 8 F 5 12004_5_1744427345.582074 1744427345.579671 12004 (12002)
+[Fri Apr 11 2025 20:09:05.582797] i LSUPDATE 12002 9 F 5 12000_6_1744427345.582776 1744427293.612769 12000 (12002)
+
+:12000> netgraph
+12000: 12002,
+12002: 12000,12004
+12004: 12002
+:12000> [Fri Apr 11 2025 20:12:15.284447] i LSUPDATE 12002 9 F 0 12000_7_1744427535.284443 1744427293.612769 12000 ()
+
+:12000> neighbors
+:12000 has no active neighbors
+:12000> e netgraph
+:12000 has no active neighbors
+:12000> [Fri Apr 11 2025 20:12:54.543203] i LSUPDATE 12002 9 F 5 12000_8_1744427574.543198 1744427293.612769 12000 (12002)
+[Fri Apr 11 2025 20:12:54.544576] r LSUPDATE 12002 9 F 11 12002_2_1744427574.544282 1744427574.544145 12002 (12000,12004)
+[Fri Apr 11 2025 20:12:54.588925] r LSUPDATE 12002 9 F 11 12002_3_1744427574.545245 1744427574.544145 12002 (12000,12004)
+[Fri Apr 11 2025 20:12:54.589156] r LSUPDATE 12002 8 F 5 12004_7_1744427574.543920 1744427345.579671 12004 (12002)
+[Fri Apr 11 2025 20:12:54.589205] i LSUPDATE 12002 9 F 5 12000_9_1744427574.589173 1744427293.612769 12000 (12002)
+
+:12000> neighbors
+Active connections of :12000:
+	:12002,
+:12000> netgraph
+12000: 12002,
+12002: 12000,12004
+12004: 12002
+:12000> quit
+[Fri Apr 11 2025 20:14:31.578309] i LSUPDATE 12002 9 F 0 12000_10_1744427671.578305 1744427293.612769 12000 ()
+]0;student@student-VirtualBox: ~/lab11[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab11[00m$ exit
+exit
+
+Script done on Fri 11 Apr 2025 08:15:56 PM PDT

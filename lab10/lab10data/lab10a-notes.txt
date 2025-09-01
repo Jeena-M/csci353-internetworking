@@ -1,0 +1,22 @@
+Topology for lab10a:
+    +-------+   +-------+ 
+    | 12000 +---+ 12002 + 
+    +-------+   +-------+ 
+in 1st window, type "neighbors", should see:
+    :12000 has no active neighbors
+in 2nd window, type <Ctrl+d> to start node :12002
+wait for SAYHELLO to be exchanged
+in 2nd window, type "neighbors", should see:
+    Neighbors of :12002:    
+            :12000          
+in 1st window, type "neighbors", should see:
+    Neighbors of :12000:    
+            :12002          
+in 1st window, type "quit", :12000 should self-terminate
+in 2nd window, type "neighbors", should see:
+    :12002 has no active neighbors
+in 1st window, type <Ctrl+d> to restart node :12000
+wait for SAYHELLO to be exchanged
+in both windows, type "neighbors" to see both nodes are connected
+in both windows, type "quit" to see both nodes self-terminate
+type <Ctrl+d> after server has quit to close this pane

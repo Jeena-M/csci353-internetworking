@@ -1,0 +1,12 @@
+in 1st window, type <Ctrl+d> to run "./pa2 -c merlot.usc.edu 80 index.html out.1 cs353-s21/images/textbooks-3-small.jpg out.2"
+    wait for all downloads to finish
+
+in 1st window, type <Ctrl+d> to run "ls -l out.1 out.2"
+    make sure file size of out.1 is 190 bytes
+    make sure file size of out.2 is 14265 bytes
+
+in 1st window, type <Ctrl+d> to run "openssl md5 out.1 out.2"
+    make sure MD5 of out.1 is 52ff4c071264039a5f8408ae5e7e9ba1
+    make sure MD5 of out.2 is 0fa2a445f252d4355aa760a54c93825e
+
+type <Ctrl+d> to close this pane

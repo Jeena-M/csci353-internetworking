@@ -1,0 +1,72 @@
+Script started on Tue 11 Mar 2025 09:49:30 PM PDT
+]0;student@student-VirtualBox: ~/lab8[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab8[00m$ make clean
+rm -f *.o lab8a lab8b
+]0;student@student-VirtualBox: ~/lab8[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab8[00m$ make lab8b 
+g++ -g -Wall -std=c++11 -DLOCALHOST=\"127.0.0.1\" -o lab8b lab8b.cpp my_socket.cpp my_timestamp.cpp -lcrypto -pthread
+[01m[Klab8b.cpp:[m[K In function ‘[01m[Kvoid talk_to_client(std::shared_ptr<Connection>)[m[K’:
+[01m[Klab8b.cpp:426:25:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[KnumIterations[m[K’ [-Wunused-variable]
+                     int numIterations = 0;
+[01;32m[K                         ^[m[K
+[01m[Klab8b.cpp:[m[K In function ‘[01m[Kvoid talk_to_user_and_server(int, std::vector<std::__cxx11::basic_string<char> >&, std::__cxx11::string, int, std::vector<std::__cxx11::basic_string<char> >&)[m[K’:
+[01m[Klab8b.cpp:556:23:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [-Wsign-compare]
+     for (int j = 0; j < uris.size(); j++){
+[01;32m[K                       ^[m[K
+]0;student@student-VirtualBox: ~/lab8[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab8[00m$ ./lab8b 12345 lab8b.logfile
+> help
+Available commands are:
+	close
+	help
+	status
+	quit
+> status
+No active connections.
+> status
+Active connections:
+[1]	Client: 127.0.0.1:12345, Socket: 5, KB sent: 37
+[2]	Client: 127.0.0.1:12345, Socket: 6, KB sent: 6
+> close 1
+[1]	Close connection requested.
+> status
+Active connections:
+[2]	Client: 127.0.0.1:12345, Socket: 6, KB sent: 10
+[3]	Client: 127.0.0.1:12345, Socket: 8, KB sent: 2
+> close 2
+[2]	Close connection requested.
+> status
+Active connections:
+[3]	Client: 127.0.0.1:12345, Socket: 8, KB sent: 10
+[4]	Client: 127.0.0.1:12345, Socket: 5, KB sent: 4
+> quit
+]0;student@student-VirtualBox: ~/lab8[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab8[00m$ ./lab8b 12345 lab8b.logfile[16Pmake lab8b ./lab8b 12345 lab8b.logfile
+> status
+Active connections:
+[1]	Client: 127.0.0.1:12345, Socket: 5, KB sent: 9
+[2]	Client: 127.0.0.1:12345, Socket: 6, KB sent: 6
+> quit
+]0;student@student-VirtualBox: ~/lab8[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab8[00m$ cat lab8b.logfile
+[Tue Mar 11 2025 21:49:41.027495] Server 127.0.0.1:12345 started
+[Tue Mar 11 2025 21:49:54.190240] [1]	Client connected from 127.0.0.1:44500 and requesting /usc-seal-1597x360.png
+[Tue Mar 11 2025 21:50:24.986310] [2]	Client connected from 127.0.0.1:44502 and requesting /viterbi-seal-rev-770x360.png
+[Tue Mar 11 2025 21:50:33.190619] [1]	Connection closed with client at 127.0.0.1:44500
+[Tue Mar 11 2025 21:50:33.311767] [1]	Reaper has joined with connection thread
+[Tue Mar 11 2025 21:50:33.556293] [3]	Client connected from 127.0.0.1:44504 and requesting /usc-seal-1597x360.png
+[Tue Mar 11 2025 21:50:38.986934] [2]	Connection closed with client at 127.0.0.1:44502
+[Tue Mar 11 2025 21:50:39.066135] [2]	Reaper has joined with connection thread
+[Tue Mar 11 2025 21:50:39.748234] [4]	Client connected from 127.0.0.1:44506 and requesting /viterbi-seal-rev-770x360.png
+[Tue Mar 11 2025 21:50:46.556478] [3]	Connection closed with client at 127.0.0.1:44504
+[Tue Mar 11 2025 21:50:46.570383] [3]	Reaper has joined with connection thread
+[Tue Mar 11 2025 21:50:46.748432] [4]	Connection closed with client at 127.0.0.1:44506
+[Tue Mar 11 2025 21:50:46.820584] [4]	Reaper has joined with connection thread
+[Tue Mar 11 2025 21:50:47.070782] Server 127.0.0.1:12345 stopped
+[Tue Mar 11 2025 21:50:52.240374] Server 127.0.0.1:12345 started
+[Tue Mar 11 2025 21:50:55.688326] [1]	Client connected from 127.0.0.1:44520 and requesting /usc-seal-1597x360.png
+[Tue Mar 11 2025 21:50:58.608138] [2]	Client connected from 127.0.0.1:44522 and requesting /viterbi-seal-rev-770x360.png
+[Tue Mar 11 2025 21:51:07.688872] [1]	Connection closed with client at 127.0.0.1:44520
+[Tue Mar 11 2025 21:51:07.754168] [1]	Reaper has joined with connection thread
+[Tue Mar 11 2025 21:51:08.608335] [2]	Connection closed with client at 127.0.0.1:44522
+[Tue Mar 11 2025 21:51:08.754669] [2]	Reaper has joined with connection thread
+[Tue Mar 11 2025 21:51:09.005100] Server 127.0.0.1:12345 stopped
+]0;student@student-VirtualBox: ~/lab8[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab8[00m$ rciy[K[K[K[Kexit
+exit
+
+Script done on Tue 11 Mar 2025 09:51:54 PM PDT

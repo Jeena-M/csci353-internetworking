@@ -1,0 +1,10 @@
+[Tue Mar  4 2025 02:15:37.912703] Server 127.0.0.1:12345 started
+[Tue Mar  4 2025 02:15:51.622984] [1]	Client connected from 127.0.0.1:42140 and requesting /textbooks-3-small.jpg
+[Tue Mar  4 2025 02:15:53.989813] [2]	Client connected from 127.0.0.1:42142 and requesting /textbooks-1-small.jpg
+[Tue Mar  4 2025 02:16:05.623167] [1]	Connection closed with client at 127.0.0.1:42140
+[Tue Mar  4 2025 02:16:14.989984] [2]	Connection closed with client at 127.0.0.1:42142
+[Tue Mar  4 2025 02:17:49.328248] [3]	Client connected from 127.0.0.1:42150 and requesting /textbooks-3-small.jpg
+[Tue Mar  4 2025 02:17:52.043948] [4]	Client connected from 127.0.0.1:42152 and requesting /textbooks-1-small.jpg
+[Tue Mar  4 2025 02:18:03.328408] [3]	Connection closed with client at 127.0.0.1:42150
+[Tue Mar  4 2025 02:18:13.044133] [4]	Connection closed with client at 127.0.0.1:42152
+[Tue Mar  4 2025 02:18:20.571405] Server 127.0.0.1:12345 stopped

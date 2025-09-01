@@ -1,0 +1,36 @@
+Topology for lab10b:
+    +-------+   +-------+     +-------+ 
+    | 12000 +---+ 12002 +-----+ 12004 | 
+    +-------+   +---+---+     +---+---+ 
+                    |             |     
+                    |  +-------+  |     
+                    \--+ 12012 +--/     
+                       +-------+        
+wait for SAYHELLO to be exchanged
+in 1st window, type "neighbors", should see:
+    Neighbors of :12000:    
+            :12002          
+in 2nd window, type "neighbors", should see:
+    Neighbors of :12002:    
+            :12000,:12004,:12012
+in 3rd window, type "neighbors", should see:
+    Neighbors of :12004:    
+            :12002,:12012
+in 4th window, type "neighbors", should see:
+    Neighbors of :12012:    
+            :12002,:12004
+in 2nd window, type "quit", :12002 should self-terminate
+in 1st window, type "neighbors", should see:
+    :12000 has no active neighbors
+in 3rd window, type "neighbors", should see:
+    Neighbors of :12004:    
+            :12012
+in 4th window, type "neighbors", should see:
+    Neighbors of :12012:    
+            :12004
+in 2nd window, type <Ctrl+d> to restart node :12002
+wait for SAYHELLO to be exchanged
+in all windows, type "neighbors" and verify
+in all windows, type "quit" to see all nodes self-terminate
+in 4th window, type "more lab10data/*.log"
+type <Ctrl+d> after server has quit to close this pane

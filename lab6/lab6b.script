@@ -1,0 +1,298 @@
+Script started on Wed 26 Feb 2025 07:52:48 PM PST
+]0;student@student-VirtualBox: ~/lab6[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab6[00m$ uname -a
+Linux student-VirtualBox 4.15.0-142-generic #146~16.04.1-Ubuntu SMP Tue Apr 13 09:26:57 UTC 2021 i686 i686 i686 GNU/Linux
+]0;student@student-VirtualBox: ~/lab6[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab6[00m$ cat /etc/os-release
+NAME="Ubuntu"
+VERSION="16.04.7 LTS (Xenial Xerus)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 16.04.7 LTS"
+VERSION_ID="16.04"
+HOME_URL="http://www.ubuntu.com/"
+SUPPORT_URL="http://help.ubuntu.com/"
+BUG_REPORT_URL="http://bugs.launchpad.net/ubuntu/"
+VERSION_CODENAME=xenial
+UBUNTU_CODENAME=xenial
+]0;student@student-VirtualBox: ~/lab6[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab6[00m$ make clean
+rm -f *.o lab6d lab6b lab6c
+]0;student@student-VirtualBox: ~/lab6[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab6[00m$ make lab6b
+g++ -g -Wall -std=c++11 -DLOCALHOST=\"127.0.0.1\" -o lab6b lab6b.cpp my_socket.cpp -pthread
+[01m[Klab6b.cpp:[m[K In function ‘[01m[Kvoid talk_to_user_and_server(int, std::vector<std::__cxx11::basic_string<char> >&, std::__cxx11::string, int, std::vector<std::__cxx11::basic_string<char> >&)[m[K’:
+[01m[Klab6b.cpp:445:23:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [-Wsign-compare]
+     for (int j = 0; j < uris.size(); j++){
+[01;32m[K                       ^[m[K
+]0;student@student-VirtualBox: ~/lab6[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab6[00m$ ./lab6b 12345
+[1]	Client connected from 127.0.0.1:40530 and requesting /textbooks-3-small.jpg
+	GET /textbooks-3-small.jpg HTTP/1.1
+	User-Agent: Wget/1.17.1 (linux-gnu)
+	Accept: */*
+	Accept-Encoding: identity
+	Host: localhost:12345
+	Connection: Keep-Alive
+	
+	HTTP/1.1 200 OK
+	Server: lab4a
+	Content-Type: application/octet-stream
+	Content-Length: 14265
+	
+[1]	Sent 1 KB to 127.0.0.1:40530
+[1]	Sent 2 KB to 127.0.0.1:40530
+[1]	Sent 3 KB to 127.0.0.1:40530
+[1]	Sent 4 KB to 127.0.0.1:40530
+[1]	Sent 5 KB to 127.0.0.1:40530
+[1]	Sent 6 KB to 127.0.0.1:40530
+[1]	Sent 7 KB to 127.0.0.1:40530
+[2]	Client connected from 127.0.0.1:40532 and requesting /textbooks-2-small.jpg
+	GET /textbooks-2-small.jpg HTTP/1.1
+	User-Agent: Wget/1.17.1 (linux-gnu)
+	Accept: */*
+	Accept-Encoding: identity
+	Host: localhost:12345
+	Connection: Keep-Alive
+	
+	HTTP/1.1 200 OK
+	Server: lab4a
+	Content-Type: application/octet-stream
+	Content-Length: 10525
+	
+[2]	Sent 1 KB to 127.0.0.1:40532
+[1]	Sent 8 KB to 127.0.0.1:40530
+[2]	Sent 2 KB to 127.0.0.1:40532
+[1]	Sent 9 KB to 127.0.0.1:40530
+[2]	Sent 3 KB to 127.0.0.1:40532
+[1]	Sent 10 KB to 127.0.0.1:40530
+[2]	Sent 4 KB to 127.0.0.1:40532
+[1]	Sent 11 KB to 127.0.0.1:40530
+[2]	Sent 5 KB to 127.0.0.1:40532
+[1]	Sent 12 KB to 127.0.0.1:40530
+[2]	Sent 6 KB to 127.0.0.1:40532
+[1]	Sent 13 KB to 127.0.0.1:40530
+[2]	Sent 7 KB to 127.0.0.1:40532
+[1]	Sent 14 KB to 127.0.0.1:40530
+[2]	Sent 8 KB to 127.0.0.1:40532
+[1]	 Connection closed with client at 127.0.0.1:40530
+[2]	Sent 9 KB to 127.0.0.1:40532
+[2]	Sent 10 KB to 127.0.0.1:40532
+[2]	Sent 11 KB to 127.0.0.1:40532
+[2]	 Connection closed with client at 127.0.0.1:40532
+[3]	Client connected from 127.0.0.1:40534 and requesting /viterbi-seal-rev-770x360.png
+	GET /viterbi-seal-rev-770x360.png HTTP/1.1
+	User-Agent: Wget/1.17.1 (linux-gnu)
+	Accept: */*
+	Accept-Encoding: identity
+	Host: localhost:12345
+	Connection: Keep-Alive
+	
+	HTTP/1.1 200 OK
+	Server: lab4a
+	Content-Type: application/octet-stream
+	Content-Length: 95957
+	
+[3]	Sent 1 KB to 127.0.0.1:40534
+[3]	Sent 2 KB to 127.0.0.1:40534
+[3]	Sent 3 KB to 127.0.0.1:40534
+[3]	Sent 4 KB to 127.0.0.1:40534
+[3]	Sent 5 KB to 127.0.0.1:40534
+[3]	Sent 6 KB to 127.0.0.1:40534
+[4]	Client connected from 127.0.0.1:40536 and requesting /viterbi-seal-rev-770x360.png
+	GET /viterbi-seal-rev-770x360.png HTTP/1.1
+	User-Agent: Wget/1.17.1 (linux-gnu)
+	Accept: */*
+	Accept-Encoding: identity
+	Host: localhost:12345
+	Connection: Keep-Alive
+	
+	HTTP/1.1 200 OK
+	Server: lab4a
+	Content-Type: application/octet-stream
+	Content-Length: 95957
+	
+[4]	Sent 1 KB to 127.0.0.1:40536
+[3]	Sent 7 KB to 127.0.0.1:40534
+[4]	Sent 2 KB to 127.0.0.1:40536
+[3]	Sent 8 KB to 127.0.0.1:40534
+[4]	Sent 3 KB to 127.0.0.1:40536
+[3]	Sent 9 KB to 127.0.0.1:40534
+[4]	Sent 4 KB to 127.0.0.1:40536
+[3]	Sent 10 KB to 127.0.0.1:40534
+[4]	Sent 5 KB to 127.0.0.1:40536
+[3]	Sent 11 KB to 127.0.0.1:40534
+[4]	Sent 6 KB to 127.0.0.1:40536
+[3]	Sent 12 KB to 127.0.0.1:40534
+[4]	Sent 7 KB to 127.0.0.1:40536
+[3]	Sent 13 KB to 127.0.0.1:40534
+[4]	Sent 8 KB to 127.0.0.1:40536
+[3]	Sent 14 KB to 127.0.0.1:40534
+[4]	Sent 9 KB to 127.0.0.1:40536
+[3]	Sent 15 KB to 127.0.0.1:40534
+[4]	Sent 10 KB to 127.0.0.1:40536
+[3]	Sent 16 KB to 127.0.0.1:40534
+[4]	Sent 11 KB to 127.0.0.1:40536
+[3]	Sent 17 KB to 127.0.0.1:40534
+[4]	Sent 12 KB to 127.0.0.1:40536
+[3]	Sent 18 KB to 127.0.0.1:40534
+[4]	Sent 13 KB to 127.0.0.1:40536
+[3]	Sent 19 KB to 127.0.0.1:40534
+[4]	Sent 14 KB to 127.0.0.1:40536
+[3]	Sent 20 KB to 127.0.0.1:40534
+[4]	Sent 15 KB to 127.0.0.1:40536
+[3]	Sent 21 KB to 127.0.0.1:40534
+[4]	Sent 16 KB to 127.0.0.1:40536
+[3]	Sent 22 KB to 127.0.0.1:40534
+[4]	Sent 17 KB to 127.0.0.1:40536
+[3]	Sent 23 KB to 127.0.0.1:40534
+[4]	Sent 18 KB to 127.0.0.1:40536
+[3]	Sent 24 KB to 127.0.0.1:40534
+[4]	Sent 19 KB to 127.0.0.1:40536
+[3]	Sent 25 KB to 127.0.0.1:40534
+[4]	Sent 20 KB to 127.0.0.1:40536
+[3]	Sent 26 KB to 127.0.0.1:40534
+[4]	Sent 21 KB to 127.0.0.1:40536
+[3]	Sent 27 KB to 127.0.0.1:40534
+[4]	Sent 22 KB to 127.0.0.1:40536
+[3]	Sent 28 KB to 127.0.0.1:40534
+[4]	Sent 23 KB to 127.0.0.1:40536
+[3]	Sent 29 KB to 127.0.0.1:40534
+[4]	Sent 24 KB to 127.0.0.1:40536
+[3]	Sent 30 KB to 127.0.0.1:40534
+[4]	Sent 25 KB to 127.0.0.1:40536
+[3]	Sent 31 KB to 127.0.0.1:40534
+[4]	Sent 26 KB to 127.0.0.1:40536
+[3]	Sent 32 KB to 127.0.0.1:40534
+[4]	Sent 27 KB to 127.0.0.1:40536
+[3]	Sent 33 KB to 127.0.0.1:40534
+[4]	Sent 28 KB to 127.0.0.1:40536
+[3]	Sent 34 KB to 127.0.0.1:40534
+[4]	Sent 29 KB to 127.0.0.1:40536
+[3]	Sent 35 KB to 127.0.0.1:40534
+[4]	Sent 30 KB to 127.0.0.1:40536
+[3]	Sent 36 KB to 127.0.0.1:40534
+[4]	Sent 31 KB to 127.0.0.1:40536
+[3]	Sent 37 KB to 127.0.0.1:40534
+[4]	Sent 32 KB to 127.0.0.1:40536
+[3]	Sent 38 KB to 127.0.0.1:40534
+[4]	Sent 33 KB to 127.0.0.1:40536
+[3]	Sent 39 KB to 127.0.0.1:40534
+[4]	Sent 34 KB to 127.0.0.1:40536
+[3]	Sent 40 KB to 127.0.0.1:40534
+[4]	Sent 35 KB to 127.0.0.1:40536
+[3]	Sent 41 KB to 127.0.0.1:40534
+[4]	Sent 36 KB to 127.0.0.1:40536
+[3]	Sent 42 KB to 127.0.0.1:40534
+[4]	Sent 37 KB to 127.0.0.1:40536
+[3]	Sent 43 KB to 127.0.0.1:40534
+[4]	Sent 38 KB to 127.0.0.1:40536
+[3]	Sent 44 KB to 127.0.0.1:40534
+[4]	Sent 39 KB to 127.0.0.1:40536
+[3]	Sent 45 KB to 127.0.0.1:40534
+[4]	Sent 40 KB to 127.0.0.1:40536
+[3]	Sent 46 KB to 127.0.0.1:40534
+[4]	Sent 41 KB to 127.0.0.1:40536
+[3]	Sent 47 KB to 127.0.0.1:40534
+[4]	Sent 42 KB to 127.0.0.1:40536
+[3]	Sent 48 KB to 127.0.0.1:40534
+[4]	Sent 43 KB to 127.0.0.1:40536
+[3]	Sent 49 KB to 127.0.0.1:40534
+[4]	Sent 44 KB to 127.0.0.1:40536
+[3]	Sent 50 KB to 127.0.0.1:40534
+[4]	Sent 45 KB to 127.0.0.1:40536
+[3]	Sent 51 KB to 127.0.0.1:40534
+[4]	Sent 46 KB to 127.0.0.1:40536
+[3]	Sent 52 KB to 127.0.0.1:40534
+[4]	Sent 47 KB to 127.0.0.1:40536
+[3]	Sent 53 KB to 127.0.0.1:40534
+[4]	Sent 48 KB to 127.0.0.1:40536
+[3]	Sent 54 KB to 127.0.0.1:40534
+[4]	Sent 49 KB to 127.0.0.1:40536
+[3]	Sent 55 KB to 127.0.0.1:40534
+[4]	Sent 50 KB to 127.0.0.1:40536
+[3]	Sent 56 KB to 127.0.0.1:40534
+[4]	Sent 51 KB to 127.0.0.1:40536
+[3]	Sent 57 KB to 127.0.0.1:40534
+[4]	Sent 52 KB to 127.0.0.1:40536
+[3]	Sent 58 KB to 127.0.0.1:40534
+[4]	Sent 53 KB to 127.0.0.1:40536
+[3]	Sent 59 KB to 127.0.0.1:40534
+[4]	Sent 54 KB to 127.0.0.1:40536
+[3]	Sent 60 KB to 127.0.0.1:40534
+[4]	Sent 55 KB to 127.0.0.1:40536
+[3]	Sent 61 KB to 127.0.0.1:40534
+[4]	Sent 56 KB to 127.0.0.1:40536
+[3]	Sent 62 KB to 127.0.0.1:40534
+[4]	Sent 57 KB to 127.0.0.1:40536
+[3]	Sent 63 KB to 127.0.0.1:40534
+[4]	Sent 58 KB to 127.0.0.1:40536
+[3]	Sent 64 KB to 127.0.0.1:40534
+[4]	Sent 59 KB to 127.0.0.1:40536
+[3]	Sent 65 KB to 127.0.0.1:40534
+[4]	Sent 60 KB to 127.0.0.1:40536
+[3]	Sent 66 KB to 127.0.0.1:40534
+[4]	Sent 61 KB to 127.0.0.1:40536
+[3]	Sent 67 KB to 127.0.0.1:40534
+[4]	Sent 62 KB to 127.0.0.1:40536
+[3]	Sent 68 KB to 127.0.0.1:40534
+[4]	Sent 63 KB to 127.0.0.1:40536
+[3]	Sent 69 KB to 127.0.0.1:40534
+[4]	Sent 64 KB to 127.0.0.1:40536
+[3]	Sent 70 KB to 127.0.0.1:40534
+[4]	Sent 65 KB to 127.0.0.1:40536
+[3]	Sent 71 KB to 127.0.0.1:40534
+[4]	Sent 66 KB to 127.0.0.1:40536
+[3]	Sent 72 KB to 127.0.0.1:40534
+[4]	Sent 67 KB to 127.0.0.1:40536
+[3]	Sent 73 KB to 127.0.0.1:40534
+[4]	Sent 68 KB to 127.0.0.1:40536
+[3]	Sent 74 KB to 127.0.0.1:40534
+[4]	Sent 69 KB to 127.0.0.1:40536
+[3]	Sent 75 KB to 127.0.0.1:40534
+[4]	Sent 70 KB to 127.0.0.1:40536
+[3]	Sent 76 KB to 127.0.0.1:40534
+[4]	Sent 71 KB to 127.0.0.1:40536
+[3]	Sent 77 KB to 127.0.0.1:40534
+[4]	Sent 72 KB to 127.0.0.1:40536
+[3]	Sent 78 KB to 127.0.0.1:40534
+[4]	Sent 73 KB to 127.0.0.1:40536
+[3]	Sent 79 KB to 127.0.0.1:40534
+[4]	Sent 74 KB to 127.0.0.1:40536
+[3]	Sent 80 KB to 127.0.0.1:40534
+[4]	Sent 75 KB to 127.0.0.1:40536
+[3]	Sent 81 KB to 127.0.0.1:40534
+[4]	Sent 76 KB to 127.0.0.1:40536
+[3]	Sent 82 KB to 127.0.0.1:40534
+[4]	Sent 77 KB to 127.0.0.1:40536
+[3]	Sent 83 KB to 127.0.0.1:40534
+[4]	Sent 78 KB to 127.0.0.1:40536
+[3]	Sent 84 KB to 127.0.0.1:40534
+[4]	Sent 79 KB to 127.0.0.1:40536
+[3]	Sent 85 KB to 127.0.0.1:40534
+[4]	Sent 80 KB to 127.0.0.1:40536
+[3]	Sent 86 KB to 127.0.0.1:40534
+[4]	Sent 81 KB to 127.0.0.1:40536
+[3]	Sent 87 KB to 127.0.0.1:40534
+[4]	Sent 82 KB to 127.0.0.1:40536
+[3]	Sent 88 KB to 127.0.0.1:40534
+[4]	Sent 83 KB to 127.0.0.1:40536
+[3]	Sent 89 KB to 127.0.0.1:40534
+[4]	Sent 84 KB to 127.0.0.1:40536
+[3]	Sent 90 KB to 127.0.0.1:40534
+[4]	Sent 85 KB to 127.0.0.1:40536
+[3]	Sent 91 KB to 127.0.0.1:40534
+[4]	Sent 86 KB to 127.0.0.1:40536
+[3]	Sent 92 KB to 127.0.0.1:40534
+[4]	Sent 87 KB to 127.0.0.1:40536
+[3]	Sent 93 KB to 127.0.0.1:40534
+[4]	Sent 88 KB to 127.0.0.1:40536
+[3]	Sent 94 KB to 127.0.0.1:40534
+[4]	Sent 89 KB to 127.0.0.1:40536
+[3]	 Connection closed with client at 127.0.0.1:40534
+[4]	Sent 90 KB to 127.0.0.1:40536
+[4]	Sent 91 KB to 127.0.0.1:40536
+[4]	Sent 92 KB to 127.0.0.1:40536
+[4]	Sent 93 KB to 127.0.0.1:40536
+[4]	Sent 94 KB to 127.0.0.1:40536
+[4]	 Connection closed with client at 127.0.0.1:40536
+^C
+]0;student@student-VirtualBox: ~/lab6[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab6[00m$ exit
+exit
+
+Script done on Wed 26 Feb 2025 07:57:32 PM PST

@@ -1,0 +1,253 @@
+Script started on Tue 25 Mar 2025 04:16:32 PM PDT
+]0;student@student-VirtualBox: ~/lab9[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab9[00m$ tcsh
+[4mstudent-VirtualBox[24m:[1m~/lab9[0m> uname -a
+Linux student-VirtualBox 4.15.0-142-generic #146~16.04.1-Ubuntu SMP Tue Apr 13 09:26:57 UTC 2021 i686 i686 i686 GNU/Linux
+[4mstudent-VirtualBox[24m:[1m~/lab9[0m> cat /etc/os-release
+NAME="Ubuntu"
+VERSION="16.04.7 LTS (Xenial Xerus)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 16.04.7 LTS"
+VERSION_ID="16.04"
+HOME_URL="http://www.ubuntu.com/"
+SUPPORT_URL="http://help.ubuntu.com/"
+BUG_REPORT_URL="http://bugs.launchpad.net/ubuntu/"
+VERSION_CODENAME=xenial
+UBUNTU_CODENAME=xenial
+[4mstudent-VirtualBox[24m:[1m~/lab9[0m> cd lab9data
+[4mstudent-VirtualBox[24m:[1m~/lab9/lab9data[0m> make clean
+rm -f a.out
+[4mstudent-VirtualBox[24m:[1m~/lab9/lab9data[0m> foreach f (cv)
+foreach?     make $f
+foreach?     ./a.out
+foreach? end
+g++ -g -Wall -std=c++11 -DLOCALHOST=\"127.0.0.1\" cv.cpp -pthread
+Producer 3 added 30
+Consumer 3 got 30
+Producer 4 added 40
+Consumer 5 got 40
+Producer 5 added 50
+Consumer 4 got 50
+Producer 6 added 60
+Consumer 6 got 60
+Producer 7 added 70
+Consumer 7 got 70
+Producer 2 added 20
+Consumer 8 got 20
+Producer 8 added 80
+Producer 3 added 31
+Consumer 4 got 80
+Consumer 5 got 31
+Producer 5 added 51
+Consumer 6 got 51
+Producer 4 added 41
+Consumer 3 got 41
+Producer 6 added 61
+Consumer 7 got 61
+Producer 7 added 71
+Producer 2 added 21
+Consumer 8 got 71
+Producer 8 added 81
+Producer 3 added 32
+Consumer 4 got 21
+Consumer 5 got 81
+Producer 5 added 52
+Consumer 6 got 32
+Producer 4 added 42
+Consumer 3 got 52
+Producer 6 added 62
+Consumer 7 got 42
+Producer 7 added 72
+Producer 2 added 22
+Consumer 8 got 62
+Producer 3 added 33
+Consumer 9 got 72
+Consumer 4 got 22
+Producer 8 added 82
+Consumer 5 got 33
+Producer 5 added 53
+Producer 4 added 43
+Consumer 3 got 82
+Consumer 6 got 53
+Producer 6 added 63
+Consumer 3 got 43
+Consumer 5 got 63
+Producer 5 added 54
+Consumer 6 got 54
+Producer 4 added 44
+Producer 3 added 34
+Consumer 4 got 44
+Consumer 7 got 34
+Producer 7 added 73
+Producer 2 added 23
+Consumer 8 got 73
+Producer 9 added 90
+Producer 8 added 83
+Consumer 9 got 23
+Consumer 2 got 90
+Producer 1 added 10
+Consumer 1 got 83
+Producer 0 added 0
+Consumer 0 got 10
+Producer 6 added 64
+Consumer 3 got 0
+Consumer 5 got 64
+Producer 5 added 55
+Producer 4 added 45
+Consumer 6 got 55
+Consumer 4 got 45
+Producer 3 added 35
+Consumer 7 got 35
+Producer 7 added 74
+Producer 2 added 24
+Consumer 8 got 74
+Producer 9 added 91
+Producer 8 added 84
+Consumer 9 got 24
+Consumer 2 got 91
+Producer 1 added 11
+Consumer 1 got 84
+Producer 0 added 1
+Consumer 0 got 11
+Producer 6 added 65
+Consumer 5 got 1
+Consumer 3 got 65
+Producer 5 added 56
+Producer 4 added 46
+Consumer 6 got 56
+Consumer 4 got 46
+Producer 3 added 36
+Consumer 7 got 36
+Producer 7 added 75
+Producer 2 added 25
+Consumer 8 got 75
+Producer 9 added 92
+Producer 8 added 85
+Consumer 9 got 25
+Consumer 2 got 92
+Producer 1 added 12
+Consumer 1 got 85
+Producer 0 added 2
+Consumer 0 got 12
+Producer 6 added 66
+Consumer 3 got 2
+Consumer 5 got 66
+Producer 5 added 57
+Producer 4 added 47
+Consumer 6 got 57
+Consumer 4 got 47
+Producer 3 added 37
+Consumer 7 got 37
+Producer 7 added 76
+Consumer 3 got 76
+Producer 2 added 26
+Producer 6 added 67
+Consumer 8 got 26
+Consumer 5 got 67
+Producer 4 added 48
+Producer 5 added 58
+Consumer 4 got 48
+Consumer 6 got 58
+Producer 9 added 93
+Producer 8 added 86
+Producer 3 added 38
+Consumer 7 got 93
+Consumer 9 got 86
+Consumer 2 got 38
+Producer 1 added 13
+Consumer 1 got 13
+Producer 0 added 3
+Consumer 0 got 3
+Producer 7 added 77
+Consumer 5 got 77
+Producer 2 added 27
+Producer 5 added 59
+Consumer 6 got 27
+Consumer 3 got 59
+Producer 6 added 68
+Producer 3 added 39
+Consumer 4 got 68
+Consumer 7 got 39
+Producer 4 added 49
+Producer 9 added 94
+Consumer 8 got 49
+Producer 8 added 87
+Consumer 9 got 94
+Consumer 2 got 87
+Producer 1 added 14
+Consumer 1 got 14
+Producer 0 added 4
+Consumer 0 got 4
+Producer 7 added 78
+Consumer 5 got 78
+Producer 2 added 28
+Consumer 6 got 28
+Producer 6 added 69
+Consumer 3 got 69
+Producer 9 added 95
+Consumer 7 got 95
+Producer 8 added 88
+Consumer 4 got 88
+Producer 1 added 15
+Consumer 9 got 15
+Producer 0 added 5
+Consumer 1 got 5
+Producer 7 added 79
+Consumer 2 got 79
+Producer 2 added 29
+Consumer 8 got 29
+Producer 9 added 96
+Consumer 6 got 96
+Producer 8 added 89
+Consumer 7 got 89
+Producer 1 added 16
+Consumer 3 got 16
+Producer 0 added 6
+Consumer 9 got 6
+Producer 9 added 97
+Consumer 8 got 97
+Producer 1 added 17
+Consumer 1 got 17
+Consumer 4 got 7
+Producer 0 added 7
+Producer 9 added 98
+Consumer 9 got 98
+Producer 1 added 18
+Consumer 5 got 18
+Producer 0 added 8
+Consumer 7 got 8
+Producer 9 added 99
+Consumer 3 got 99
+Producer 1 added 19
+Consumer 2 got 19
+Producer 0 added 9
+Consumer 9 got 9
+Joined producer 0
+Joined consumer 0
+Joined producer 1
+Joined consumer 1
+Joined producer 2
+Joined consumer 2
+Joined producer 3
+Joined consumer 3
+Joined producer 4
+Joined consumer 4
+Joined producer 5
+Joined consumer 5
+Joined producer 6
+Joined consumer 6
+Joined producer 7
+Joined consumer 7
+Joined producer 8
+Joined consumer 8
+Joined producer 9
+Joined consumer 9
+[4mstudent-VirtualBox[24m:[1m~/lab9/lab9data[0m> make clean
+rm -f a.out
+[4mstudent-VirtualBox[24m:[1m~/lab9/lab9data[0m> cd ..
+[4mstudent-VirtualBox[24m:[1m~/lab9[0m> exit
+exit
+]0;student@student-VirtualBox: ~/lab9[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab9[00m$ exit
+exit
+
+Script done on Tue 25 Mar 2025 04:17:51 PM PDT

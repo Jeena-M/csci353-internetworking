@@ -1,0 +1,9 @@
+in 1st window, type <Ctrl+d> to run "./pa2 -c releases.ubuntu.com 80 16.04/ubuntu-16.04.6-desktop-i386.iso out.1"
+    wait for download to start
+    make sure byte count & elapsed time in progress bar keep incrementing
+    make sure that progress bar is in the correct format
+
+in 1st window, wait for progress bar to show 10 seconds has elapsed
+    type <Ctrl+c> in 1st window to kill pa2
+
+type <Ctrl+d> to close this pane

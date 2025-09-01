@@ -1,0 +1,87 @@
+Script started on Sat 18 Jan 2025 04:00:31 PM PST
+]0;student@student-VirtualBox: ~/lab1[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab1[00m$ uname -a
+Linux student-VirtualBox 4.15.0-142-generic #146~16.04.1-Ubuntu SMP Tue Apr 13 09:26:57 UTC 2021 i686 i686 i686 GNU/Linux
+]0;student@student-VirtualBox: ~/lab1[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab1[00m$ cat /etc/os-release
+NAME="Ubuntu"
+VERSION="16.04.7 LTS (Xenial Xerus)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 16.04.7 LTS"
+VERSION_ID="16.04"
+HOME_URL="http://www.ubuntu.com/"
+SUPPORT_URL="http://help.ubuntu.com/"
+BUG_REPORT_URL="http://bugs.launchpad.net/ubuntu/"
+VERSION_CODENAME=xenial
+UBUNTU_CODENAME=xenial
+]0;student@student-VirtualBox: ~/lab1[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab1[00m$ make clean
+rm -f lab1b lab1c *.o
+]0;student@student-VirtualBox: ~/lab1[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab1[00m$ make lab1b
+g++ -g -Wall -std=c++11 -DLOCALHOST=\"127.0.0.1\" -o lab1b lab1b.cpp
+]0;student@student-VirtualBox: ~/lab1[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab1[00m$ ./lab1b
+Hello World!
+]0;student@student-VirtualBox: ~/lab1[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab1[00m$ gdb lab1b
+GNU gdb (Ubuntu 7.11.1-0ubuntu1~16.5) 7.11.1
+Copyright (C) 2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "i686-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from lab1b...done.
+(gdb) break main
+Breakpoint 1 at 0x80486bf: file lab1b.cpp, line 28.
+(gdb) run
+Starting program: /home/student/lab1/lab1b 
+
+Breakpoint 1, main (argc=1, argv=0xbffff434) at lab1b.cpp:28
+28	    for (int i=1; i < argc; i++) cout << argv[i] << endl;
+(gdb) next
+30	    cout << "Hello World!" << endl;
+(gdb) where
+#0  main (argc=1, argv=0xbffff434) at lab1b.cpp:30
+(gdb) list
+25	int main(int argc, char *argv[])
+26	{
+27	    /* this is how to iterate through commandline arguments */
+28	    for (int i=1; i < argc; i++) cout << argv[i] << endl;
+29	
+30	    cout << "Hello World!" << endl;
+31	    return 0;
+32	}
+33	
+(gdb) net[Kxt
+Hello World!
+31	    return 0;
+(gdb) next
+32	}
+(gdb) cont
+Continuing.
+[Inferior 1 (process 5231) exited normally]
+(gdb) run aa bbb cccc
+Starting program: /home/student/lab1/lab1b aa bbb cccc
+
+Breakpoint 1, main (argc=4, argv=0xbffff414) at lab1b.cpp:28
+28	    for (int i=1; i < argc; i++) cout << argv[i] << endl;
+(gdb) next
+aa
+bbb
+cccc
+30	    cout << "Hello World!" << endl;
+(gdb) cont
+Continuing.
+Hello World!
+[Inferior 1 (process 5236) exited normally]
+(gdb) quit
+]0;student@student-VirtualBox: ~/lab1[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab1[00m$ make clean
+rm -f lab1b lab1c *.o
+]0;student@student-VirtualBox: ~/lab1[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab1[00m$ exit
+exit
+
+Script done on Sat 18 Jan 2025 04:01:57 PM PST

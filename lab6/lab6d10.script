@@ -1,0 +1,45 @@
+Script started on Wed 26 Feb 2025 07:37:10 PM PST
+]0;student@student-VirtualBox: ~/lab6[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab6[00m$ wget -O x http://localhost:12345/viterbi-seal -rev-770x360.png --debug
+DEBUG output created by Wget 1.17.1 on linux-gnu.
+
+Reading HSTS entries from /home/student/.wget-hsts
+URI encoding = ‘UTF-8’
+--2025-02-26 19:37:17--  http://localhost:12345/viterbi-seal-rev-770x360.png
+Resolving localhost (localhost)... 127.0.0.1
+Caching localhost => 127.0.0.1
+Connecting to localhost (localhost)|127.0.0.1|:12345... connected.
+Created socket 4.
+Releasing 0x0127a310 (new refcount 1).
+
+---request begin---
+GET /viterbi-seal-rev-770x360.png HTTP/1.1
+User-Agent: Wget/1.17.1 (linux-gnu)
+Accept: */*
+Accept-Encoding: identity
+Host: localhost:12345
+Connection: Keep-Alive
+
+---request end---
+HTTP request sent, awaiting response... 
+---response begin---
+HTTP/1.1 200 OK
+Server: lab4a
+Content-Type: application/octet-stream
+Content-Length: 95957
+
+---response end---
+200 OK
+Registered socket 4 for persistent reuse.
+Length: 95957 (94K) [application/octet-stream]
+Saving to: ‘x’
+
+x                     0%[                    ]       0  --.-KB/s               x                     4%[                    ]   4.00K  13.3KB/s               x                     6%[>                   ]   6.00K  12.0KB/s               x                     9%[>                   ]   9.00K  11.3KB/s               x                    11%[=>                  ]  11.00K  11.0KB/s               x                    14%[=>                  ]  14.00K  10.8KB/s               x                    17%[==>                 ]  16.00K  10.7KB/s               x                    20%[===>                ]  19.00K  10.6KB/s               x                    22%[===>                ]  21.00K  10.5KB/s               x                    24%[===>                ]  23.00K  10.5KB/s               x                    27%[====>               ]  26.00K  10.4KB/s               x                    30%[=====>              ]  29.00K  10.4KB/s               x                    34%[=====>              ]  32.00K  10.3KB/s    eta 6s     x                    37%[======>             ]  35.00K  10.3KB/s    eta 6s     x                    40%[=======>            ]  38.00K  10.3KB/s    eta 6s     x                    42%[=======>            ]  40.00K  10.3KB/s    eta 6s     x                    44%[=======>            ]  42.00K  10.2KB/s    eta 5s     x                    48%[========>           ]  45.00K  10.0KB/s    eta 5s     x                    50%[=========>          ]  47.00K  10.0KB/s    eta 5s     x                    53%[=========>          ]  50.00K  10.0KB/s    eta 5s     x                    56%[==========>         ]  53.00K  10.0KB/s    eta 4s     x                    58%[==========>         ]  55.00K  10.0KB/s    eta 4s     x                    60%[===========>        ]  57.00K  10.0KB/s    eta 4s     x                    64%[===========>        ]  60.00K  10.0KB/s    eta 4s     x                    66%[============>       ]  62.00K  10.0KB/s    eta 4s     x                    69%[============>       ]  65.00K  10.0KB/s    eta 3s     x                    72%[=============>      ]  68.00K  10.0KB/s    eta 3s     x                    75%[==============>     ]  71.00K  9.99KB/s    eta 3s     x                    78%[==============>     ]  74.00K  10.0KB/s    eta 3s     x                    82%[===============>    ]  77.00K  10.0KB/s    eta 2s     x                    85%[================>   ]  80.00K  10.0KB/s    eta 2s     x                    88%[================>   ]  83.00K  10.0KB/s    eta 2s     x                    90%[=================>  ]  85.00K  10.0KB/s    eta 2s     x                    92%[=================>  ]  87.00K  10.0KB/s    eta 1s     x                    96%[==================> ]  90.00K  10.0KB/s    eta 1s     x                    98%[==================> ]  92.00K  10.0KB/s    eta 1s     x                   100%[===================>]  93.71K  9.93KB/s    eta 0s     x                   100%[===================>]  93.71K  9.93KB/s    in 9.3s    
+
+2025-02-26 19:37:27 (10.1 KB/s) - ‘x’ saved [95957/95957]
+
+Saving HSTS entries to /home/student/.wget-hsts
+]0;student@student-VirtualBox: ~/lab6[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab6[00m$ diff x lab4data/viterbi-seal-rev-770x360.png
+]0;student@student-VirtualBox: ~/lab6[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab6[00m$ exit
+exit
+
+Script done on Wed 26 Feb 2025 07:37:49 PM PST

@@ -1,0 +1,46 @@
+Script started on Fri 14 Feb 2025 01:51:37 AM PST
+]0;student@student-VirtualBox: ~/lab5[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab5[00m$ make lab5b
+g++ -g -Wall -std=c++11 -DLOCALHOST=\"127.0.0.1\" logging.cpp -o lab5b
+[01m[Klogging.cpp:61:6:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid LogALineVersion3(std::__cxx11::string)[m[K’ defined but not used [-Wunused-function]
+ void LogALineVersion3(string a_line_of_msg)
+[01;32m[K      ^[m[K
+]0;student@student-VirtualBox: ~/lab5[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab5[00m$ rm -f xyzzy xyzzy.log
+]0;student@student-VirtualBox: ~/lab5[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab5[00m$ ./lab5b > xyzzy
+]0;student@student-VirtualBox: ~/lab5[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab5[00m$ ./lab5b xyzzy.log
+Line 4.
+Line 5.
+Line 6.
+Some messages were written into file 'xyzzy.log' (and this message is written to cout)
+]0;student@student-VirtualBox: ~/lab5[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab5[00m$ diff xyzzy xyzzy.log
+7,10d6
+< Line 4.
+< Line 5.
+< Line 6.
+< All messages were written into cout (includingn this message)
+]0;student@student-VirtualBox: ~/lab5[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab5[00m$ cat xyzzy
+Line 1.
+Line 2.
+Line 3.
+Line 4.
+Line 5.
+Line 6.
+Line 4.
+Line 5.
+Line 6.
+All messages were written into cout (includingn this message)
+]0;student@student-VirtualBox: ~/lab5[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab5[00m$ cat xyzzy.log
+Line 1.
+Line 2.
+Line 3.
+Line 4.
+Line 5.
+Line 6.
+]0;student@student-VirtualBox: ~/lab5[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab5[00m$ xxd -g 1 xyzzy.log
+00000000: 4c 69 6e 65 20 31 2e 0d 0a 4c 69 6e 65 20 32 2e  Line 1...Line 2.
+00000010: 0d 0a 4c 69 6e 65 20 33 2e 0d 0a 4c 69 6e 65 20  ..Line 3...Line 
+00000020: 34 2e 0d 0a 4c 69 6e 65 20 35 2e 0d 0a 4c 69 6e  4...Line 5...Lin
+00000030: 65 20 36 2e 0d 0a                                e 6...
+]0;student@student-VirtualBox: ~/lab5[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab5[00m$ exit
+exit
+
+Script done on Fri 14 Feb 2025 01:53:22 AM PST

@@ -1,0 +1,65 @@
+Script started on Tue 04 Mar 2025 02:15:27 AM PST
+]0;student@student-VirtualBox: ~/lab7[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab7[00m$ uname -a
+Linux student-VirtualBox 4.15.0-142-generic #146~16.04.1-Ubuntu SMP Tue Apr 13 09:26:57 UTC 2021 i686 i686 i686 GNU/Linux
+]0;student@student-VirtualBox: ~/lab7[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab7[00m$ cat /etc/os-release
+NAME="Ubuntu"
+VERSION="16.04.7 LTS (Xenial Xerus)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 16.04.7 LTS"
+VERSION_ID="16.04"
+HOME_URL="http://www.ubuntu.com/"
+SUPPORT_URL="http://help.ubuntu.com/"
+BUG_REPORT_URL="http://bugs.launchpad.net/ubuntu/"
+VERSION_CODENAME=xenial
+UBUNTU_CODENAME=xenial
+]0;student@student-VirtualBox: ~/lab7[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab7[00m$ make clean
+rm -f *.o lab7b lab7c
+]0;student@student-VirtualBox: ~/lab7[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab7[00m$ make lab7c
+g++ -g -Wall -std=c++11 -DLOCALHOST=\"127.0.0.1\" -o lab7c lab7c.cpp my_socket.cpp my_timestamp.cpp -lcrypto -pthread
+[01m[Klab7c.cpp:[m[K In function ‘[01m[Kvoid talk_to_user_and_server(int, std::vector<std::__cxx11::basic_string<char> >&, std::__cxx11::string, int, std::vector<std::__cxx11::basic_string<char> >&)[m[K’:
+[01m[Klab7c.cpp:526:23:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [-Wsign-compare]
+     for (int j = 0; j < uris.size(); j++){
+[01;32m[K                       ^[m[K
+]0;student@student-VirtualBox: ~/lab7[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab7[00m$ ./lab7c 12345 lab7c.logfile
+> status
+Active connections:
+1 2 
+> quit
+Cannot quit, the following connections are active: 1 2 
+> status
+Active connections:
+2 
+> quit
+Cannot quit, the following connections are active: 2 
+> status
+No active connections.
+> help
+Available commands are:
+	help
+	status
+	quit
+> 
+> 
+> 
+> quit
+Cannot quit, the following connections are active: 3 4 
+> status
+Active connections:
+3 4 
+> status
+Active connections:
+3 4 
+> status
+Active connections:
+4 
+> status
+Active connections:
+4 
+> status
+No active connections.
+> quit
+]0;student@student-VirtualBox: ~/lab7[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab7[00m$ exit
+exit
+
+Script done on Tue 04 Mar 2025 02:18:24 AM PST

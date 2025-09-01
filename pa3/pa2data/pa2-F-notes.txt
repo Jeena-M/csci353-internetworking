@@ -1,0 +1,4 @@
+in 1st window, type <Ctrl+d> to run "./pa2 -c merlot.usc.edu 80 cs353-s21/description.html out.1"
+    pa2 should print, "No Content-Length in response header ..."
+
+type <Ctrl+d> to close this pane

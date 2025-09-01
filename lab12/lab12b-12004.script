@@ -1,0 +1,28 @@
+Script started on Wed 16 Apr 2025 09:18:20 PM PDT
+]0;student@student-VirtualBox: ~/lab12[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab12[00m$ exit./lab12b lab12data/lab12-12012.ini[1P.ini[1P.ini0.ini4.ini
+:12004> netgraph
+:12004: :12002,:12012
+:12000: :12002
+:12002: :12000,:12004,:12012
+:12012: :12002,:12004
+:12004> forwarding
+:12000: :12002
+:12002: :12002
+:12012: :12012
+:12004> [Wed Apr 16 2025 21:19:38.702336] r UCASTAPP :12002 8 - 5 :12000_13_1744863578.701762  :12000 :12004 1 hello
+No receiver for UDT message 'hello' from :12000.
+udtsend :12000 how are you?
+:12000 is not reachable
+:12004> udtsend :1200 12 how are you?
+[Wed Apr 16 2025 21:20:26.531590] i UCASTAPP :12012 9 - 12 :12004_9_1744863626.531576  :12004 :12012 1 how are you?
+:12004> forwarding
+:12000: :12002
+:12002: :12002
+:12012: :12012
+:12004> quit
+Console thread terminated
+
+]0;student@student-VirtualBox: ~/lab12[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab12[00m$ exit
+exit
+
+Script done on Wed 16 Apr 2025 09:23:15 PM PDT

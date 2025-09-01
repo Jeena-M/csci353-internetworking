@@ -1,0 +1,62 @@
+#!/bin/tcsh -f
+#
+# This script is for your convenience.  It's NOT EXACTLY THE SAME as going throught the steps in the grading guidelines.
+# It's best that you run through section (D) of the grading guidelines manually so you won't get any grading surprises!
+#
+# This file should be in the "pa3data" subdirectory of the directory where you have your "pa3" executable.  To run it do:
+#     chmod 755 ./pa3data/tmux-pa3-D.txt
+#     ./pa3data/tmux-pa3-D.txt
+# To switch to use a different pane, please type <Cntrl+b> follwed the up/down/left/right key on your keyboard.
+
+setenv SHELL "/bin/tcsh"
+set session_name="pa3"
+set running=`tmux list-sessions | grep "${session_name}:"`
+set machine=`uname -n`
+
+if ("x$running" != "x") then
+    # it's running
+    echo "Session '${session_name}' already exists.  Type 'tmux kill-session -t ${session_name}' to kill it."
+else
+    # create 4 panes, one at the bottom, two on the left, and one on the right
+
+    # create a tmux session
+    /bin/rm -f pa3data/*.log
+    tmux new-session -d -s ${session_name} 'echo "(window1) "; \
+            script -c "pa3data/pa3-D-1.csh" pa3-D.script; \
+            echo "[ (1) type <Ctrl+d> to close this pane ]"; cat'
+    # split the current pane vertically 95/5
+    tmux split-window -v -p 5
+    # split the top pane horizontally 60/40
+    tmux split-window -h -t top -p 40 'more pa3data/pa3-D-notes.txt; cat'
+    # split the left pane vertically 30/70
+    if ("$machine" == "viterbi-scf1") then
+        tmux split-window -v -t 0 -p 30 '\
+            echo "(window2) "; \
+            source pa3data/pa3-setup.csh; \
+            echo "[ (2) type <Ctrl+d> to run "\""wget -r -l 1 "\$"url6"\"" in dir2 ]"; cat; \
+            /bin/rm -rf dir2; mkdir dir2; cd dir2; wget -r -l 1 $url6; cd ..; \
+            echo "[ (2) type <Ctrl+d> to close this pane ]"; cat'
+        tmux split-window -v -t 3 -p 50 '\
+            echo "(window3) "; \
+            source pa3data/pa3-setup.csh; \
+            echo "[ (3) type <Ctrl+d> to run "\""wget -r -l 1 "\$"url6"\"" in dir3 ]"; cat; \
+            /bin/rm -rf dir3; mkdir dir3; cd dir3; wget -r -l 1 $url6; cd ..; \
+            /bin/rm -rf dir3; mkdir dir3; cd dir3; wget -r -l 1 $url6; cd ..; \
+            echo "[ (3) type <Ctrl+d> to close this pane ]"; cat'
+    else
+        tmux split-window -v -t 0 -p 30 '\
+            echo "(window2) "; \
+            source pa3data/pa3-setup.csh; \
+            echo "[ (2) type <Ctrl+d> to run "\""wget -r -l 1 "\$"url6"\"" in dir2 ]"; cat; \
+            /bin/rm -rf dir2; mkdir dir2; cd dir2; wget -r -l 1 $url6; cd ..; \
+            echo "[ (2) type <Ctrl+d> to close this pane ]"; cat'
+        tmux split-window -v -t 3 -p 50 '\
+            echo "(window3) "; \
+            source pa3data/pa3-setup.csh; \
+            echo "[ (3) type <Ctrl+d> to run "\""wget -r -l 1 "\$"url6"\"" in dir3 ]"; cat; \
+            /bin/rm -rf dir3; mkdir dir3; cd dir3; wget -r -l 1 $url6; cd ..; \
+            echo "[ (3) type <Ctrl+d> to close this pane ]"; cat'
+    endif
+
+    tmux attach-session -d -t ${session_name}
+endif

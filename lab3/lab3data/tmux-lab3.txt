@@ -1,0 +1,30 @@
+#!/bin/tcsh -f
+#
+# This file should be in the "lab3data" subdirectory of the directory where you have your "lab3" executable.  To run it do:
+#     chmod 755 ./lab3data/tmux-lab3.txt
+#     ./lab3data/tmux-lab3.txt
+# To kill the entire session in one command, type "tmux kill-session -t lab3" in any pane
+#
+# If you haven't installed tmux, please do:
+#     sudo apt-get install tmux
+# To switch to use a different pane, please type <Cntrl+b> follwed the up/down/left/right key on your keyboard.
+# If you see an error message saying that the tmux server is not running, just type "tmux" and then type "exit".
+
+set session_name="lab3"
+set running=`tmux list-sessions | grep "${session_name}:"`
+
+if ("x$running" != "x") then
+    # it's running
+    echo "Session '${session_name}' already exists.  Type 'tmux kill-session -t ${session_name}' to kill it."
+else
+    # create 3 panes, one at the bottom and two side by side
+
+    # create a tmux session
+    tmux new-session -d -s ${session_name}
+    # split the current pane vertically 90/10
+    tmux split-window -v -p 10
+    # split the top pane horizontally 50/50
+    tmux split-window -h -t top -p 50
+
+    tmux attach-session -d -t ${session_name}
+endif

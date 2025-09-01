@@ -1,0 +1,42 @@
+Script started on Tue 11 Feb 2025 07:37:32 PM PST
+]0;student@student-VirtualBox: ~/lab4[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab4[00m$ tcsh
+[4mstudent-VirtualBox[24m:[1m~/lab4[0m> ./lab4d -c merlot.usc.edu 80 /cs353/images/upc_map.pd f x0 /cs353/images/usctommy.gif x1
+echo-client at 172.31.18.216:41324 is connected to server at 68.181.32.44:80
+	GET /cs353/images/upc_map.pdf HTTP/1.1
+	User-Agent: lab4b
+	Accept: */*
+	Host: merlot.usc.edu:80
+	
+	HTTP/1.1 200 OK
+	Date: Wed, 12 Feb 2025 03:37:29 GMT
+	Server: Apache
+	Last-Modified: Wed, 13 Sep 2023 20:02:19 GMT
+	Accept-Ranges: bytes
+	Content-Length: 746248
+	X-Frame-Options: SAMEORIGIN
+	X-XSS-Protection: 1; mode=block
+	Content-Type: application/pdf
+	
+	GET /cs353/images/usctommy.gif HTTP/1.1
+	User-Agent: lab4b
+	Accept: */*
+	Host: merlot.usc.edu:80
+	
+	HTTP/1.1 200 OK
+	Date: Wed, 12 Feb 2025 03:37:29 GMT
+	Server: Apache
+	Last-Modified: Wed, 06 Nov 2002 22:46:44 GMT
+	Accept-Ranges: bytes
+	Content-Length: 1689
+	X-Frame-Options: SAMEORIGIN
+	X-XSS-Protection: 1; mode=block
+	Content-Type: image/gif
+	
+[4mstudent-VirtualBox[24m:[1m~/lab4[0m> diff lab4data/upc_map.pdf x0
+[4mstudent-VirtualBox[24m:[1m~/lab4[0m> diff lab4data/usctommy.gif x1
+[4mstudent-VirtualBox[24m:[1m~/lab4[0m> exit
+exit
+]0;student@student-VirtualBox: ~/lab4[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab4[00m$ script lab4d3.scripttcsh[Kexit
+exit
+
+Script done on Tue 11 Feb 2025 07:39:03 PM PST

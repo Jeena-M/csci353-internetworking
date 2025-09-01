@@ -1,0 +1,29 @@
+wait for pa3 prompt in 1st window to appear
+in 2nd window, type <Ctrl+d> to run "wget -O f3.out $url3"
+in 1st window, wait for download to start, then type "status"
+    should see status of connection [1]
+wait for window 2 throughput to settle around 1.05 KB/s, then
+  type "status" in 1st window
+    make sure the "Sent:" lines are showing correct percentages
+type "close 1" in the 1st window, wget in 2nd window should restart
+wait for download to start, then type "status" in 1st window
+    should see status of connection [2]
+wait for window 2 throughput to settle around 1.05 KB/s, then
+  type "close 2" in 1st window, wget in 2nd window should restart
+wait for download to start, then type "status" in 1st window
+    should see status of connection [3]
+wait for window 2 throughput to settle around 1.05 KB/s, then
+  type "dial 3 100" in 1st window
+wait for window 2 throughput to settle around 7 KB/s, then
+  type "dial 3 50" in 1st window
+wait for window 2 throughput to settle around 3.5 KB/s, then
+  type "dial 3 100" in 1st window
+  window 2 throughput to settle around 7 KB/s
+wait for the download to finish, type "status" 1st window
+    should see "No active connections"
+type "quit" in 1st window
+    pa3 should self-terminate
+in 1st window, type <Ctrl+d> to run "diff $sol3 f3.out"
+    should see no printout
+in 1st window, type <Ctrl+d> to run "cat pa3.log"
+type <Ctrl+d> to close this pane

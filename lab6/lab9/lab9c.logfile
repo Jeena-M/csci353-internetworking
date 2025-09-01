@@ -1,0 +1,28 @@
+[Tue Mar 25 2025 20:49:05.261205] Server 127.0.0.1:12345 started
+[Tue Mar 25 2025 20:49:24.696047] [1]	Socket-writing thread has terminated
+[Tue Mar 25 2025 20:49:24.696134] [1]	Socket-reading thread has joined with socket-writing thread
+[Tue Mar 25 2025 20:49:24.696166] [1]	Connection closed with client at 127.0.0.1:50324
+[Tue Mar 25 2025 20:49:24.696202] [1]	Reaper has joined with connection thread
+[Tue Mar 25 2025 20:49:26.624104] [2]	Socket-writing thread has terminated
+[Tue Mar 25 2025 20:49:26.624172] [2]	Socket-reading thread has joined with socket-writing thread
+[Tue Mar 25 2025 20:49:26.624206] [2]	Connection closed with client at 127.0.0.1:50326
+[Tue Mar 25 2025 20:49:26.624239] [2]	Reaper has joined with connection thread
+[Tue Mar 25 2025 20:49:28.661464] [3]	Socket-writing thread has terminated
+[Tue Mar 25 2025 20:49:28.661521] [3]	Socket-reading thread has joined with socket-writing thread
+[Tue Mar 25 2025 20:49:28.661536] [3]	Connection closed with client at 127.0.0.1:50328
+[Tue Mar 25 2025 20:49:28.661563] [3]	Reaper has joined with connection thread
+[Tue Mar 25 2025 20:49:30.381085] [4]	Socket-writing thread has terminated
+[Tue Mar 25 2025 20:49:30.381138] [4]	Socket-reading thread has joined with socket-writing thread
+[Tue Mar 25 2025 20:49:30.381150] [4]	Connection closed with client at 127.0.0.1:50330
+[Tue Mar 25 2025 20:49:30.381191] [4]	Reaper has joined with connection thread
+[Tue Mar 25 2025 20:49:30.381221] Server 127.0.0.1:12345 stopped
+[Tue Mar 25 2025 20:50:40.472545] Server 127.0.0.1:12345 started
+[Tue Mar 25 2025 20:50:59.265719] [1]	Socket-writing thread has terminated
+[Tue Mar 25 2025 20:50:59.265773] [1]	Socket-reading thread has joined with socket-writing thread
+[Tue Mar 25 2025 20:50:59.266324] [1]	Connection closed with client at 127.0.0.1:50336
+[Tue Mar 25 2025 20:50:59.266358] [1]	Reaper has joined with connection thread
+[Tue Mar 25 2025 20:51:01.204439] [2]	Socket-writing thread has terminated
+[Tue Mar 25 2025 20:51:01.204493] [2]	Socket-reading thread has joined with socket-writing thread
+[Tue Mar 25 2025 20:51:01.204508] [2]	Connection closed with client at 127.0.0.1:50338
+[Tue Mar 25 2025 20:51:01.204534] [2]	Reaper has joined with connection thread
+[Tue Mar 25 2025 20:51:03.347106] Server 127.0.0.1:12345 stopped

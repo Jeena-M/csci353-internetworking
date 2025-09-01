@@ -1,0 +1,22 @@
+[Tue Mar 25 2025 18:40:58.837797] Server 127.0.0.1:12345 started
+[Tue Mar 25 2025 18:41:26.723237] [1]	Client connected from 127.0.0.1:50230 and requesting /textbooks-1-small.jpg
+[Tue Mar 25 2025 18:41:28.772804] [2]	Client connected from 127.0.0.1:50232 and requesting /viterbi-seal-rev-770x360.png
+[Tue Mar 25 2025 18:41:33.642146] [1]	Connection closed with client at 127.0.0.1:50230
+[Tue Mar 25 2025 18:41:33.642210] [1]	Reaper has joined with connection thread
+[Tue Mar 25 2025 18:41:34.643277] [3]	Client connected from 127.0.0.1:50234 and requesting /textbooks-1-small.jpg
+[Tue Mar 25 2025 18:41:38.364080] [2]	Connection closed with client at 127.0.0.1:50232
+[Tue Mar 25 2025 18:41:38.364163] [2]	Reaper has joined with connection thread
+[Tue Mar 25 2025 18:41:39.365001] [4]	Client connected from 127.0.0.1:50236 and requesting /viterbi-seal-rev-770x360.png
+[Tue Mar 25 2025 18:41:42.077326] [3]	Connection closed with client at 127.0.0.1:50234
+[Tue Mar 25 2025 18:41:42.077377] [3]	Reaper has joined with connection thread
+[Tue Mar 25 2025 18:41:43.605786] [4]	Connection closed with client at 127.0.0.1:50236
+[Tue Mar 25 2025 18:41:43.606065] [4]	Reaper has joined with connection thread
+[Tue Mar 25 2025 18:41:43.606184] Server 127.0.0.1:12345 stopped
+[Tue Mar 25 2025 18:42:32.766173] Server 127.0.0.1:12345 started
+[Tue Mar 25 2025 18:42:36.624316] [1]	Client connected from 127.0.0.1:50240 and requesting /textbooks-1-small.jpg
+[Tue Mar 25 2025 18:42:39.071888] [2]	Client connected from 127.0.0.1:50242 and requesting /viterbi-seal-rev-770x360.png
+[Tue Mar 25 2025 18:42:43.967711] [1]	Connection closed with client at 127.0.0.1:50240
+[Tue Mar 25 2025 18:42:43.967761] [1]	Reaper has joined with connection thread
+[Tue Mar 25 2025 18:42:44.322950] [2]	Connection closed with client at 127.0.0.1:50242
+[Tue Mar 25 2025 18:42:44.322994] [2]	Reaper has joined with connection thread
+[Tue Mar 25 2025 18:42:44.323023] Server 127.0.0.1:12345 stopped

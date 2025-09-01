@@ -1,0 +1,49 @@
+Script started on Sun 27 Apr 2025 02:16:31 AM PDT
+]0;student@student-VirtualBox: ~/lab13[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab13[00m$ exit./lab13a lab13data/lab13-12010.iniexit[K./lab13a lab13data/lab13-12008.iniexit[K./lab13a lab13data/lab13-12006.ini
+:12006> traceroute 12000
+.1 - 12004, 0.000749
+
+.2 - 12002, 0.001837
+
+.12006_16_1745745447.075313 12006_16_1745745447.075313
+3 - 12000, 0.002066
+
+12000 is reached in 3 steps
+:12006> traceroute 12000
+.1 - 12004, 0.00062
+
+.2 - 12002, 0.001241
+
+.12006_20_1745745713.392117 12006_20_1745745713.392117
+3 - 12000, 0.001805
+
+12000 is reached in 3 steps
+:12006> trc aceroute 12000
+.1 - 12004, 0.000633
+
+.2 - 12010, 0.001537
+
+.3 - 12002, 0.001838
+
+.12006_25_1745745772.690449 12006_25_1745745772.690449
+4 - 12000, 0.002771
+
+12000 is reached in 4 steps
+:12006> traceroute 12000
+.1 - 12004, 0.000642
+
+.2 - 12010, 0.001134
+
+.3 - 12002, 0.001826
+
+.12006_40_1745745822.592888 12006_40_1745745822.592888
+4 - 12000, 0.002325
+
+12000 is reached in 4 steps
+:12006> quit
+Console thread terminated
+
+]0;student@student-VirtualBox: ~/lab13[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab13[00m$ exit
+exit
+
+Script done on Sun 27 Apr 2025 02:27:19 AM PDT

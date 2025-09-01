@@ -1,0 +1,124 @@
+Script started on Sat 18 Jan 2025 04:23:14 PM PST
+]0;student@student-VirtualBox: ~/lab1[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab1[00m$ tcsh
+[4mstudent-VirtualBox[24m:[1m~/lab1[0m> uname -a
+Linux student-VirtualBox 4.15.0-142-generic #146~16.04.1-Ubuntu SMP Tue Apr 13 09:26:57 UTC 2021 i686 i686 i686 GNU/Linux
+[4mstudent-VirtualBox[24m:[1m~/lab1[0m> make clean
+rm -f lab1b lab1c *.o
+[4mstudent-VirtualBox[24m:[1m~/lab1[0m> make lab1c
+g++ -g -Wall -std=c++11 -DLOCALHOST=\"127.0.0.1\" -o lab1c lab1c.cpp
+[4mstudent-VirtualBox[24m:[1m~/lab1[0m> foreach f (Makefile *.c* *.h*)
+foreach? echo "==$f[K[K[K[K[K[K[K[K[Kecho "=== $f ==="
+foreach? ./lab1c $f
+foreach? echo -n "wc: "
+foreach? wc -l $f
+foreach? end
+=== Makefile ===
+54
+0
+16
+33
+0
+16
+33
+0
+6
+22
+number of lines read: 10
+wc: 10 Makefile
+=== lab1b.cpp ===
+38
+19
+18
+17
+0
+20
+4
+33
+21
+22
+18
+0
+35
+18
+19
+19
+18
+18
+19
+19
+0
+35
+45
+0
+32
+1
+62
+57
+0
+35
+13
+1
+0
+number of lines read: 33
+wc: 33 lab1b.cpp
+=== lab1c.cpp ===
+38
+19
+18
+18
+17
+0
+20
+4
+33
+21
+22
+18
+0
+35
+18
+19
+19
+18
+18
+19
+19
+0
+35
+45
+0
+32
+1
+52
+0
+16
+18
+0
+17
+46
+0
+23
+12
+6
+0
+35
+0
+13
+5
+0
+54
+0
+35
+0
+13
+1
+number of lines read: 50
+wc: 49 lab1c.cpp
+[4mstudent-VirtualBox[24m:[1m~/lab1[0m> make clean
+rm -f lab1b lab1c *.o
+[4mstudent-VirtualBox[24m:[1m~/lab1[0m> exit
+exit
+]0;student@student-VirtualBox: ~/lab1[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab1[00m$ exit
+exit
+
+Script done on Sat 18 Jan 2025 04:26:03 PM PST

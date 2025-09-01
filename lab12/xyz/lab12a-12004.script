@@ -1,0 +1,27 @@
+Script started on Wed 16 Apr 2025 05:54:40 PM PDT
+]0;student@student-VirtualBox: ~/lab12[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab12[00m$ exit./lab12a lab12data/lab12-12012.iniexit[K./lab12a lab12data/lab12-12004.ini
+:12004> netgraph
+:12004: :12002,:12012
+:12000: :12002
+:12002: :12000,:12004,:12012
+:12012: :12002,:12004
+:12004> forwarding
+:12000: :12002
+:12002: :12002
+:12012: :12012
+:12004> forwarding
+:12012: :12012
+:12004> forwarding
+:12000: :12002
+:12002: :12002
+:12012: :12012
+:12004> forwarding
+:12002: :12002
+:12012: :12012
+:12004> quit
+Console thread terminated
+
+]0;student@student-VirtualBox: ~/lab12[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab12[00m$ exit
+exit
+
+Script done on Wed 16 Apr 2025 05:59:54 PM PDT

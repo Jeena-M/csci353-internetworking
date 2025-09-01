@@ -1,0 +1,139 @@
+Script started on Tue 04 Feb 2025 08:55:02 PM PST
+]0;student@student-VirtualBox: ~/lab3[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab3[00m$ gdb echo-server
+GNU gdb (Ubuntu 7.11.1-0ubuntu1~16.5) 7.11.1
+Copyright (C) 2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "i686-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from echo-server...done.
+(gdb) list 76
+71	    if (gnDebug) {
+72	        cerr << "[DBG-SVR] " << dec << bytes_received << " bytes received from " << get_ip_and_port_for_server(newsockfd, 0) << " (data displayed in next line, <TAB>-indented):\n\t";
+73	        write(2, buf, bytes_received);
+74	        if (!(bytes_received > 0 && buf[bytes_received-1] == '\n')) cerr << endl;
+75	        if (bytes_received > 0) {
+76	            cerr << "\t";
+77	            for (int i=0; i < bytes_received; i++) {
+78	                cerr << "0x" << setfill('0') << setw(2) << hex << (int)buf[i] << " ";
+79	            }
+80	            cerr << endl;
+(gdb) break 76
+Breakpoint 1 at 0x80494f4: file echo-server.cpp, line 76.
+(gdb) break main
+Breakpoint 2 at 0x804967a: file echo-server.cpp, line 90.
+(gdb) run 12345
+Starting program: /home/student/lab3/echo-server 12345
+
+Breakpoint 2, main (argc=2, argv=0xbffff424) at echo-server.cpp:90
+90	{
+(gdb) list
+85	    shutdown(newsockfd, SHUT_RDWR);
+86	    close(newsockfd);
+87	}
+88	
+89	int main(int argc, char *argv[])
+90	{
+91	    process_options(argc, argv);
+92	    listen_socket_fd = create_listening_socket(argv[1]);
+93	    if (listen_socket_fd != (-1)) {
+94	        if (gnDebug) {
+(gdb) print argc
+$1 = 2
+(gdb) print argv[0]
+$2 = 0xbffff592 "/home/student/lab3/echo-server"
+(gdb) print argv[1]
+$3 = 0xbffff5b1 "12345"
+(gdb) cont
+Continuing.
+[DBG-SVR]	argv[0]: '/home/student/lab3/echo-server'
+[DBG-SVR]	argv[1]: '12345'
+[SERVER]	listening at 127.0.0.1:12345
+[DBG-SVR] 7 bytes received from 127.0.0.1:57740 (data displayed in next line, <TAB>-indented):
+	Hello!
+
+Breakpoint 1, talk_to_client (newsockfd=4) at echo-server.cpp:76
+76	            cerr << "\t";
+(gdb) l
+71	    if (gnDebug) {
+72	        cerr << "[DBG-SVR] " << dec << bytes_received << " bytes received from " << get_ip_and_port_for_server(newsockfd, 0) << " (data displayed in next line, <TAB>-indented):\n\t";
+73	        write(2, buf, bytes_received);
+74	        if (!(bytes_received > 0 && buf[bytes_received-1] == '\n')) cerr << endl;
+75	        if (bytes_received > 0) {
+76	            cerr << "\t";
+77	            for (int i=0; i < bytes_received; i++) {
+78	                cerr << "0x" << setfill('0') << setw(2) << hex << (int)buf[i] << " ";
+79	            }
+80	            cerr << endl;
+(gdb) p bytes_received
+$4 = 7
+(gdb) p buf[0]
+$5 = 72 'H'
+(gdb) p buf[1]
+$6 = 101 'e'
+(gdb) p buf[2]
+$7 = 108 'l'
+(gdb) p buf[3]
+$8 = 108 'l'
+(gdb) p buf[4]
+$9 = 111 'o'
+(gdb) p buf[5]
+$10 = 33 '!'
+(gdb) p buf[6]
+$11 = 10 '\n'
+(gdb) p buf[7]
+$12 = -7 '\371'
+(gdb) p buf[8]
+$13 = -8 '\370'
+(gdb) p buf[9]
+$14 = -9 '\367'
+(gdb) c
+Continuing.
+	0x48 0x65 0x6c 0x6c 0x6f 0x21 0x0a 
+[DBG-SVR] 5 bytes received from 127.0.0.1:57742 (data displayed in next line, <TAB>-indented):
+	Bye.
+
+Breakpoint 1, talk_to_client (newsockfd=4) at echo-server.cpp:76
+76	            cerr << "\t";
+(gdb) p bytes_received
+$15 = 5
+(gdb) p buf[0]
+$16 = 66 'B'
+(gdb) p buf[1]
+$17 = 121 'y'
+(gdb) p buf[2]
+$18 = 101 'e'
+(gdb) p buf[3]
+$19 = 46 '.'
+(gdb) p buf[4]
+$20 = 10 '\n'
+(gdb) p buf[5]
+$21 = -5 '\373'
+(gdb) p buf[6]
+$22 = -6 '\372'
+(gdb) p buf[7]
+$23 = -7 '\371'
+(gdb) c
+Continuing.
+	0x42 0x79 0x65 0x2e 0x0a 
+^C
+Program received signal SIGINT, Interrupt.
+0xb7fd9cf5 in __kernel_vsyscall ()
+(gdb) quit
+A debugging session is active.
+
+	Inferior 1 [process 12867] will be killed.
+
+Quit anyway? (y or n) y
+]0;student@student-VirtualBox: ~/lab3[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab3[00m$ exit
+exit
+
+Script done on Tue 04 Feb 2025 09:01:39 PM PST

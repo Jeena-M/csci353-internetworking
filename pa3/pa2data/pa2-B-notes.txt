@@ -1,0 +1,19 @@
+wait for pa2 to start running in 1st window
+
+in 2nd window, type <Ctrl+d> to run "wget -O f0.out $url0"
+    wait for download to finish
+
+in 2nd window, type <Ctrl+d> to run "ls -l f0.out" and
+  "openssl md5 f0.out"
+    make sure file size is 1433 bytes
+    make sure MD5 is 27a020415f3afc20eb433f2c931dc52e
+
+in 2nd window, type <Ctrl+d> to run "kill `cat pa2.pid`"
+    should see "Terminated" in 1st window
+
+in 2nd window, type <Ctrl+d> to run "lsof -i 4"
+    make sure you don't see pa2 running
+
+in 1st window, type <Ctrl+d> to run "cat pa2.log"
+
+type <Ctrl+d> to close this pane

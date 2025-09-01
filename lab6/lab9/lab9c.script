@@ -1,0 +1,75 @@
+Script started on Tue 25 Mar 2025 08:48:46 PM PDT
+]0;student@student-VirtualBox: ~/lab9[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab9[00m$ make clean
+rm -f *.o lab9b lab9c
+]0;student@student-VirtualBox: ~/lab9[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab9[00m$ makel[K labc[K9c
+g++ -g -Wall -std=c++11 -DLOCALHOST=\"127.0.0.1\" -o lab9c lab9c.cpp my_socket.cpp my_timestamp.cpp -lcrypto -pthread
+[01m[Klab9c.cpp:[m[K In function ‘[01m[Kvoid write_from_client(std::shared_ptr<Connection>)[m[K’:
+[01m[Klab9c.cpp:460:25:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[KnumIterations[m[K’ [-Wunused-variable]
+                     int numIterations = 0;
+[01;32m[K                         ^[m[K
+[01m[Klab9c.cpp:[m[K In function ‘[01m[Kvoid talk_to_client(std::shared_ptr<Connection>)[m[K’:
+[01m[Klab9c.cpp:659:25:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[KnumIterations[m[K’ [-Wunused-variable]
+                     int numIterations = 0;
+[01;32m[K                         ^[m[K
+[01m[Klab9c.cpp:[m[K In function ‘[01m[Kvoid talk_to_user_and_server(int, std::vector<std::__cxx11::basic_string<char> >&, std::__cxx11::string, int, std::vector<std::__cxx11::basic_string<char> >&)[m[K’:
+[01m[Klab9c.cpp:801:23:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [-Wsign-compare]
+     for (int j = 0; j < uris.size(); j++){
+[01;32m[K                       ^[m[K
+[01m[Klab9c.cpp:[m[K At global scope:
+[01m[Klab9c.cpp:525:6:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid talk_to_client(std::shared_ptr<Connection>)[m[K’ defined but not used [-Wunused-function]
+ void talk_to_client(shared_ptr<Connection> conn_ptr)
+[01;32m[K      ^[m[K
+]0;student@student-VirtualBox: ~/lab9[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab9[00m$ ./lab9c 12345 lab9c.logfile
+> s help
+Available commands are:
+	close
+	help
+	status
+	quit
+> status
+No active connections.
+> status
+Active connections:
+[1]	Client: 127.0.0.1:12345, Socket: 5, Bytes sent: 12339
+[2]	Client: 127.0.0.1:12345, Socket: 6, Bytes sent: 7316
+> close 1
+[1]	Close connection requested.
+> status
+Active connections:
+[2]	Client: 127.0.0.1:12345, Socket: 6, Bytes sent: 18687
+[3]	Client: 127.0.0.1:12345, Socket: 9, Bytes sent: 4248
+> close 2
+[2]	Close connection requested.
+> status
+Active connections:
+[3]	Client: 127.0.0.1:12345, Socket: 9, Bytes sent: 13579
+[4]	Client: 127.0.0.1:12345, Socket: 14, Bytes sent: 1153
+> quit
+]0;student@student-VirtualBox: ~/lab9[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab9[00m$ cat lab9c.logfile
+[Tue Mar 25 2025 20:49:05.261205] Server 127.0.0.1:12345 started
+[Tue Mar 25 2025 20:49:24.696047] [1]	Socket-writing thread has terminated
+[Tue Mar 25 2025 20:49:24.696134] [1]	Socket-reading thread has joined with socket-writing thread
+[Tue Mar 25 2025 20:49:24.696166] [1]	Connection closed with client at 127.0.0.1:50324
+[Tue Mar 25 2025 20:49:24.696202] [1]	Reaper has joined with connection thread
+[Tue Mar 25 2025 20:49:26.624104] [2]	Socket-writing thread has terminated
+[Tue Mar 25 2025 20:49:26.624172] [2]	Socket-reading thread has joined with socket-writing thread
+[Tue Mar 25 2025 20:49:26.624206] [2]	Connection closed with client at 127.0.0.1:50326
+[Tue Mar 25 2025 20:49:26.624239] [2]	Reaper has joined with connection thread
+[Tue Mar 25 2025 20:49:28.661464] [3]	Socket-writing thread has terminated
+[Tue Mar 25 2025 20:49:28.661521] [3]	Socket-reading thread has joined with socket-writing thread
+[Tue Mar 25 2025 20:49:28.661536] [3]	Connection closed with client at 127.0.0.1:50328
+[Tue Mar 25 2025 20:49:28.661563] [3]	Reaper has joined with connection thread
+[Tue Mar 25 2025 20:49:30.381085] [4]	Socket-writing thread has terminated
+[Tue Mar 25 2025 20:49:30.381138] [4]	Socket-reading thread has joined with socket-writing thread
+[Tue Mar 25 2025 20:49:30.381150] [4]	Connection closed with client at 127.0.0.1:50330
+[Tue Mar 25 2025 20:49:30.381191] [4]	Reaper has joined with connection thread
+[Tue Mar 25 2025 20:49:30.381221] Server 127.0.0.1:12345 stopped
+]0;student@student-VirtualBox: ~/lab9[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab9[00m$ cat lab9c.logfile[10@./lab9c 12345[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+> status
+Active connections:
+[2]	Client: 127.0.0.1:12345, Socket: 6, Bytes sent: 22072
+> quit
+]0;student@student-VirtualBox: ~/lab9[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab9[00m$ exit[K[K[K[Kexit
+exit
+
+Script done on Tue 25 Mar 2025 08:51:30 PM PDT

@@ -1,0 +1,123 @@
+Script started on Tue 11 Feb 2025 07:35:54 PM PST
+]0;student@student-VirtualBox: ~/lab4[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab4[00m$ uname -a
+Linux student-VirtualBox 4.15.0-142-generic #146~16.04.1-Ubuntu SMP Tue Apr 13 09:26:57 UTC 2021 i686 i686 i686 GNU/Linux
+]0;student@student-VirtualBox: ~/lab4[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab4[00m$ cat /etc/os-release
+NAME="Ubuntu"
+VERSION="16.04.7 LTS (Xenial Xerus)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 16.04.7 LTS"
+VERSION_ID="16.04"
+HOME_URL="http://www.ubuntu.com/"
+SUPPORT_URL="http://help.ubuntu.com/"
+BUG_REPORT_URL="http://bugs.launchpad.net/ubuntu/"
+VERSION_CODENAME=xenial
+UBUNTU_CODENAME=xenial
+]0;student@student-VirtualBox: ~/lab4[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab4[00m$ make clean
+rm -f *.o lab4a lab4b lab4d
+]0;student@student-VirtualBox: ~/lab4[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab4[00m$ make lab4d
+g++ -g -Wall -std=c++11 -DLOCALHOST=\"127.0.0.1\" -o lab4d lab4d.cpp my_socket.cpp
+[01m[Klab4d.cpp:[m[K In function ‘[01m[Kvoid talk_to_user_and_server(int, std::vector<std::__cxx11::basic_string<char> >&, std::__cxx11::string, int, std::vector<std::__cxx11::basic_string<char> >&)[m[K’:
+[01m[Klab4d.cpp:429:23:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [-Wsign-compare]
+     for (int j = 0; j < uris.size(); j++){
+[01;32m[K                       ^[m[K
+]0;student@student-VirtualBox: ~/lab4[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab4[00m$ ./lab4d 12345
+	GET /persistent.html HTTP/1.1
+	User-Agent: Wget/1.17.1 (linux-gnu)
+	Accept: */*
+	Accept-Encoding: identity
+	Host: localhost:12345
+	Connection: Keep-Alive
+	
+	HTTP/1.1 200 OK
+	Server: lab4a
+	Content-Type: text/html
+	Content-Length: 186
+	
+	GET /robots.txt HTTP/1.1
+	User-Agent: Wget/1.17.1 (linux-gnu)
+	Accept: */*
+	Accept-Encoding: identity
+	Host: localhost:12345
+	Connection: Keep-Alive
+	
+	HTTP/1.1 404 Not Found
+	Server: lab4a
+	Content-Type: text/html
+	Content-Length: 63
+	
+	<html><head></head><body><h1>404 Not Found</h1></body></html>
+	GET /textbooks-2-small.jpg HTTP/1.1
+	Referer: http://localhost:12345/persistent.html
+	User-Agent: Wget/1.17.1 (linux-gnu)
+	Accept: */*
+	Accept-Encoding: identity
+	Host: localhost:12345
+	Connection: Keep-Alive
+	
+	HTTP/1.1 200 OK
+	Server: lab4a
+	Content-Type: application/octet-stream
+	Content-Length: 10525
+	
+	GET /textbooks-3-small.jpg HTTP/1.1
+	Referer: http://localhost:12345/persistent.html
+	User-Agent: Wget/1.17.1 (linux-gnu)
+	Accept: */*
+	Accept-Encoding: identity
+	Host: localhost:12345
+	Connection: Keep-Alive
+	
+	HTTP/1.1 200 OK
+	Server: lab4a
+	Content-Type: application/octet-stream
+	Content-Length: 14265
+	
+	GET /usctommy.gif HTTP/1.1
+	Referer: http://localhost:12345/persistent.html
+	User-Agent: Wget/1.17.1 (linux-gnu)
+	Accept: */*
+	Accept-Encoding: identity
+	Host: localhost:12345
+	Connection: Keep-Alive
+	
+	HTTP/1.1 200 OK
+	Server: lab4a
+	Content-Type: application/octet-stream
+	Content-Length: 1689
+	
+	GET /upc_map.pdf HTTP/1.1
+	User-Agent: lab4b
+	Accept: */*
+	Host: localhost:12345
+	
+	HTTP/1.1 200 OK
+	Server: lab4a
+	Content-Type: application/octet-stream
+	Content-Length: 746248
+	
+	GET /persistent.html HTTP/1.1
+	User-Agent: lab4b
+	Accept: */*
+	Host: localhost:12345
+	
+	HTTP/1.1 200 OK
+	Server: lab4a
+	Content-Type: text/html
+	Content-Length: 186
+	
+	GET /upc_map.gif HTTP/1.1
+	User-Agent: lab4b
+	Accept: */*
+	Host: localhost:12345
+	
+	HTTP/1.1 200 OK
+	Server: lab4a
+	Content-Type: application/octet-stream
+	Content-Length: 416140
+	
+^C
+]0;student@student-VirtualBox: ~/lab4[01;32mstudent@student-VirtualBox[00m:[01;34m~/lab4[00m$ exit
+exit
+
+Script done on Tue 11 Feb 2025 07:40:42 PM PST
