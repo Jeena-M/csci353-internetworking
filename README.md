@@ -14,8 +14,13 @@ Successfully implemented:
 - Through multithreaded programming exercises (written in C++), how threads within an application can communicate with each other safely and how to turn exteranl asynchronous events (such as a timer expiration) into synchronous message exchanges
 
 **Breakdown of PAs:**
+
 PA1: graph algorithms in C/C++
+
 PA2: web server and web client in C++
+
 PA3: multithreaded traffic throttling web server in C++
+
 PA4: network of servers in C++, part 1 - link layer and network layer
+
 PA5: network of servers in C++, part 2 - transport layer and application layer
